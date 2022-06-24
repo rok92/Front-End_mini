@@ -1,0 +1,179 @@
+@charset "UTF-8";
+
+/* 폰트 Pretendard 적용 */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+* {
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+}
+
+/* 초기화 */
+*{
+  margin: 0;
+  padding: 0;
+  color: #222222;
+  font-size: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.daterangepicker{
+  visibility: visible;
+}
+
+/* 공통 */
+.wrap{
+  width: 1320px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.txt_blue{
+  color:#48A0FF;
+}
+
+.mr_0{
+  margin-right: 0!important;
+}
+
+.ml_0{
+  margin-left: 0!important;
+}
+
+.pr_0{
+  padding-right: 0!important;
+}
+
+.pl_0{
+  padding-left: 0!important;
+}
+
+.b_none{
+  border: none!important;
+}
+
+.bold{
+  font-weight: bold!important;
+}
+
+/* 헤더 */
+.header{
+  height: 180px;
+  padding: 50px 20px 0;
+  border-bottom: 1px solid #BBBBBB;
+}
+
+.header .lg_title{
+  width:222px;
+}
+
+/* 헤더 - 로그인/회원가입/마이페이지 */
+.header .div_account{
+  display: inline-block;
+  float: right;
+}
+
+.header .div_account .btn_account{
+  margin: 0 10px;
+  padding:5px 20px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.header .div_account .btn_mypage{
+  display: none;
+}
+
+/* 헤더 - 네비게이션 */
+.header nav{
+  display: flex;
+  align-content: flex-end;
+  height:108px;
+}
+
+.header nav ul{
+  display: flex;
+  align-items: flex-end;
+}
+
+.header nav ul li{
+  height: 45px;
+  margin-right: 30px;
+}
+
+/* nav 포커싱 때 클래스 추가할 예정 */
+.header nav ul li.nav_active{
+  border-bottom: 4px solid #48A0FF;
+}
+
+.header nav ul li a{
+  display: flex;
+  align-items: center;
+}
+
+.header nav ul .ic_nav{
+  width: 29px;
+}
+
+.header nav ul span{
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* footer */
+.footer{
+  margin-top: 100px;
+  padding: 30px 0 60px;
+  border-top: 1px solid #EEEEEE;
+}
+
+.footer .wrap .div_terms{
+  display: inline-block;
+}
+
+.footer .wrap .div_terms .btn_terms{
+  margin: 0 5px;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.footer .wrap .div_service{
+  display: inline-block;
+  float:right;
+}
+
+.footer .wrap .div_service .btn_service{
+  margin: 0 5px;
+  padding: 5px 10px;
+  color: #666666;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.footer .wrap .div_cpy_info{
+  display: inline-block;
+  width: 1000px;
+  margin-top: 45px;
+}
+
+.footer .wrap .div_cpy_info p{
+  color: #AAAAAA;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 24px;
+}
+
+.footer .wrap .div_cpy_info p:first-child{
+  margin-bottom: 5px;
+}
+
+.footer .wrap .lg_title_gray{
+  display: inline-block;
+  float: right;
+  width: 222px;
+  margin-top:100px;
+}
