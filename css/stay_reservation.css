@@ -404,6 +404,7 @@
   font-size: 16px;
   font-weight: 200;
   color: #222222;
+  cursor: pointer;
 }
 .payment_final_info{
   width: 330px;
