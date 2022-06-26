@@ -204,9 +204,9 @@ $(document).ready(function(){
 
   //항공 체크박스
   $('.txt_time_picker').click(function() {
-    $(this).attr('class','txt_time_picker checkI')
+    $(this).addClass('checkI')
     $('.checkI i').toggleClass('fa-active');
-    $(this).attr('class','txt_time_picker');
+    $(this).removeClass('checkI');
   });
 
   // result_filter_select

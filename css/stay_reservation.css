@@ -137,11 +137,11 @@
 /*section*/
 
 .book_detail{   /*호텔이름, 숙박기간 박스설정*/
-  margin: 0 auto;
+  margin-right: 70px;
+  width: 880px;
 }
 .book_hotel_stay{   /*박스내 아이템 나란히 배치*/
   display: flex;
-  width: 900px;
   height: 161px;
   border-top: 2px solid #BBBBBB;
   margin-top: 100px;
@@ -177,7 +177,6 @@
   display: flex;
   justify-content: space-between;
   margin-top: 22px;
-  width: 900px;
   height: 72px;
   background-color: #F2F2F2;
   border-radius: 5px;
@@ -200,7 +199,6 @@
   display: flex;
   justify-content: space-between;
   border-bottom: #DDDDDD 1px solid;
-  width: 900px;
   height: 88px;
 }
 .total_price_text{  /*총 금액 텍스트*/
@@ -216,7 +214,6 @@
   margin-top: 20px;
 }
 .booked_info{   /*예약자 정보 박스*/
-  width: 900px;
   height: 53px;
 }
 .booked_info div{   /*예약자 정보박스 내 예약자 이름설정*/
@@ -226,7 +223,6 @@
   margin-top: 60px;
 }
 .booked_customer_info{    /*예약자 상세정보 박스*/
-  width: 900px;
   height: 365px;
   border: #DDDDDD solid 1px;
 }
@@ -240,7 +236,6 @@
 .booked_p_name{   /*예약자 이름입력상자*/
   width: 270px;
   height: 50px;
-  background-color: #F4F4F4;
   font-size: 16px;
   border: #DDDDDD 1px solid;
   margin-top: 6px;
@@ -347,6 +342,7 @@
   color: #222222;
   margin-top: 66px;
   margin-left: 14px;
+  cursor: pointer;
 }
 .contract_info{   /*약관안내 감싸는 박스*/
   margin-bottom: 24px;
@@ -358,7 +354,6 @@
   margin-top: 60px;
 }
 .introduce_contract_box{  /*약관 동의 안내 박스*/
-  width: 900px;
   height: 193px;
   border: #DDDDDD 1px solid;
 }
@@ -390,7 +385,6 @@
 }
 .agreement_check_final{
   display: flex;
-  width: 900px;
   height: 63px;
   border-right:#DDDDDD 1px solid;
   border-left:#DDDDDD 1px solid;
@@ -406,12 +400,13 @@
 }
 .agree_text_final{
   margin-top: 23px;
+  margin-left: 20px;
   font-size: 16px;
   font-weight: 200;
   color: #222222;
 }
 .payment_final_info{
-  width: 350px;
+  width: 330px;
   height: auto;
   margin-top: 100px;
   position: sticky;
@@ -439,32 +434,31 @@
 }
 .total_price_final{
   display: flex;
-  justify-content: left;
+  justify-content: space-between;
 }
 .ttp_text{
+  display: inline-block;
   font-size: 18px;
   font-weight: 600;
   color: #222222;
   margin-top: 23px;
-  
 }
 .ttp_num{
+  display: inline-block;
   font-size: 28px;
   font-weight: bold;
   color: #222222;
   margin-top: 17px;
-  margin-left: 192px;
 }
 .ttr_won{
+  display: inline-block;
   font-size: 18px;
   font-weight: normal;
   color: #222222;
-  margin-top: 27px;
 }
 .final_price_line{
   display: flex;
-  width: 1320px;
-  margin: auto ;
+  justify-content: center;
 }
 .booked_button_final{
   margin: auto;
@@ -535,4 +529,49 @@
   float: right;
   width: 222px;
   margin-top:100px;
+}
+
+/* checkbox */
+.same_name>i{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border: 1px solid #EEEEEE;
+  background-color: #FFFFFF;
+  color: #FFFFFF;
+  font-size: 14px;
+  text-align: center;
+  line-height: 20px;
+}
+
+.same_name>i.fa-active{
+  border: 1px solid #48A0FF;
+  background-color: #48A0FF;
+  color: #FFFFFF;
+  font-size: 14px;
+  text-align: center;
+  line-height: 20px;
+}
+
+.agree_text_final>i{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border: 1px solid #EEEEEE;
+  background-color: #FFFFFF;
+  color: #FFFFFF;
+  font-size: 14px;
+  text-align: center;
+  line-height: 20px;
+}
+
+.agree_text_final>i.fa-active{
+  border: 1px solid #48A0FF;
+  background-color: #48A0FF;
+  color: #FFFFFF;
+  font-size: 14px;
+  text-align: center;
+  line-height: 20px;
 }

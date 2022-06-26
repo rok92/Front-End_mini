@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
   // 시작전에 ID란에 포커스
-  $('#emailId').focus();
+  // $('#emailId').focus();
 
   // 예약하기 눌렀을 때
   $('#book_ing').on('click',function(){
@@ -35,7 +35,12 @@ $(document).ready(function(){
       return false;
     }
     // 약관 동의 유효성 체크
-    if(!$('input:checked[id=check_final]').is(':checked')){
+    // if(!$('input:checked[id=check_final]').is(':checked')){
+    //   alert('약관에 모두 동의하셔야 합니다.');
+    //   return false;
+    // }
+
+    if(!$('.agree_text_final>i').hasClass('fa-active')){
       alert('약관에 모두 동의하셔야 합니다.');
       return false;
     }
@@ -89,9 +94,10 @@ $(document).ready(function(){
   });
 
   // 투숙객정보와 일치해요 버튼클릭하면
-
-  $("#cusInfo").change(function(){
-    if($('#cusInfo').is(':checked')){
+  $('.same_name').click(function() {
+    $(this).addClass('checkI')
+    $('.checkI i').toggleClass('fa-active');
+    if($('.checkI i').hasClass('fa-active')){
       $('#realName').attr('value', $('#cusName').val());
       $('#realId').attr('value', $('#emailId').val());
       $('#realAddress').attr('value', $('#emailAddress').val());
@@ -108,5 +114,14 @@ $(document).ready(function(){
       $('#realPs').removeAttr('value', $('#num_second').val());
       $('#realPt').removeAttr('value', $('#num_third').val());
     }
+    $(this).removeClass('checkI');
   });
+
+  // 위 약관을 확인 하였으며, 약관에 동의합니다 클릭할 때
+  $('.agree_text_final').click(function() {
+    $(this).addClass('checkI')
+    $('.checkI i').toggleClass('fa-active');
+    $(this).removeClass('checkI');
+  });
+
 });
