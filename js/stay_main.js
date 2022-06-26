@@ -87,7 +87,7 @@ $(document).ready(function(){
 
   // 인원 선택 팝업 X 버튼 클릭 시 display:none;
   $('#popupPersonCloseBtn').click(function(){
-    $('.popup_person').css('display','none');
+    $('.popup_person').toggleClass('dp_block');
   });
 
   // 인원 선택 팝업 외부영역 클릭 시 팝업 닫기

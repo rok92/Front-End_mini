@@ -10,6 +10,7 @@
     <!-- 폰트어썸 -->
     <script src="https://kit.fontawesome.com/fa5522895a.js"crossorigin="anonymous"></script>
     <!-- daterangepicker -->
+    <script src="../js/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
     <script type="text/javascript" src="../js/moment.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
@@ -24,7 +25,6 @@
 
     <!-- <link rel="stylesheet" href="../css/common.css"/> -->
     <link rel="stylesheet" href="../css/stay_detail.css"/>
-    <script src="../js/jquery-3.6.0.min.js"></script>
     <script src="../js/stay_detail.js"></script>
     
     
@@ -45,8 +45,8 @@
           <nav>
             <!-- 항공/숙박/렌터카 -->
             <ul>
-              <li class="nav_active"><a href="#"><img class="ic_nav" src="../images/ic_plane.png" alt="항공"><span>항공</span></a></li>
-              <li><a href="#"><img class="ic_nav" src="../images/ic_lodgment.png" alt="숙박"><span>숙박</span></a></li>
+              <li><a href="#"><img class="ic_nav" src="../images/ic_plane.png" alt="항공"><span>항공</span></a></li>
+              <li class="nav_active"><a href="#"><img class="ic_nav" src="../images/ic_lodgment.png" alt="숙박"><span>숙박</span></a></li>
               <li><a href="#"><img class="ic_nav" src="../images/ic_rent.png" alt="렌터카"><span>렌터카</span></a></li>
             </ul>
           </nav>
@@ -74,7 +74,7 @@
                 </div>
                 <!-- 위치보기 버튼 -->
                 <button class="location_see">
-                  <i class="fa-regular location_map fa-map"></i><a href="https://map.naver.com/v5/search/%EB%A9%94%EC%A2%85%EA%B8%80%EB%9E%98%EB%93%9C%EC%A0%9C%EC%A3%BC?c=14080705.9654982,3959866.1628083,17,0,0,0,dh">위치보기</a>
+                  <i class="fa-regular location_map fa-map"></i><a href="https://map.naver.com/v5/search/%EB%A9%94%EC%A2%85%20%EA%B8%80%EB%9E%98%EB%93%9C%20%EC%A0%9C%EC%A3%BC?c=14080177.6046714,3959888.7729625,15,0,0,0,dh">위치보기</a>
                 </button>
               </div>
               <!-- 호텔이름 / 체크인아웃 시간 -->
@@ -85,7 +85,7 @@
                 </div>
                 <div class="hotel_time">
                     <i class="fa-solid check_clock fa-clock"></i>
-                    체크인14:00 ~ 체크아웃11:00
+                    체크인 14:00 ~ 체크아웃 11:00
                 </div>
               </div>
               <!-- 호텔 사진들 -->
@@ -94,6 +94,7 @@
                   <a href="../images/main_pic.png" data-lightbox="example"><button class="expand_box"><i class="fa-solid expand_icon fa-expand"></i></button></a>
                 </div>
                 <div class="hotel_sub" id="popUp">
+                  <div class="expand_hidden_pic">+5</div>
                     <a href="../images/bathroom.png" data-lightbox="example"><img src="../images/bathroom.png" class="img1"></a>
                     <a href="../images/restaurant.png" data-lightbox="example"><img src="../images/restaurant.png" class="img2"></a>
                     <a href="../images/room_standard2.png" data-lightbox="example"><img src="../images/room_standard2.png" class="img3"></a>
@@ -104,22 +105,45 @@
                     <a href="../images/room_standard3.png" data-lightbox="example"><img src="../images/room_standard3.png"class="img8"></a>
                     <a href="../images/room_delux.png" data-lightbox="example"><img src="../images/room_delux.png"class="img9"></a>
                 </div>
-                <div class="expand_hidden_pic">+5</div>
                 <div class="img_area">
                   <div class="img_box">
                     <div class="slider_box"></div>
                   </div>
                 </div>
-                <!-- 데이트피커랑 인원수체크 들어가야함!!!!!!!! -->
+              <!-- 데이트피커랑 인원수체크 들어가야함!!!!!!!! -->
               <div class="date_count">
                 <div class="textbox_box">
-                    <input type="text" class="day_night txt_stay txt_stay_placeholder" id="lodDatepicker" name="daterange" value="06.24(금) - 07. 01(금), 3박">
-
-                    </input>
-                    <input type="text" class="guest_count txt_stay" id="lodPersonCount" value="성인 1명, 어린이 0명">
-
-                    </input>
+                    <input type="text" id="lodDatepicker" class="day_night"  name="daterange" value="06.27(월) - 06.30(목), 3박">
+                    <input type="text" id="lodPersonCount" class="guest_count" value="성인1, 어린이0">
                     <button class="re_search">재검색</button>
+                    <div class="popup_person">
+                      <h4 class="tlt_popup_person">인원 선택</h4>
+                      <i id="popupPersonCloseBtn" class="fa-solid fa-xmark"></i>
+                      <!-- 인원 선택 성인 -->
+                      <div class="div_person_count">
+                        <div class="box_txt_person">
+                          <span class="txt_person_main">성인</span>
+                          <span class="txt_person_sub">만 18세 이상</span>
+                        </div>
+                        <div class="box_plus_minus">
+                          <a id="adultMinusBtn" class="btn_popup_count">-</a>
+                          <span id="adultCount" class="popup_count_person">1</span>
+                          <a id="adultPlusBtn" class="btn_popup_count btn_adult_plus btn_count_active">+</a>
+                        </div>
+                      </div>
+                      <!-- 인원 선택 어린이 -->
+                      <div class="div_person_count">
+                        <div class="box_txt_person">
+                          <span class="txt_person_main">어린이</span>
+                          <span class="txt_person_sub">만 18세 미만</span>
+                        </div>
+                        <div class="box_plus_minus">
+                          <a id="childMinusBtn" class="btn_popup_count">-</a>
+                          <span id="childCount" class="popup_count_person">0</span>
+                          <a id="childPlusBtn" class="btn_popup_count btn_count_active">+</a>
+                        </div>
+                      </div>
+                    </div>
                 </div>
               </div>
               <div class="room_standard">
@@ -136,7 +160,8 @@
                         <span class="price_won">원</span>
                     </div>
                 </div>
-                <a href="../html/stay_reservation.html"><button class="booked">예약</button></a>
+                <!-- <button class="booked"><a href="../html/stay_reservation.html"></a>예약</button> -->
+                <a class="booked" href="../html/stay_reservation.html">예약</a>
               </div>
               <div class="room_twin">
                 <img src="../images/room_standard3.png"/>
@@ -152,7 +177,7 @@
                         <span class="price_won">원</span>
                     </div>
                 </div>
-                <a href="../html/stay_reservation.html"><button class="booked">예약</button></a>
+                <a class="booked" href="../html/stay_reservation.html">예약</a>
               </div>
               <!-- 약관 -->
               <div class="use_info_box">
@@ -175,6 +200,7 @@
                   </div>
                 <div class="info_detail_second">
                   <!-- <pre class="info_detail_exsecond"> -->
+                    <br>
                     [추가요금정책]<br>
                       ㅁ 조식안내<br>
                       - 운영시간 : 07:00~10:00<br>

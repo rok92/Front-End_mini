@@ -32,19 +32,20 @@ $(document).ready(function () {
   // daterangepicker 정의
   $(function() {
     $('#lodDatepicker').daterangepicker({
+      startDate: "06/27/2022",
+      endDate: "06/30/2022",
       autoUpdateInput: false,
       autoApply: true,
       minDate: today,
-      locale: {
-          "daysOfWeek": ["일", "월", "화", "수", "목", "금", "토"],
-          "monthNames": ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"]
-        }
+      locale:{
+        "daysOfWeek": ["일", "월", "화", "수", "목", "금", "토"],
+        "monthNames": ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"]
+      }
     });
 
     // 날짜 선택했을 때 포맷
     $('#lodDatepicker').on('apply.daterangepicker', function(ev, picker) {
       $(this).val(picker.startDate.format('MM.DD(dd)') + ' - ' + picker.endDate.format('MM.DD(dd)') + ', ' + Math.floor((picker.endDate - picker.startDate)/86400000) + '박');
-      $(this).removeClass('txt_stay_placeholder');
     });
 
     // 날짜 없을 때
@@ -54,7 +55,7 @@ $(document).ready(function () {
   });
 
 
-   // 인원 선택
+  // 인원 선택
   // 인원 버튼 클릭 시 display:block css 토글
   $('#lodPersonCount').click(function(){
     $('.popup_person').toggleClass('dp_block');
@@ -62,8 +63,17 @@ $(document).ready(function () {
 
   // 인원 선택 팝업 X 버튼 클릭 시 display:none;
   $('#popupPersonCloseBtn').click(function(){
-    $('.popup_person').css('display','none');
+    $('.popup_person').toggleClass('dp_block');
   });
+
+  // 인원 선택 팝업 외부영역 클릭 시 팝업 닫기
+  $(document).mouseup(function (e){
+    var LayerPopup = $(".popup_person");
+    if(LayerPopup.has(e.target).length === 0){
+      LayerPopup.removeClass("dp_block");
+    }
+  });
+
   // 인원 버튼 클릭할 때
   var adultCount = parseInt($('#adultCount').text());
   var childCount = parseInt($('#childCount').text());
@@ -127,7 +137,7 @@ $(document).ready(function () {
 
   // 객실 선택하기 [버튼] '예약' 위치로
   $('#pressBtn').click(function(){
-     $('html,body').animate({scrollTop : 1200}, 500);
+     $('html,body').animate({scrollTop : 1189}, 500);
   });
 
 
