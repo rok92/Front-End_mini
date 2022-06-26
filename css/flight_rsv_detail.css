@@ -683,6 +683,13 @@ button {
 /* 세부 요금 */
 .fare_body h3 {
   font-size: 20px;
+  font-weight: 400;
+}
+
+.fare_body b{
+  font-size: 20px;
+  font-weight: 600;
+  color: #48A0FF;
 }
 
 .fare_detail {
