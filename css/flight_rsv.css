@@ -1,0 +1,568 @@
+@charset "UTF-8";
+
+/* 폰트 Pretendard 적용 */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+* {
+    font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+}
+
+/* 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    color: #222222;
+    font-size: 16px;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.daterangepicker {
+    visibility: visible;
+}
+
+/* 공통 */
+.wrap {
+    width: 1320px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.txt_blue {
+    color: #48A0FF !important;
+}
+
+.txt_red {
+    color: #E65454 !important;
+}
+
+.txt_gray {
+    color: #999999 !important;
+}
+
+.white {
+    color: #FFFFFF !important;
+}
+
+.bgblue {
+    background-color: #48A0FF !important;
+}
+
+.bdblack {
+    border-color: #222222 !important;
+}
+
+.bdblue {
+    border-color: #48A0FF !important;
+}
+
+.mr_0 {
+    margin-right: 0 !important;
+}
+
+.ml_0 {
+    margin-left: 0 !important;
+}
+
+.pr_0 {
+    padding-right: 0 !important;
+}
+
+.pl_0 {
+    padding-left: 0 !important;
+}
+
+.b_none {
+    border: none !important;
+}
+
+.light {
+    font-weight: 300 !important;
+}
+
+.semi_bold {
+    font-weight: 600 !important;
+}
+
+.bold {
+    font-weight: bold !important;
+}
+
+select {
+    cursor: pointer;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* 헤더 */
+.header_wrap {
+    border-bottom: 1px solid #BBBBBB;
+}
+
+.headerBox {
+    width: 1280px;
+    height: 90px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.headerBox h2 {
+    line-height: 90px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* 헤더 뒤로가기 부분 */
+.btn_back {
+    float: left;
+    z-index: 1;
+    padding-top: 30px;
+    font-size: 18px;
+}
+
+.back i {
+    width: 7px;
+    height: 14px;
+    color: #BBBBBB;
+}
+
+.btn_back span:last-child {
+    padding-left: 10px;
+    color: #BBBBBB;
+}
+
+/* 헤더 타이틀 */
+.title {
+    padding-right: 72.31px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* 섹션 */
+.section {
+    display: flex;
+    width: 1280px;
+    margin: 100px auto;
+    text-align: center;
+}
+
+/* 섹션 왼쪽 */
+.left {
+    width: 900px;
+    height: 729px;
+}
+
+/* 가는편 */
+.dep {
+    width: 900px;
+    height: 330px;
+}
+
+/* 가는편 요약 */
+.search_result {
+    display: flex;
+    line-height: 32px;
+}
+
+.dep_flight {
+    width: 60px;
+    height: 30px;
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+    background-color: #48A0FF;
+    text-align: center;
+}
+
+.dep_flight span {
+    width: 42px;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+.dep_city_from {
+    width: 80px;
+    margin-left: 17px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.search_result div:nth-child(3) {
+    line-height: 25px;
+}
+
+.search_result img {
+    width: 22px;
+    height: 5px;
+    margin-right: 10px;
+    margin-left: 9px;
+}
+
+.dep_city_to {
+    width: 80px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* 가는편 세부정보 */
+.reserve_flight {
+    width: 900px;
+    height: 288px;
+    margin-top: 10px;
+    border: 1px solid #DDDDDD;
+    border-radius: 5px;
+}
+
+/* 가는편 위 블럭 */
+.flight_info {
+    display: flex;
+    height: 118px;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.flight_logo img {
+    width: 40px;
+    height: 40px;
+    margin: 39.5px 15px 39.5px 40px;
+}
+
+.flight_airline {
+    width: 42px;
+    height: 19px;
+    margin-top: 51px;
+}
+
+.flight_time {
+    display: flex;
+    width: 252px;
+    height: 41px;
+    margin: 39px auto 38px 103px;
+}
+
+.flight_time img {
+    width: 88px;
+    height: 5px;
+}
+
+.dep_from {
+    width: 57px;
+    height: 41px;
+    line-height: 20px;
+    margin-right: 27px;
+    text-align: right;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.dep_from_time {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.dep_from_city {
+    width: 23px;
+    height: 17px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.dep_from_time {
+    line-height: 20px;
+    text-align: center;
+}
+
+.dep_duringtime {
+    height: 21px;
+    line-height: 26px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.dep_to {
+    width: 57px;
+    height: 41px;
+    line-height: 20px;
+    margin-left: 28px;
+    text-align: left;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.dep_to_time {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.dep_to_city {
+    width: 23px;
+    height: 17px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+/* 가는편 아래 블럭 */
+.flight_detail {
+    height: 171px;
+    white-space: nowrap;
+}
+
+.detail_area {
+    display: flex;
+    padding: 33px 343px 38px 40px;
+}
+
+.detail_area img {
+    width: 10px;
+    height: 86px;
+    margin-top: 4px;
+}
+
+.flight_no {
+    width: 82px;
+    height: 19px;
+}
+
+.dep_date {
+    width: 69px;
+    height: 19px;
+    margin: 0 10px 0 99px;
+}
+
+.detail_time {
+    margin: 0 10px 0 10px;
+}
+
+.detail_time div {
+    text-align: left;
+}
+
+.detail_dep {
+    width: 57px;
+    line-height: 20px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.detail_duringtime {
+    margin: 18px 0 17px 0;
+    font-size: 14px;
+    font-weight: 300;
+    color: #BBBBBB;
+}
+
+.detail_arr {
+    width: 52px;
+    line-height: 20px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.detail_from_city {
+    margin: 0 20px 0 10px;
+    font-weight: 300;
+}
+
+.detail_info span:nth-child(2) {
+    font-size: 14px;
+    font-weight: 300;
+    color: #BBBBBB;
+}
+
+.detail_to_city {
+    width: 54px;
+    height: 19px;
+    margin: 53px auto auto 10px;
+    font-weight: 300;
+}
+
+/* 오는편 */
+.arr {
+    width: 900px;
+    height: 330px;
+    margin-top: 40px;
+}
+
+/* 오는편 요약 */
+.arr_flight {
+    width: 60px;
+    height: 30px;
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+    background-color: #48A0FF;
+    text-align: center;
+}
+
+.arr_flight span {
+    width: 42px;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+.arr_city_from {
+    width: 80px;
+    margin-left: 17px;
+    font-size: 18px;
+    font-weight: 600;
+}
+.arr_city_to {
+    width: 80px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* 섹션 오른쪽 부분 */
+.section_right {
+    width: 350px;
+}
+
+.right {
+    width: 350px;
+    margin-left: 70px;
+    text-align: left;
+}
+
+.select_way {
+    width: 350px;
+    height: 26px;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.select_way span {
+    margin-right: 10px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.select_way span:nth-child(2){
+    line-height: 20px;
+}
+
+.select_way img {
+    width: 22px;
+    height: 14px;
+    padding-top: 3px;
+}
+
+.total_check {
+    height: 20px;
+    margin: 8px 0 60px 0;
+    font-weight: 300;
+}
+
+/* 요금표 */
+.tariff {
+    margin: 60px 0 auto 0;
+}
+
+/* 자세한 요금 */
+.tariff_btn {
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.fare_body h3 {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.fare_body b{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.fare_detail {
+    margin-top: 10px;
+}
+
+.fare_detail1 {
+    height: 148px;
+    padding: 7px 0;
+    border-top: 1px solid #DDDDDD;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.fare_detail1 table {
+    width: 350px;
+    font-size: 14px;
+}
+
+.fare_detail1 tr {
+    height: 31px;
+}
+
+.fare_detail td {
+    margin: 14px 0;
+}
+
+.fare_detail2 table {
+    width: 350px;
+    height: 49px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* 총 요금 */
+.total_fare_wrap {
+    margin-top: 26px;
+    border-top: 1px solid #DDDDDD;
+}
+
+.total_fare {
+    display: flex;
+    justify-content: space-between;
+    height: 51px;
+    margin-top: 23px;
+}
+
+.total_fare h3 {
+    text-align: right;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.total_fare div:nth-child(2) h3 {
+    height: 34px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.total_fare div:nth-child(2) h3 span {
+    font-size: 18px;
+    color: #222222;
+}
+
+.total_fare div:nth-child(2) span:nth-child(2) {
+    display: block;
+    height: 17px;
+    text-align: right;
+    font-size: 14px;
+    color: #BBBBBB;
+}
+
+/* 예약하기 버튼 부분 */
+.reserve {
+    width: 100%;
+    height: 255px;
+    margin-top: 100px;
+    border-top: 1px solid #BBBBBB;
+    text-align: center;
+}
+
+.rsv_btn {
+    width: 200px;
+    height: 48px;
+    margin-top: 100px;
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+    background-color: #48A0FF;
+    text-align: center;
+    font-size: 19px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
