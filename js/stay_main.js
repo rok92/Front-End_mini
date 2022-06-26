@@ -17,6 +17,14 @@ $(document).ready(function(){
     $('.popup_lod').toggleClass('dp_block');
   });
 
+  // 여행지 검색 팝업 외부영역 클릭 시 팝업 딛기
+  $(document).mouseup(function (e){
+    var LayerPopup = $(".popup_lod");
+    if(LayerPopup.has(e.target).length === 0){
+      LayerPopup.removeClass("dp_block");
+    }
+  });
+
   // 팝업 내 검색하기 버튼 클릭 시
   $('#popupLodSearchBtn').click(function(){
     var txt = $('#popupLodSearch').val();
@@ -81,6 +89,15 @@ $(document).ready(function(){
   $('#popupPersonCloseBtn').click(function(){
     $('.popup_person').css('display','none');
   });
+
+  // 인원 선택 팝업 외부영역 클릭 시 팝업 닫기
+  $(document).mouseup(function (e){
+    var LayerPopup = $(".popup_person");
+    if(LayerPopup.has(e.target).length === 0){
+      LayerPopup.removeClass("dp_block");
+    }
+  });
+
   // 인원 버튼 클릭할 때
   var adultCount = parseInt($('#adultCount').text());
   var childCount = parseInt($('#childCount').text());
