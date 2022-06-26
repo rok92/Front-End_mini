@@ -34,6 +34,10 @@
   color:#48A0FF;
 }
 
+.mt_0{
+  margin-top: 0!important;
+}
+
 .mr_0{
   margin-right: 0!important;
 }
@@ -52,6 +56,10 @@
 
 .b_none{
   border: none!important;
+}
+
+.bg_gray{
+  background-color: #F9F9F9!important;
 }
 
 .bold{
