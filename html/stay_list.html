@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>쿨탐찼다! 여행가자! - 쿨타임트립</title>
+  <!-- ico -->
+  <link rel="icon" href="../images/ico_logo.ico" />
+  <!-- fontawesome -->
+  <script type="text/javascript" src="https://kit.fontawesome.com/fa5522895a.js" crossorigin="anonymous"></script>
+  <!-- daterangepicker -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+  <script type="text/javascript" src="../js/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+  <!-- custom css/js -->
+  <script defer type="text/javascript" src="../js/stay_list.js"></script>
+  <link rel="stylesheet" href="../css/daterangepicker.css"/>
+  <link rel="stylesheet" href="../css/common.css"/>
+  <link rel="stylesheet" href="../css/list.css"/>
+</head>
+
+<body>
+  <header class="header">
+    <!-- 헤더 wrap -->
+    <div class="wrap">
+      <div>
+        <img class="lg_title" src="../images/lg_title.png" alt="로고">
+        <!-- 로그인/회원가입 > 마이페이지 -->
+        <div class="div_account">
+          <a class="btn_account" href="#">로그인</a>
+          <a class="btn_account txt_blue mr_0 pr_0" href="#">회원가입</a>
+          <a class="btn_account btn_mypage" href="#">마이페이지</a>
+        </div>
+      </div>
+      <nav>
+        <!-- 항공/숙박/렌터카 -->
+        <ul>
+          <li><a href="#"><img class="ic_nav" src="../images/ic_plane.png" alt="항공"><span>항공</span></a></li>
+          <li class="nav_active"><a href="#"><img class="ic_nav" src="../images/ic_lodgment.png" alt="숙박"><span>숙박</span></a></li>
+          <li><a href="#"><img class="ic_nav" src="../images/ic_rent.png" alt="렌터카"><span>렌터카</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- 검색 영역 -->
+  <section class="sec_search_list">
+    <span class="div_list_tlt">여행지</span>
+    <!-- 검색 설정 영역 / 유효성 검사 필요 -->
+    <div class="div_lod_list_search wrap">
+      <div class="wrap_lod_div">
+        <form id="lodSearchList">
+            <div class="wrap_search_input">
+              <input type="text" id="lodListSearchBtn" class="txt_stay" value="제주도">
+              <input type="text" id="lodListDatepicker" name="daterange" class="txt_stay" value="6.27(월) - 6.30(목)">
+              <input type="text" id="lodListPersonCount" class="txt_stay" value="성인2, 어린이0">
+              <input type="submit" class="btn_search_stay" value="검색하기">
+            </div>
+        </form>
+        <!-- 검색 팝업 -->
+        <div class="popup_lod">
+          <h4 class="tlt_popup_lod">여행지 검색</h4><i class="fa-solid fa-xmark" id="popupLodListCloseBtn"></i>
+          <div class="div_popup_search">
+            <input type="text" name="" id="popupLodListSearch" class="input_popup_search" placeholder="여행지 검색">
+            <input type="button" name="" id="popupLodListSearchBtn" class="btn_popup_search" value="검색하기">
+          </div>
+          <h6 class="tlt_list_lod">최근 확인한 여행지</h6>
+          <!-- 최근 3개까지 -->
+          <div class="list_location">
+            <i class="fa-solid fa-location-dot"></i>
+            <div class="div_txt_location">
+              <span class="txt_location_main">제주도</span>
+              <span class="txt_location_sub">대한민국</span>
+            </div>
+          </div>
+          <div class="list_location b_none">
+            <i class="fa-solid fa-location-dot"></i>
+            <div class="div_txt_location">
+              <span class="txt_location_main">가평군</span>
+              <span class="txt_location_sub">대한민국 경기도</span>
+            </div>
+          </div>
+          <h6 class="tlt_list_lod">인기 여행지</h6>
+          <!-- 3개 -->
+          <div class="list_location">
+            <i class="fa-solid fa-location-dot"></i>
+            <div class="div_txt_location">
+              <span class="txt_location_main">제주도</span>
+              <span class="txt_location_sub">대한민국</span>
+            </div>
+          </div>
+          <div class="list_location">
+            <i class="fa-solid fa-location-dot"></i>
+            <div class="div_txt_location">
+              <span class="txt_location_main">강릉</span>
+              <span class="txt_location_sub">대한민국 강원도</span>
+            </div>
+          </div>
+          <div class="list_location b_none">
+            <i class="fa-solid fa-location-dot"></i>
+            <div class="div_txt_location">
+              <span class="txt_location_main">여수</span>
+              <span class="txt_location_sub">대한민국 전라남도</span>
+            </div>
+          </div>
+        </div>
+        <!-- 인원 팝업 -->
+        <div class="popup_person">
+          <h4 class="tlt_popup_person">인원 선택</h4><i class="fa-solid fa-xmark" id="popupPersonListCloseBtn"></i>
+          <div class="div_person_count">
+            <div class="box_txt_person">
+              <span class="txt_person_main">성인</span>
+              <span class="txt_person_sub">만 18세 이상</span>
+            </div>
+            <div class="box_plus_minus">
+              <a id="adultListMinusBtn" class="btn_popup_count">-</a>
+              <span id="adultListCount" class="popup_count_person">1</span>
+              <a href="#" id="adultListPlusBtn" class="btn_popup_count btn_adult_plus btn_count_active">+</a>
+            </div>
+          </div>
+          <div class="div_person_count">
+            <div class="box_txt_person">
+              <span class="txt_person_main">어린이</span>
+              <span class="txt_person_sub">만 18세 미만</span>
+            </div>
+            <div class="box_plus_minus">
+              <a id="childListMinusBtn" class="btn_popup_count">-</a>
+              <span id="childListCount" class="popup_count_person">0</span>
+              <a href="#" id="childListPlusBtn" class="btn_popup_count btn_count_active">+</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 검색 영역 끝 -->
+  <!-- 필터 부분 / 검색 결과 -->
+  <div class="bg_gray">
+    <!-- 검색 필터 -->
+    <div class="wrap wrap_result">
+      <section class="sec_filter">
+        <div class="wrap_map_btn">
+          <a href="https://map.naver.com/v5/search/hotel?c=14080163.7383975,3960182.5048724,14.31,0,0,0,dh">
+            <img src="../images/btn_map.png" alt="지도로 보기">
+            <span>지도로 보기</span>
+          </a>
+        </div>
+        <div class="wrap_hotel_star">
+          <span class="tlt_hotel_star">호텔등급</span>
+          <div class="wrap_star">
+            <i class="fa-solid fa-star"><span id="starZero">0+</span></i>
+            <i class="fa-solid fa-star"><span id="starTwo">2</span></i>
+            <i class="fa-solid fa-star"><span id="starThree">3</span></i>
+            <i class="fa-solid fa-star"><span id="starFour">4</span></i>
+            <i class="fa-solid fa-star fa-disabled"><span id="starFive">5</span></i>
+          </div>
+        </div>
+      </section>
+      <!-- 검색 결과 -->
+      <section class="sec_result">
+        <div class="wrap_result_title">
+          <span class="result_count">검색결과 총 60개</span>
+          <!-- 커스텀 셀렉트 -->
+          <div class="result_filter">
+            <button class="result_filter_open"><span>추천순</span><i id="arrowDown" class="fa-solid fa-angle-down"></i></button>
+              <ul class="result_filter_select">
+                <li class="result_filter_option">추천순</li>
+                <li class="result_filter_option">많은 후기순</li>
+                <li class="result_filter_option">높은 평점순</li>
+                <li class="result_filter_option">낮은 가격순</li>
+                <li class="result_filter_option">높은 가격순</li>
+              </ul>
+          </div>
+        </div>
+        <!-- result data-->
+        <div class="wrap_result_list">
+          <div class="wrap_result_img">
+            <img src="../images/img_maison.jpg" alt="호텔 사진">
+          </div>
+          <div class="wrap_result_hotel_info">
+            <span class="txt_result_name">메종 글래드 제주</span>
+            <span class="txt_result_adrs">4성급 ・ 제주시 연동 노연로 80</span>
+            <span class="txt_result_review"><i class="fa-solid fa-star txt_blue"></i> 4.5<span class="txt_result_review_count">(131)</span></span>
+            <span class="txt_result_price">178,700원</span>
+          </div>
+        </div>
+        <div class="wrap_result_list">
+          <div class="wrap_result_img">
+            <img src="../images/img_shillastay.jpg" alt="호텔 사진">
+          </div>
+          <div class="wrap_result_hotel_info">
+            <span class="txt_result_name">신라스테이 제주</span>
+            <span class="txt_result_adrs">4성급 ・ 제주시 연동 노연로 80</span>
+            <span class="txt_result_review"><i class="fa-solid fa-star txt_blue"></i> 4.5<span class="txt_result_review_count">(131)</span></span>
+            <span class="txt_result_price">178,700원</span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer class="footer mt_0">
+    <div class="wrap">
+      <div class="div_terms ml_0">
+        <a class="btn_terms ml_0 pl_0" href="#">이용 약관</a>
+        <a class="btn_terms bold" href="#">개인정보 처리방침</a>
+        <a class="btn_terms" href="#">취소 및 환불 정책</a>
+      </div>
+      <div class="div_service">
+        <a class="btn_service" href="#">고객센터</a>
+        <a class="btn_service mr_0 pr_0" href="#">FAQ</a>
+      </div>
+      <div class="div_cpy_info">
+        <p>
+          상호명 (주)쿨타임트립 | 대표 채동혁 | 개인정보보호책임자 곽경록<br>
+          주소 서울 강남구 선릉로 428, 위워크 2층 | 이메일 help@cooltimetrip.com | 마케팅/제휴 문의 marketing@cooltimetrip.com
+        </p>
+        <p>
+          쿨타임트립은 통신판매중개자이며 통신판매의 당사자가 아닙니다. 따라서 상품·거래정보 및 거래에 대하여 책임을 지지않습니다.
+        </p>
+      </div>
+      <img class="lg_title_gray" src="../images/lg_title_gray.png" alt="">
+    </div>
+  </footer>
+</body>
+
+</html>
