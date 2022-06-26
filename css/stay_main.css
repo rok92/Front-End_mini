@@ -1,0 +1,509 @@
+@charset "UTF-8";
+
+/* stay_main.html */
+
+
+/* 검색 영역 CSS */
+.sec_search{
+  position: relative;
+  width: 100%;
+  height: 384px;
+}
+
+/* 백그라운드 영역 */
+.sec_search .div_bg_stay{
+  overflow: hidden;
+  width: 100%;
+  height: 320px;
+}
+
+/* 백그라운드 사진 */
+.sec_search .div_bg_stay .bg_stay{
+  width: 100%;
+  filter: brightness(60%);
+}
+
+/* 숙박타이틀 */
+.sec_search .tlt_stay{
+  position: absolute;
+  top: 100px;
+  width: 100%;
+  color: #ffffff;
+  font-size: 42px;
+  font-weight: 100;
+  text-align: center;
+}
+
+/* 검색이나 설정하는 영역 */
+.sec_search .div_lod_search{
+  position: absolute;
+  top: 190px;
+  width: 100%;
+}
+
+.sec_search .div_lod_search .wrap_lod_table{
+  width: 1280px;
+  height: 192px;
+  margin: 0 auto;
+  padding: 60px 70px;
+  border-radius: 30px;
+  background-color: #ffffff;
+  box-shadow: 3px 3px 18px #0002;
+}
+
+.sec_search .div_lod_search .wrap_lod_table table{
+  width: 100%;
+  text-align: left;
+}
+
+.sec_search .div_lod_search .wrap_lod_table table tr th{
+  height: 30px;
+}
+
+.sec_search .div_lod_search .wrap_lod_table table tr th{
+  color: #666666;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+/* td태그 내부 텍스트 */
+.sec_search .div_lod_search .wrap_lod_table table tr td .txt_stay{
+  width: 100%;
+  color: #222222;
+  font-size: 22px;
+  font-weight: 600;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* value 값으로 가지고 오기 때문에 placeholder 클래스 임의 설정 */
+.sec_search .div_lod_search .wrap_lod_table table tr td .txt_stay_placeholder{
+  color: #AAAAAA;
+}
+
+.sec_search .div_lod_search .wrap_lod_table table tr td #lod_datepicker{
+  width: 100%;
+}
+
+.sec_search .div_lod_search .wrap_lod_table table tr td #lod_datepicker:focus{
+  outline: none;
+}
+
+/* 검색하기 */
+.sec_search .div_lod_search .wrap_lod_table table tr td .btn_search_stay{
+  padding: 22px 40px;
+  border: none;
+  border-radius: 30px;
+  background-color: #48A0FF;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* 여행지 검색 팝업 */
+.sec_search .popup_lod{
+  display: none;
+  position: absolute;
+  top: 202px;
+  width: 690px;
+  height: 733px;
+  margin-left: -70px;
+  padding:50px 70px;
+  border-radius: 30px;
+  background-color: #ffffff;
+  box-shadow: 3px 3px 18px #0003;
+  z-index: 1;
+}
+
+.sec_search .popup_lod .tlt_popup_lod{
+  display: inline-block;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* 엑스버튼 */
+.sec_search .popup_lod>i{
+  float: right;
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* 검색 인풋 영역 */
+.sec_search .popup_lod .div_popup_search{
+  margin: 20px 0 20px;
+}
+
+/* 인풋 */
+.sec_search .popup_lod .div_popup_search .input_popup_search{
+  width: 408px;
+  padding: 14px 30px;
+  border: 1px solid #BBBBBB;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+/* 인풋 포커스 */
+.sec_search .popup_lod .div_popup_search .input_popup_search:focus{
+  outline: none;
+  border: 1px solid #48A0FF!important;
+}
+
+/* 인풋 placeholder */
+.sec_search .popup_lod .div_popup_search .input_popup_search::placeholder{
+  color: #AAAAAA;
+}
+
+/* 검색버튼 */
+.sec_search .popup_lod .div_popup_search .btn_popup_search{
+  margin-left: -4px;
+  padding: 14px 35px;
+  color:#ffffff;
+  border: 1px solid #48A0FF;
+  font-size: 20px;
+  font-weight: 600;
+  background-color: #48A0FF;
+}
+
+.sec_search .popup_lod .tlt_list_lod{
+  display: inline-block;
+  margin: 20px 0 10px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.sec_search .popup_lod .list_location{
+  display: flex;
+  height: 78px;
+  border-bottom: 1px solid #DDDDDD;
+  cursor: pointer;
+}
+
+.sec_search .popup_lod .list_location>i{
+  display: inline-block;
+  width: 70px;
+  padding-left: 20px;
+  font-size: 27px;
+  color:#48A0FF;
+  line-height: 78px;
+}
+
+.sec_search .popup_lod .list_location .div_txt_location{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sec_search .popup_lod .list_location .div_txt_location .txt_location_main{
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.sec_search .popup_lod .list_location .div_txt_location .txt_location_sub{
+  color: #999999;
+  font-size: 17px;
+  font-weight: 200;
+}
+
+/* 인원 팝업 */
+.sec_search .popup_person{
+  display: none;
+  position: absolute;
+  top: 202px;
+  width: 468px;
+  height: 287px;
+  margin-left: 672px;
+  padding:50px 70px;
+  border-radius: 30px;
+  background-color: #ffffff;
+  box-shadow: 3px 3px 18px #0003;
+  z-index: 1;
+}
+
+.sec_search .popup_person .tlt_popup_person{
+  display: inline-block;
+  margin-bottom: 15px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.sec_search .popup_person>i{
+  float: right;
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;;
+}
+
+.sec_search .popup_person .div_person_count{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.sec_search .popup_person .div_person_count .box_txt_person{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sec_search .popup_person .div_person_count .box_txt_person .txt_person_main {
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.sec_search .popup_person .div_person_count .box_txt_person .txt_person_sub{
+  color: #BBBBBB;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.sec_search .popup_person .div_person_count .box_plus_minus{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.sec_search .popup_person .div_person_count .box_plus_minus .btn_popup_count{
+  width: 46px;
+  height: 46px;
+  border: 2px solid #BBBBBB;
+  border-radius: 50px;
+  color: #BBBBBB;
+  font-size: 36px;
+  font-weight: 200;
+  text-align: center;
+  line-height: 38px;
+  cursor: pointer;
+}
+
+.sec_search .popup_person .div_person_count .box_plus_minus a.btn_count_active{
+  border: 2px solid #48A0FF;
+  color: #48A0FF;
+}
+
+.sec_search .popup_person .div_person_count .box_plus_minus .popup_count_person{
+  display: inline-block;
+  width: 60px;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* 최근 검색 숙소 */
+.sec_recent{
+  margin-top: 70px;
+}
+
+.sec_recent .tlt_recent{
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.sec_recent .div_recent_list{
+  display: flex;
+  flex-direction: row;
+}
+
+.sec_recent .div_recent_list .box_recent{
+  display: flex;
+  width: 400px;
+  height: 120px;
+  margin-right: 40px;
+  padding: 10px 0;
+  align-items: center;
+}
+
+/* 이미지 박스 값 지정 */
+.sec_recent .div_recent_list .box_recent .div_recent_img{
+  display: flex;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 10px;
+  justify-content: center;
+}
+
+/* 높이를 맞추고 양 옆은 자름 */
+.sec_recent .div_recent_list .box_recent .div_recent_img .img_recent_hotel{
+  height: 100%;
+}
+
+.sec_recent .div_recent_list .box_recent .inner_recent_info{
+  display: flex;
+  align-items: flex-start;
+  width: 300px;
+  padding: 0 15px;
+  flex-direction: column;
+}
+
+.sec_recent .div_recent_list .box_recent .inner_recent_info .txt_recent_location{
+  margin-bottom: 5px;
+  color: #AAAAAA;
+  font-size: 16px;
+  font-weight: 200;
+}
+
+.sec_recent .div_recent_list .box_recent .inner_recent_info .txt_recent_hotel{
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.sec_recent .div_recent_list .box_recent .inner_recent_info .txt_recent_price{
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* 숙소 추천 */
+.sec_rmd .div_rmd_list{
+  position: relative;
+  height: 380px;
+  overflow: hidden;
+  margin-top: 100px;
+}
+
+.sec_rmd .div_rmd_list .tlt_rmd{
+  margin-bottom: 30px;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.sec_rmd .div_rmd_list .box_rmd_prev{
+  position: absolute;
+  left: 0;
+  z-index: 1;
+}
+
+.sec_rmd .div_rmd_list .box_rmd_prev .prev{
+  display: none;
+  position: relative;
+}
+
+.sec_rmd .div_rmd_list .box_rmd_prev .prev a{
+  cursor: pointer;
+}
+
+.sec_rmd .div_rmd_list .box_rmd_prev .prev i{
+  position: absolute;
+  top: 160px;
+  left: 15px;
+  width: 50px;
+  height: 50px;
+  border-radius: 200px;
+  background-color: #FFFFFF;
+  color: #222222;
+  font-size: 22px;
+  text-align: center;
+  line-height: 50px;
+  box-shadow: 1px 1px 4px #0002;
+}
+
+.sec_rmd .div_rmd_list .box_rmd_prev .prev .gradient_white{
+  display: inline-block;
+  width: 240px;
+  height: 320px;
+  background: linear-gradient( to left, #FFFFFF00, #FFFFFF );
+}
+
+.sec_rmd .div_rmd_list .box_rmd_next{
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
+
+.sec_rmd .div_rmd_list .box_rmd_next .next{
+  position: relative;
+}
+
+.sec_rmd .div_rmd_list .box_rmd_next .next a{
+  cursor: pointer;
+}
+
+.sec_rmd .div_rmd_list .box_rmd_next .next i{
+  position: absolute;
+  top: 160px;
+  right: 15px;
+  width: 50px;
+  height: 50px;
+  border-radius: 200px;
+  background-color: #FFFFFF;
+  color: #222222;
+  font-size: 22px;
+  text-align: center;
+  line-height: 50px;
+  box-shadow: 1px 1px 4px #0002;
+}
+
+.sec_rmd .div_rmd_list .box_rmd_next .next .gradient_white{
+  display: inline-block;
+  width: 240px;
+  height: 320px;
+  background: linear-gradient( to right, #FFFFFF00, #FFFFFF );
+}
+
+.sec_rmd .div_rmd_list .box_rmd_list{
+  position: absolute;
+  top: 64px;
+  display: flex;
+  flex-direction: row;
+}
+
+.sec_rmd .div_rmd_list .box_rmd_list .inner_rmd_list{
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+
+.sec_rmd .div_rmd_list .box_rmd_list .inner_rmd_list .div_img_hotel{
+  display: flex;
+  width: 180px;
+  height: 180px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.sec_rmd .div_rmd_list .box_rmd_list .inner_rmd_list .div_img_hotel .img_rmd_hotel{
+  height: 100%;
+}
+
+.sec_rmd .div_rmd_list .box_rmd_list .inner_rmd_list .txt_rmd_location{
+  margin-bottom: 5px;
+  color: #AAAAAA;
+  font-size: 16px;
+  font-weight: 200;
+}
+
+.sec_rmd .div_rmd_list .box_rmd_list .inner_rmd_list .txt_rmd_hotel{
+  margin-bottom: 7px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.sec_rmd .div_rmd_list .box_rmd_list .inner_rmd_list .txt_rmd_star{
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.sec_rmd .div_rmd_list .box_rmd_list .inner_rmd_list .txt_rmd_star i{
+  margin-right: 5px;
+  color: #48A0FF;
+  font-size: 18px;
+}
+
+.sec_rmd .div_rmd_list .box_rmd_list .inner_rmd_list .txt_rmd_star .txt_review_count{
+  color: #999999;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.sec_rmd .div_rmd_list .box_rmd_list .inner_rmd_list .txt_rmd_price{
+  font-size: 18px;
+  font-weight: 600;
+}

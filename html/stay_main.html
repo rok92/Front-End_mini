@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>쿨탐찼다! 여행가자! - 쿨타임트립</title>
+  <!-- ico -->
+  <link rel="icon" href="../images/ico_logo.ico" />
+  <!-- fontawesome -->
+  <script type="text/javascript" src="https://kit.fontawesome.com/fa5522895a.js" crossorigin="anonymous"></script>
+  <!-- daterangepicker -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+  <script type="text/javascript" src="../js/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+  <!-- custom css/js -->
+  <link rel="stylesheet" href="../css/daterangepicker.css"/>
+  <link rel="stylesheet" href="../css/common.css"/>
+  <link rel="stylesheet" href="../css/stay_main.css"/>
+  <script defer type="text/javascript" src="../js/stay_main.js"></script>
+</head>
+
+<body>
+  <!-- 헤더 시작 -->
+  <header class="header">
+    <!-- 헤더 wrap -->
+    <div class="wrap">
+      <div>
+        <!-- 로고 -->
+        <img class="lg_title" src="../images/lg_title.png" alt="로고">
+        <!-- 로그인/회원가입 > 마이페이지 -->
+        <div class="div_account">
+          <a class="btn_account" href="#">로그인</a>
+          <a class="btn_account txt_blue mr_0 pr_0" href="#">회원가입</a>
+          <a class="btn_account btn_mypage" href="#">마이페이지</a>
+        </div>
+      </div>
+      <nav>
+        <!-- 항공/숙박/렌터카 -->
+        <ul>
+          <!-- 항공 -->
+          <li><a href="#"><img class="ic_nav" src="../images/ic_plane.png" alt="항공"><span>항공</span></a></li>
+          <!-- 숙박 -->
+          <li class="nav_active"><a href="#"><img class="ic_nav" src="../images/ic_lodgment.png" alt="숙박"><span>숙박</span></a></li>
+          <!-- 렌터카 -->
+          <li><a href="#"><img class="ic_nav" src="../images/ic_rent.png" alt="렌터카"><span>렌터카</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- 검색 영역 -->
+  <section class="sec_search">
+    <!-- 백그라운드 -->
+    <div class="div_bg_stay">
+      <img class="bg_stay" src="../images/bg_stay.jpg" alt="숙박예약 배경">
+    </div>
+    <!-- 숙박 타이틀 -->
+    <h2 class="tlt_stay">숙박 예약</h2>
+    <!-- 검색이나 설정하는 영역 / 유효성 검사 필요 -->
+    <div class="div_lod_search">
+      <div class="wrap_lod_table">
+        <!-- 유효성 검사 위한 폼태그 설정 -->
+        <form>
+          <table>
+            <tr>
+              <th width="30%">여행지, 숙소</th>
+              <th width="35%">날짜</th>
+              <th width="20%">인원</th>
+              <!-- 검색하기 버튼 -->
+              <td width="15%" rowspan="2"><input type="button" class="btn_search_stay" value="검색하기"></td>
+            </tr>
+            <tr>
+              <!-- 해당영역에 js에서 val()로 값 지정 -->
+              <!-- 여행지 검색 인풋 -->
+              <td><input type="text" id="lodSearchBtn" class="txt_stay txt_stay_placeholder" value="여행지를 검색해주세요"></td>
+              <!-- 날짜 선택 인풋 -->
+              <td><input type="text" id="lodDatepicker" name="daterange" class="txt_stay txt_stay_placeholder" value="날짜를 선택해주세요"></td>
+              <!-- 인원 선택 인풋 -->
+              <td><input type="text" id="lodPersonCount" class="txt_stay" value="성인1, 어린이0"></td>
+            </tr>
+          </table>
+        </form>
+        <!-- 여행지 검색 팝업 -->
+        <div class="popup_lod">
+          <h4 class="tlt_popup_lod">여행지 검색</h4>
+          <i id="popupLodCloseBtn" class="fa-solid fa-xmark"></i>
+          <!-- 검색 인풋 영역 -->
+          <div class="div_popup_search">
+            <input type="text" id="popupLodSearch" class="input_popup_search" placeholder="여행지 검색">
+            <input type="button" id="popupLodSearchBtn" class="btn_popup_search" value="검색하기">
+          </div>
+          <h6 class="tlt_list_lod">최근 확인한 여행지</h6>
+          <!-- 최근 3개까지 -->
+          <div class="list_location">
+            <i class="fa-solid fa-location-dot"></i>
+            <div class="div_txt_location">
+              <span class="txt_location_main">제주도</span>
+              <span class="txt_location_sub">대한민국</span>
+            </div>
+          </div>
+          <div class="list_location b_none">
+            <i class="fa-solid fa-location-dot"></i>
+            <div class="div_txt_location">
+              <span class="txt_location_main">가평군</span>
+              <span class="txt_location_sub">대한민국 경기도</span>
+            </div>
+          </div>
+          <h6 class="tlt_list_lod">인기 여행지</h6>
+          <!-- 인기 여행지 3개 -->
+          <div class="list_location">
+            <i class="fa-solid fa-location-dot"></i>
+            <div class="div_txt_location">
+              <span class="txt_location_main">제주도</span>
+              <span class="txt_location_sub">대한민국</span>
+            </div>
+          </div>
+          <div class="list_location">
+            <i class="fa-solid fa-location-dot"></i>
+            <div class="div_txt_location">
+              <span class="txt_location_main">강릉</span>
+              <span class="txt_location_sub">대한민국 강원도</span>
+            </div>
+          </div>
+          <div class="list_location b_none">
+            <i class="fa-solid fa-location-dot"></i>
+            <div class="div_txt_location">
+              <span class="txt_location_main">여수</span>
+              <span class="txt_location_sub">대한민국 전라남도</span>
+            </div>
+          </div>
+        </div>
+        <!-- 인원 팝업 -->
+        <div class="popup_person">
+          <h4 class="tlt_popup_person">인원 선택</h4>
+          <i id="popupPersonCloseBtn" class="fa-solid fa-xmark"></i>
+          <!-- 인원 선택 성인 -->
+          <div class="div_person_count">
+            <div class="box_txt_person">
+              <span class="txt_person_main">성인</span>
+              <span class="txt_person_sub">만 18세 이상</span>
+            </div>
+            <div class="box_plus_minus">
+              <a id="adultMinusBtn" class="btn_popup_count">-</a>
+              <span id="adultCount" class="popup_count_person">1</span>
+              <a id="adultPlusBtn" class="btn_popup_count btn_adult_plus btn_count_active">+</a>
+            </div>
+          </div>
+          <!-- 인원 선택 어린이 -->
+          <div class="div_person_count">
+            <div class="box_txt_person">
+              <span class="txt_person_main">어린이</span>
+              <span class="txt_person_sub">만 18세 미만</span>
+            </div>
+            <div class="box_plus_minus">
+              <a id="childMinusBtn" class="btn_popup_count">-</a>
+              <span id="childCount" class="popup_count_person">0</span>
+              <a id="childPlusBtn" class="btn_popup_count btn_count_active">+</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 검색 영역 끝 -->
+  <!-- 최근 검색 숙소 -->
+  <section class="sec_recent wrap">
+    <h4 class="tlt_recent">최근 검색한 숙소</h4>
+    <!-- 숙박은 최근 검색 최대 3개만 뜨게 -->
+    <div class="div_recent_list">
+      <div class="box_recent">
+        <div class="div_recent_img">
+          <img class="img_recent_hotel" src="../images/img_ramada.jpg" alt="숙소 사진">
+        </div>
+        <div class="inner_recent_info">
+          <span class="txt_recent_location">호텔 ・ 제주도</span>
+          <span class="txt_recent_hotel">라마다 제주시티 호텔</span>
+          <span class="txt_recent_price">73,000원</span>
+        </div>
+      </div>
+      <div class="box_recent">
+        <div class="div_recent_img">
+          <img class="img_recent_hotel" src="../images/img_maison.jpg" alt="숙소 사진">
+        </div>
+        <div class="inner_recent_info">
+          <span class="txt_recent_location">호텔 ・ 제주도</span>
+          <span class="txt_recent_hotel">메종 글래드 제주</span>
+          <span class="txt_recent_price">178,700원</span>
+        </div>
+      </div>
+      <div class="box_recent mr_0">
+        <div class="div_recent_img">
+          <img class="img_recent_hotel" src="../images/img_shillastay.jpg" alt="숙소 사진">
+        </div>
+        <div class="inner_recent_info">
+          <span class="txt_recent_location">호텔 ・ 제주도</span>
+          <span class="txt_recent_hotel">신라스테이 제주</span>
+          <span class="txt_recent_price">157,500원</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 최근 검색 숙소 끝 -->
+  <!-- 숙소 추천 -->
+  <section class="sec_rmd wrap">
+    <!-- 제주도 인기 호텔 -->
+    <div class="div_rmd_list">
+      <h3 class="tlt_rmd">제주도 인기 호텔 🏝️</h3>
+      <!-- Prev / Next -->
+      <div class="box_rmd_prev">
+        <div id="divfirstPrev" class="prev">
+          <a id="firstPrevBtn"><i class="fa-solid fa-chevron-left"></i></a>
+          <div class="gradient_white"></div>
+        </div>
+      </div>
+      <div class="box_rmd_next">
+        <div id="divfirstNext" class="next">
+          <a id="firstNextBtn"><i class="fa-solid fa-chevron-right"></i></a>
+          <div class="gradient_white"></div>
+        </div>
+      </div>
+      <div id="rmdfirstList" class="box_rmd_list">
+        <div class="inner_rmd_list">
+          <div class="div_img_hotel">
+            <img class="img_rmd_hotel" src="../images/img_maison.jpg" alt="메종 글래드 제주">
+          </div>
+          <span class="txt_rmd_location">호텔 ・ 제주도</span>
+          <span class="txt_rmd_hotel">메종 글래드 제주</span>
+          <span class="txt_rmd_star"><i class="fa-solid fa-star"></i>4.5<span class="txt_review_count">(131)</span></span>
+          <span class="txt_rmd_price">178,700원</span>
+        </div>
+        <div class="inner_rmd_list">
+          <div class="div_img_hotel">
+            <img class="img_rmd_hotel" src="../images/img_shillastay.jpg" alt="신라스테이 제주">
+          </div>
+          <span class="txt_rmd_location">호텔 ・ 제주도</span>
+          <span class="txt_rmd_hotel">신라 스테이 제주</span>
+          <span class="txt_rmd_star"><i class="fa-solid fa-star"></i>4.6<span class="txt_review_count">(61)</span></span>
+          <span class="txt_rmd_price">157,500원</span>
+        </div>
+        <div class="inner_rmd_list">
+          <div class="div_img_hotel">
+            <img class="img_rmd_hotel" src="../images/img_first70.jpg" alt="서귀포 퍼스트70 호텔">
+          </div>
+          <span class="txt_rmd_location">호텔 ・ 제주도</span>
+          <span class="txt_rmd_hotel">서귀포 퍼스트70 호텔</span>
+          <span class="txt_rmd_star"><i class="fa-solid fa-star"></i>4.3<span class="txt_review_count">(123)</span></span>
+          <span class="txt_rmd_price">70,000원</span>
+        </div>
+        <div class="inner_rmd_list">
+          <div class="div_img_hotel">
+            <img class="img_rmd_hotel" src="../images/img_coopcityhotel.jpg" alt="코업시티 호텔 하버뷰">
+          </div>
+          <span class="txt_rmd_location">호텔 ・ 제주도</span>
+          <span class="txt_rmd_hotel">코업시티 호텔 하버뷰</span>
+          <span class="txt_rmd_star"><i class="fa-solid fa-star"></i>4.3<span class="txt_review_count">(81)</span></span>
+          <span class="txt_rmd_price">59,000원</span>
+        </div>
+        <div class="inner_rmd_list">
+          <div class="div_img_hotel">
+            <img class="img_rmd_hotel" src="../images/img_phoenix.jpg" alt="휘닉스 제주 섭지코지">
+          </div>
+          <span class="txt_rmd_location">호텔 ・ 제주도</span>
+          <span class="txt_rmd_hotel">휘닉스 제주 섭지코지</span>
+          <span class="txt_rmd_star"><i class="fa-solid fa-star"></i>4.4<span class="txt_review_count">(39)</span></span>
+          <span class="txt_rmd_price">330,000원</span>
+        </div>
+        <div class="inner_rmd_list">
+          <div class="div_img_hotel">
+            <img class="img_rmd_hotel" src="../images/img_cordelia.jpg" alt="코델리아S 호텔">
+          </div>
+          <span class="txt_rmd_location">호텔 ・ 제주도</span>
+          <span class="txt_rmd_hotel">코델리아S 호텔</span>
+          <span class="txt_rmd_star"><i class="fa-solid fa-star"></i>3.8<span class="txt_review_count">(91)</span></span>
+          <span class="txt_rmd_price">44,850원</span>
+        </div>
+        <div class="inner_rmd_list">
+          <div class="div_img_hotel">
+            <img class="img_rmd_hotel" src="../images/img_thecube.jpg" alt="더큐브 리조트 제주">
+          </div>
+          <span class="txt_rmd_location">호텔 ・ 제주도</span>
+          <span class="txt_rmd_hotel">더큐브 리조트 제주</span>
+          <span class="txt_rmd_star"><i class="fa-solid fa-star"></i>4.5<span class="txt_review_count">(321)</span></span>
+          <span class="txt_rmd_price">65,000원</span>
+        </div>
+        <div class="inner_rmd_list">
+          <div class="div_img_hotel">
+            <img class="img_rmd_hotel" src="../images/img_thecube.jpg" alt="더큐브 리조트 제주">
+          </div>
+          <span class="txt_rmd_location">호텔 ・ 제주도</span>
+          <span class="txt_rmd_hotel">더큐브 리조트 제주</span>
+          <span class="txt_rmd_star"><i class="fa-solid fa-star"></i>4.5<span class="txt_review_count">(321)</span></span>
+          <span class="txt_rmd_price">65,000원</span>
+        </div>
+        <div class="inner_rmd_list">
+          <div class="div_img_hotel">
+            <img class="img_rmd_hotel" src="../images/img_thecube.jpg" alt="더큐브 리조트 제주">
+          </div>
+          <span class="txt_rmd_location">호텔 ・ 제주도</span>
+          <span class="txt_rmd_hotel">더큐브 리조트 제주</span>
+          <span class="txt_rmd_star"><i class="fa-solid fa-star"></i>4.5<span class="txt_review_count">(321)</span></span>
+          <span class="txt_rmd_price">65,000원</span>
+        </div>
+      </div>
+    </div>
+    <!-- 강원도 인기 호텔 -->
+    <div class="div_rmd_list">
+      <h3 class="tlt_rmd">강원도 인기 호텔 ⛱</h3>
+      <!-- Prev / Next -->
+      <div class="box_rmd_prev">
+        <div id="divsecondPrev" class="prev">
+          <a id="secondPrevBtn"><i class="fa-solid fa-chevron-left"></i></a>
+          <div class="gradient_white"></div>
+        </div>
+      </div>
+      <div class="box_rmd_next">
+        <div id="divsecondNext" class="next">
+          <a id="secondNextBtn"><i class="fa-solid fa-chevron-right"></i></a>
+          <div class="gradient_white"></div>
+        </div>
+      </div>
+      <div id="rmdsecondList" class="box_rmd_list">
+        <div class="inner_rmd_list">
+          <div class="div_img_hotel">
+            <img class="img_rmd_hotel" src="../images/img_maison.jpg" alt="메종 글래드 제주">
+          </div>
+          <span class="txt_rmd_location">호텔 ・ 제주도</span>
+          <span class="txt_rmd_hotel">메종 글래드 제주</span>
+          <span class="txt_rmd_star"><i class="fa-solid fa-star"></i>4.5<span class="txt_review_count">(131)</span></span>
+          <span class="txt_rmd_price">178,700원</span>
+        </div>
+        <div class="inner_rmd_list">
+          <div class="div_img_hotel">
+            <img class="img_rmd_hotel" src="../images/img_shillastay.jpg" alt="신라스테이 제주">
+          </div>
+          <span class="txt_rmd_location">호텔 ・ 제주도</span>
+          <span class="txt_rmd_hotel">신라 스테이 제주</span>
+          <span class="txt_rmd_star"><i class="fa-solid fa-star"></i>4.6<span class="txt_review_count">(61)</span></span>
+          <span class="txt_rmd_price">157,500원</span>
+        </div>
+        <div class="inner_rmd_list">
+          <div class="div_img_hotel">
+            <img class="img_rmd_hotel" src="../images/img_first70.jpg" alt="서귀포 퍼스트70 호텔">
+          </div>
+          <span class="txt_rmd_location">호텔 ・ 제주도</span>
+          <span class="txt_rmd_hotel">서귀포 퍼스트70 호텔</span>
+          <span class="txt_rmd_star"><i class="fa-solid fa-star"></i>4.3<span class="txt_review_count">(123)</span></span>
+          <span class="txt_rmd_price">70,000원</span>
+        </div>
+        <div class="inner_rmd_list">
+          <div class="div_img_hotel">
+            <img class="img_rmd_hotel" src="../images/img_coopcityhotel.jpg" alt="코업시티 호텔 하버뷰">
+          </div>
+          <span class="txt_rmd_location">호텔 ・ 제주도</span>
+          <span class="txt_rmd_hotel">코업시티 호텔 하버뷰</span>
+          <span class="txt_rmd_star"><i class="fa-solid fa-star"></i>4.3<span class="txt_review_count">(81)</span></span>
+          <span class="txt_rmd_price">59,000원</span>
+        </div>
+        <div class="inner_rmd_list">
+          <div class="div_img_hotel">
+            <img class="img_rmd_hotel" src="../images/img_phoenix.jpg" alt="휘닉스 제주 섭지코지">
+          </div>
+          <span class="txt_rmd_location">호텔 ・ 제주도</span>
+          <span class="txt_rmd_hotel">휘닉스 제주 섭지코지</span>
+          <span class="txt_rmd_star"><i class="fa-solid fa-star"></i>4.4<span class="txt_review_count">(39)</span></span>
+          <span class="txt_rmd_price">330,000원</span>
+        </div>
+        <div class="inner_rmd_list">
+          <div class="div_img_hotel">
+            <img class="img_rmd_hotel" src="../images/img_cordelia.jpg" alt="코델리아S 호텔">
+          </div>
+          <span class="txt_rmd_location">호텔 ・ 제주도</span>
+          <span class="txt_rmd_hotel">코델리아S 호텔</span>
+          <span class="txt_rmd_star"><i class="fa-solid fa-star"></i>3.8<span class="txt_review_count">(91)</span></span>
+          <span class="txt_rmd_price">44,850원</span>
+        </div>
+        <div class="inner_rmd_list">
+          <div class="div_img_hotel">
+            <img class="img_rmd_hotel" src="../images/img_thecube.jpg" alt="더큐브 리조트 제주">
+          </div>
+          <span class="txt_rmd_location">호텔 ・ 제주도</span>
+          <span class="txt_rmd_hotel">더큐브 리조트 제주</span>
+          <span class="txt_rmd_star"><i class="fa-solid fa-star"></i>4.5<span class="txt_review_count">(321)</span></span>
+          <span class="txt_rmd_price">65,000원</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- footer -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="div_terms ml_0">
+        <a class="btn_terms ml_0 pl_0" href="#">이용 약관</a>
+        <a class="btn_terms bold" href="#">개인정보 처리방침</a>
+        <a class="btn_terms" href="#">취소 및 환불 정책</a>
+      </div>
+      <div class="div_service">
+        <a class="btn_service" href="#">고객센터</a>
+        <a class="btn_service mr_0 pr_0" href="#">FAQ</a>
+      </div>
+      <div class="div_cpy_info">
+        <p>
+          상호명 (주)쿨타임트립 | 대표 채동혁 | 개인정보보호책임자 곽경록<br>
+          주소 서울 강남구 선릉로 428, 위워크 2층 | 이메일 help@cooltimetrip.com | 마케팅/제휴 문의 marketing@cooltimetrip.com
+        </p>
+        <p>
+          쿨타임트립은 통신판매중개자이며 통신판매의 당사자가 아닙니다. 따라서 상품·거래정보 및 거래에 대하여 책임을 지지않습니다.
+        </p>
+      </div>
+      <img class="lg_title_gray" src="../images/lg_title_gray.png" alt="">
+    </div>
+  </footer>
+</body>
+
+</html>
