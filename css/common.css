@@ -58,6 +58,10 @@
   font-weight: bold!important;
 }
 
+.dp_block{
+  display: block!important;
+}
+
 /* 헤더 */
 .header{
   height: 180px;
@@ -71,7 +75,6 @@
 
 /* 헤더 - 로그인/회원가입/마이페이지 */
 .header .div_account{
-  display: inline-block;
   float: right;
 }
 
@@ -142,7 +145,6 @@
 }
 
 .footer .wrap .div_service{
-  display: inline-block;
   float:right;
 }
 
@@ -172,7 +174,6 @@
 }
 
 .footer .wrap .lg_title_gray{
-  display: inline-block;
   float: right;
   width: 222px;
   margin-top:100px;
