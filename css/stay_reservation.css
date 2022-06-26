@@ -1,0 +1,538 @@
+/* 폰트 Pretendard 적용 */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+* {
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+}
+/* 초기화 */
+*{
+  margin: 0;
+  padding: 0;
+  color: #222222;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.daterangepicker{
+  visibility: visible;
+}
+
+/* 공통 */
+.wrap{
+  width: 1320px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.txt_blue{
+  color:#48A0FF;
+}
+
+.txt_blue{
+  color:#48A0FF;
+}
+
+.bdblue{
+  border-color: #48A0FF !important;
+}
+
+.bdblack{
+  border-color: #222222 !important;
+}
+
+.mr_0{
+  margin-right: 0!important;
+}
+
+.ml_0{
+  margin-left: 0!important;
+}
+
+.pr_0{
+  padding-right: 0!important;
+}
+
+.pl_0{
+  padding-left: 0!important;
+}
+
+.b_none{
+  border: none!important;
+}
+
+.bold{
+  font-weight: bold!important;
+}
+
+/* 헤더 */
+.header{
+  height: 180px;
+  padding: 50px 20px 0;
+  border-bottom: 1px solid #BBBBBB;
+}
+
+.header .lg_title{
+  width:222px;
+}
+
+/* 헤더 - 로그인/회원가입/마이페이지 */
+.header .div_account{
+  float: right;
+}
+
+.header .div_account .btn_account{
+  margin: 0 10px;
+  padding:5px 20px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.header .div_account .btn_mypage{
+  display: none;
+}
+
+/* 헤더 - 네비게이션 */
+.header nav{
+  display: flex;
+  align-content: flex-end;
+  height:108px;
+}
+
+.header nav ul{
+  display: flex;
+  align-items: flex-end;
+}
+
+.header nav ul li{
+  height: 45px;
+  margin-right: 30px;
+}
+.header nav ul li:hover{
+  border-bottom: 4px solid #48A0FF;
+}
+
+/* nav 포커싱 때 클래스 추가할 예정 */
+.header nav ul li.nav_active{
+  border-bottom: 4px solid #48A0FF;
+}
+
+.header nav ul li a{
+  display: flex;
+  align-items: center;
+}
+
+.header nav ul .ic_nav{
+  width: 29px;
+}
+
+.header nav ul span{
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+
+/*section*/
+
+.book_detail{   /*호텔이름, 숙박기간 박스설정*/
+  margin: 0 auto;
+}
+.book_hotel_stay{   /*박스내 아이템 나란히 배치*/
+  display: flex;
+  width: 900px;
+  height: 161px;
+  border-top: 2px solid #BBBBBB;
+  margin-top: 100px;
+}
+.book_hotel_stay img{   /*메종글레드 호텔 이미지 설정*/
+  width: 110px;
+  height: 110px;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+.maison_text_box{   /*두 문장 감싸는 박스*/
+  margin-top: 40px;
+  margin-left: 20px;
+}
+.glad_jeju_text{  /*메종글레드 텍스트*/
+  font-size: 24px;
+  font-weight: bold;
+  color: #222222;
+}
+.first_stay{
+  font-size: 14px;
+  font-weight: normal;
+  color: #999999;
+  margin-top: 15px;
+}
+.second_stay{
+  font-size: 14px;
+  font-weight: normal;
+  color: #999999;
+  margin-top: 7px;
+}
+.num_people_bed_box{    /*침대, 금액 나란히 배치*/
+  display: flex;
+  justify-content: space-between;
+  margin-top: 22px;
+  width: 900px;
+  height: 72px;
+  background-color: #F2F2F2;
+  border-radius: 5px;
+}
+.num_people_bed{  /*침대 텍스트 설정*/ 
+  margin-top: 27px;
+  margin-left: 40px;
+  font-size: 16px;
+  font-weight: normal;
+  color: #666666;
+}
+.num_people_bed_price{    /*금액 텍스트 설정*/
+  margin-top: 27px;
+  margin-right: 40px;
+  font-size: 16px;
+  font-weight: normal;
+  color: #666666;
+}
+.total_price_box{ /*총 금액 감싸는 박스*/
+  display: flex;
+  justify-content: space-between;
+  border-bottom: #DDDDDD 1px solid;
+  width: 900px;
+  height: 88px;
+}
+.total_price_text{  /*총 금액 텍스트*/
+  font-size: 16px;
+  font-weight: normal;
+  color: #222222;
+  margin-top: 23px;
+}
+.total_price_won{   /*총 금액 원화*/
+  font-size: 20px;
+  font-weight: bold;
+  color: #222222;
+  margin-top: 20px;
+}
+.booked_info{   /*예약자 정보 박스*/
+  width: 900px;
+  height: 53px;
+}
+.booked_info div{   /*예약자 정보박스 내 예약자 이름설정*/
+  font-size: 24px;
+  font-weight: 600;
+  color: #222222;
+  margin-top: 60px;
+}
+.booked_customer_info{    /*예약자 상세정보 박스*/
+  width: 900px;
+  height: 365px;
+  border: #DDDDDD solid 1px;
+}
+.b_name{        /*예약자 정보박스 안 예약자 이름 텍스트*/
+  font-size: 16px;
+  font-weight: 500;
+  color: #222222;
+  margin-top: 40px;
+  margin-left: 30px;
+}
+.booked_p_name{   /*예약자 이름입력상자*/
+  width: 270px;
+  height: 50px;
+  background-color: #F4F4F4;
+  font-size: 16px;
+  border: #DDDDDD 1px solid;
+  margin-top: 6px;
+  margin-left: 30px;
+  padding-left: 16px;
+}
+.b_mail{    /*예약자 정보박스 안 이메일주소 텍스트*/
+  font-size: 16px;
+  font-weight: 500;
+  color: #222222;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+.email_id{    /*아이디 입력상자*/
+  width: 270px;
+  height: 50px;
+  background-color: #FFFFFF;
+  font-size: 16px;
+  border: #DDDDDD 1px solid;
+  margin-top: 6px;
+  margin-left: 30px;
+  padding-left: 16px;
+}
+.email_text_box span{   /*골뱅이 설정*/
+  font-size: 18px;
+  font-weight: normal;
+  color: #222222;
+  margin-left: 5px;
+}
+.email_address_insert{    /*이메일 직접설정 상자*/
+  width: 270px;
+  height: 50px;
+  background-color: #FFFFFF;
+  font-size: 16px;
+  border: #DDDDDD 1px solid;
+  margin-top: 6px;
+  margin-left: 5px;
+  padding-left: 16px;
+}
+.email_address_select{    /*셀렉트 박스 설정상자*/
+  width: 250px;
+  height: 50px;
+  background-color: #FFFFFF;
+  font-size: 16px;
+  border: #DDDDDD 1px solid;
+  margin-top: 6px;
+  margin-left: 5px;
+  padding-left: 16px;
+}
+.b_phone{   /*예약자 휴대폰 번호 텍스트 설정*/
+  font-size: 16px;
+  font-weight: 500;
+  color: #222222;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+.phone_first{   /*첫 번째 번호*/
+  width: 120px;
+  height: 50px;
+  margin-left: 30px;
+  padding-left: 16px;
+  font-size: 16px;
+  border: #DDDDDD 1px solid;
+  background-color: #FFFFFF;
+}
+.phone_second{    /*두 번째 번호*/
+  width: 120px;
+  height: 50px;
+  margin-left: 10px;
+  padding-left: 16px;
+  font-size: 16px;
+  border: #DDDDDD 1px solid;
+  background-color: #FFFFFF;
+}
+.phone_third{   /*세 번째 번호*/
+  width: 120px;
+  height: 50px;
+  margin-left: 10px;
+  padding-left: 16px;
+  font-size: 16px;
+  border: #DDDDDD 1px solid;
+  background-color: #FFFFFF;
+}
+.stay_p_info{   /*투숙객 정보 박스*/
+  display: flex;
+  margin-bottom: 24px;
+}
+.p_info_detail{   /*투숙객 정보 텍스트상자*/
+  font-size: 24px;
+  font-weight: 600;
+  color: #222222;
+  margin-top: 60px;
+}
+.check_box_sizing{  /*체크박스 사이즈 설정*/
+  width: 20px;
+  height: 20px;
+  background-color: #48A0FF;
+  margin-top: 65px;
+  margin-left: 20px;
+}
+.same_name{   /*체크박스 설명 텍스트 설정*/
+  font-size: 16px;
+  font-weight: 200;
+  color: #222222;
+  margin-top: 66px;
+  margin-left: 14px;
+}
+.contract_info{   /*약관안내 감싸는 박스*/
+  margin-bottom: 24px;
+}
+.introduce_contract{  /*약관안내 텍스트*/
+  font-size: 24px;
+  font-weight: 600;
+  color: #222222;
+  margin-top: 60px;
+}
+.introduce_contract_box{  /*약관 동의 안내 박스*/
+  width: 900px;
+  height: 193px;
+  border: #DDDDDD 1px solid;
+}
+.right_arrow{
+  width: 5px;
+  height: 9px;
+  color: #222222;
+}
+.agreement_a{
+  font-size: 16px;
+  font-weight: normal;
+  color: #222222;
+  margin-left: 40px;
+  margin-top: 40px;
+}
+.agreement_b{
+  font-size: 16px;
+  font-weight: normal;
+  color: #222222;
+  margin-left: 40px;
+  margin-top: 28px;
+}
+.agreement_c{
+  font-size: 16px;
+  font-weight: normal;
+  color: #222222;
+  margin-left: 40px;
+  margin-top: 28px;
+}
+.agreement_check_final{
+  display: flex;
+  width: 900px;
+  height: 63px;
+  border-right:#DDDDDD 1px solid;
+  border-left:#DDDDDD 1px solid;
+  border-bottom:#DDDDDD 1px solid;
+  margin-bottom: 100px;
+}
+.check_box_final{
+  width: 20px;
+  height: 20px;
+  margin-left: 24px;
+  margin-right: 14px;
+  margin-top: 22px;
+}
+.agree_text_final{
+  margin-top: 23px;
+  font-size: 16px;
+  font-weight: 200;
+  color: #222222;
+}
+.payment_final_info{
+  width: 350px;
+  height: auto;
+  margin-top: 100px;
+  position: sticky;
+  align-self: flex-start;
+  top: 40px;
+}
+.info_pay{
+  border-bottom: #DDDDDD 1px solid;
+  font-size: 20px;
+  font-weight: normal;
+  color: #222222;
+  padding-bottom: 14px;
+}
+.order_price_box{
+  display: flex;
+  justify-content: space-between;
+  height: 71px;
+  border-bottom: #DDDDDD 1px solid;
+}
+.order_price_box div{
+  margin-top: 14px;
+  color: #222222;
+  font-size: 14px;
+  font-weight: normal;
+}
+.total_price_final{
+  display: flex;
+  justify-content: left;
+}
+.ttp_text{
+  font-size: 18px;
+  font-weight: 600;
+  color: #222222;
+  margin-top: 23px;
+  
+}
+.ttp_num{
+  font-size: 28px;
+  font-weight: bold;
+  color: #222222;
+  margin-top: 17px;
+  margin-left: 192px;
+}
+.ttr_won{
+  font-size: 18px;
+  font-weight: normal;
+  color: #222222;
+  margin-top: 27px;
+}
+.final_price_line{
+  display: flex;
+  width: 1320px;
+  margin: auto ;
+}
+.booked_button_final{
+  margin: auto;
+}
+.final_book_btn{
+  width: 300px;
+  height: 64px;
+  background-color: #48A0FF;
+  border: transparent;
+  border-radius: 5px;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 46px;
+  margin-left: 500px;
+  cursor: pointer;
+}
+
+/*여기부터는 footer*/
+/* footer */
+.footer{
+  margin-top: 100px;
+  padding: 30px 0 60px;
+  border-top: 1px solid #EEEEEE;
+}
+
+.footer .wrap .div_terms{
+  display: inline-block;
+}
+
+.footer .wrap .div_terms .btn_terms{
+  margin: 0 5px;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.footer .wrap .div_service{
+  float:right;
+}
+
+.footer .wrap .div_service .btn_service{
+  margin: 0 5px;
+  padding: 5px 10px;
+  color: #666666;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.footer .wrap .div_cpy_info{
+  display: inline-block;
+  width: 1000px;
+  margin-top: 45px;
+}
+
+.footer .wrap .div_cpy_info p{
+  color: #AAAAAA;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 24px;
+}
+
+.footer .wrap .div_cpy_info p:first-child{
+  margin-bottom: 5px;
+}
+
+.footer .wrap .lg_title_gray{
+  float: right;
+  width: 222px;
+  margin-top:100px;
+}
