@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>쿨탐찼다! 여행가자! - 쿨타임트립</title>
+  <!-- ico -->
+  <link rel="icon" href="../images/ico_logo.ico" />
+  <!-- signup.css -->
+  <link rel="stylesheet" href="../css/common.css"/>
+  <link rel="stylesheet" href="../css/signup.css"/>
+  <!-- signup.js -->
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script src="../js/signup.js"></script>
+</head>
+ 
+<body>
+  <header class="header">
+    <!-- 헤더 wrap -->
+    <div class="wrap">
+      <div>
+        <img class="lg_title" src="../images/lg_title.png" alt="로고">
+        <!-- 로그인/회원가입 > 마이페이지 -->
+        <div class="div_account">
+          <a class="btn_account" href="login.html">로그인</a>
+          <a class="btn_account txt_blue mr_0 pr_0" href="signup.html">회원가입</a>
+          <a class="btn_account btn_mypage" href="#">마이페이지</a>
+        </div>
+      </div>
+      <nav>
+        <!-- 항공/숙박/렌터카 -->
+        <ul>
+          <li class="nav_active"><a href="#"><img class="ic_nav" src="../images/ic_plane.png" alt="항공"><span>항공</span></a></li>
+          <li><a href="#"><img class="ic_nav" src="../images/ic_lodgment.png" alt="숙박"><span>숙박</span></a></li>
+          <li><a href="#"><img class="ic_nav" src="../images/ic_rent.png" alt="렌터카"><span>렌터카</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header> 
+  <!-- section -->
+  <section class="section">
+    <!-- 섹션 wrap -->
+    <div class="wrap">
+      <div class="div_signup_panel">
+        <div class="div_signup_title"><p>SIGN UP</p></div>
+        <div class="div_signup_id"><p>아이디 *</p>
+          <input class="input_signup_id" type="text" placeholder="아이디 입력">
+          <button class="btn_check_id" type="button" style="cursor:pointer">중복확인</button>
+        </div>
+        <div class="div_signup_password"><p>비밀번호 *</p>
+          <input class="input_signup_password" type="password" placeholder="영문 숫자 특수문자 조합 8~16자리">
+          <div class="eyes"><img class="eyes_signup_password" src="../images/ic_eye-solid.png"></div>
+        </div>
+        <div class="div_check_password"><p>비밀번호 확인 *</p>
+          <input class="input_check_password" type="password" placeholder="비밀번호 확인">
+          <div class="eyes"><img class="eyes_check_password" src="../images/ic_eye-solid.png"></div>
+        </div>
+        <div class="div_signup_name"><p>이름 *</p>
+          <input class="input_signup_name" type="text" placeholder="실명 입력">
+        </div>
+        <div class="div_signup_phone"><p>휴대폰 번호 *</p>
+          <input class="input_signup_phone" type="text" placeholder="숫자만 입력">
+          <button class="btn_signup_phone" type="button" style="cursor:pointer">인증하기</button>
+        </div>
+        <div class="div_check_phone">
+          <input class="input_check_phone" type="text" placeholder="인증번호 입력">
+          <button class="btn_check_phone" type="button" style="cursor:pointer">확인</button>
+        </div>
+        <div class="div_signup_email"><p>이메일 *</p>
+          <input class="input_signup_email" type="text" placeholder="ID@example.com">
+        </div>
+        <br><br>
+        <div class="div_agreeTos">
+            <div class="div_agreeTos_total">
+              <input class="checkbox_agreeTos_total" id="checkboxTos" type="checkbox" name="checkboxTotal" style="cursor:pointer"><p>약관 전체 동의</p>
+            </div>     
+            <br>
+            <div class="div_agreeTos_sub">
+                <div class="div_agreeTos_sub1">
+                    <input class="checkbox_agreeTos_sub1" id="checkboxTos1" type="checkbox" name="checkboxSub" style="cursor:pointer"><p>(필수) 이용약관 동의</p>
+                    <a class="link_agreeTos_sub1" href="#">전체 보기</a>
+                </div>
+                <div class="div_agreeTos_sub2">
+                    <input class="checkbox_agreeTos_sub2" id="checkboxTos2" type="checkbox" name="checkboxSub" style="cursor:pointer"><p>(필수) 만 14세 이상 확인</p>
+                </div>
+                <div class="div_agreeTos_sub3">
+                    <input class="checkbox_agreeTos_sub3" id="checkboxTos3" type="checkbox" name="checkboxSub" style="cursor:pointer"><p>(필수) 개인정보 수집 및 이용 동의</p>
+                    <a class="link_agreeTos_sub3" href="#">전체 보기</a>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="div_signup_button">
+            <button class="btn_signup" type="submit" style="cursor:pointer">회원가입</button>
+        </div>
+      </div>           
+    </div>
+  </section>
+  <!-- footer -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="div_terms ml_0">
+        <a class="btn_terms ml_0 pl_0" href="#">이용 약관</a>
+        <a class="btn_terms bold" href="#">개인정보 처리방침</a>
+        <a class="btn_terms" href="#">취소 및 환불 정책</a>
+      </div>
+      <div class="div_service">
+        <a class="btn_service" href="#">고객센터</a>
+        <a class="btn_service mr_0 pr_0" href="#">FAQ</a>
+      </div>
+      <div class="div_cpy_info">
+        <p>
+          상호명 (주)쿨타임트립 | 대표 채동혁 | 개인정보보호책임자 곽경록<br>
+          주소 서울 강남구 선릉로 428, 위워크 2층 | 이메일 help@cooltimetrip.com | 마케팅/제휴 문의 marketing@cooltimetrip.com
+        </p>
+        <p>
+          쿨타임트립은 통신판매중개자이며 통신판매의 당사자가 아닙니다. 따라서 상품·거래정보 및 거래에 대하여 책임을 지지않습니다.
+        </p>
+      </div>
+      <img class="lg_title_gray" src="../images/lg_title_gray.png" alt="">
+    </div>
+  </footer>
+</body>
+
+</html>

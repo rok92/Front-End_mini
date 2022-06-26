@@ -1,0 +1,234 @@
+@charset "UTF-8";
+
+/* 폰트 Pretendard 적용 */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+* {
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+}
+
+/* /////////////////////////////////////// */
+
+/* section */
+
+.section .wrap{
+    display: flex;
+    justify-content: center;
+    margin-top:70px;
+    
+    /* border:1px solid red; */
+} 
+
+/* section - 로그인 박스*/
+.section .div_login_panel{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid #DDDDDD;
+    padding:70px 115px 100px 115px;
+}
+
+/* 로그인 박스 상단 타이틀 */
+.section .div_login_title{
+    display: flex;
+    flex-direction: column;
+}
+
+/* WELCOME! */
+.section .div_login_title .title_main{
+    font-size:28px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* 여행 쿨탐 찼다! 떠나자~ */
+.section .div_login_title .title_sub{
+    font-size:22px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 7px;
+    /* color:red; */
+    color: #A1A1A1;
+}
+
+/* 아이디/비밀번호 입력 상자 위 텍스트 */
+.section .div_login_id .text_login_id,
+.section .div_login_password .text_login_password{
+    text-align: left;
+    font-size: 14px;
+    margin-top: 28px;
+    color: #222222;
+}
+
+.section .div_login_id .error_login_id{
+  font-size: 12px;
+  margin-top: 5px;
+  color: #E65454;
+}
+
+.section .div_login_password .error_login_password{
+  font-size: 12px;
+  margin-top: 5px;
+  color: #E65454;
+}
+
+/* 아이디/비밀번호 입력 상자 */
+.section .div_login_id input,
+.section .div_login_password input{
+    height: 50px;
+    width: 350px;
+    font-size: 16px;
+    margin-top: 7px;
+    border: 1px solid #DDDDDD;
+    text-indent: 16px;
+}
+
+/* 아이디/비밀번호 입력 상자 입력 전 텍스트 */
+.section .div_login_id input::placeholder,
+.section .div_login_password input::placeholder{
+    color:#BBBBBB;
+}
+
+/* 로그인 상태 유지 */
+.section .div_login_savefind {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-top: 7px;
+}
+
+/* 로그인 상태 유지 */
+.section .div_login_savefind p{
+    margin-left: 10px;
+    color: #666666;
+    font-size: 14px;
+}
+
+/* 로그인 상태 유지 - 체크 박스 */
+
+/* .section .div_login_savefind .checkbox_login_save{
+  display:none;
+}
+
+.section .checkbox_login_save + label{
+    display: inline-block;
+    width:20px;
+    height:20px;
+    border: 1px solid #EEEEEE;
+    position: relative;
+    cursor: pointer;
+}
+
+.section .checkbox_login_save:checked + label::after{
+    background-color: red;
+    font-size: 14px; 
+}
+
+.div_login_savefind .div_ic_check{
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  margin: auto 1px;
+  font-size: 20px;
+} */
+
+.div_login_savefind input{
+  width: 20px;
+  height: 20px;
+}
+
+/* 아이디/비밀번호 찾기 */
+.section .div_login_savefind a{
+    margin-left: 108px;
+    color: #A1A1A1;
+    font-size: 14px;
+    border-bottom: 1px solid #A1A1A1;
+}
+
+/* 로그인 버튼 div */
+.section .div_login_button{
+    display: flex;
+    justify-content: center;    
+    width: 350px;
+    margin-top: 26px;
+}
+
+/* 로그인 버튼 */
+.section .div_login_button button{
+    width: 350px;
+    height: 50px;
+    font-size: 16px;
+    color: #FFFFFF;
+    border: 0px;
+    background-color: #48A0FF;
+    cursor: pointer;
+}
+
+/* 구분선 */
+.section .div_login_panel hr{
+    border-top: 1px solid #EEEEEE;
+    margin-top: 30px;
+}
+
+/* SNS로 간편하게 로그인하기 */
+.section .div_login_panel .p_sns_title{
+    margin-top: 25px;
+    text-align: center;
+    font-size: 16px;
+    color: #666666;
+}
+
+/* SNS 연동 로그인 div */
+.section .div_login_sns{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+/* SNS 연동 로그인 버튼 - 카카오/네이버/구글 */
+.section .div_login_sns button{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 80px;
+    height: 30px;
+    margin-top: 15px;
+    font-size: 16px;
+    color: #222222;
+    background-color: #FFFFFF;
+    border: 0px;
+    cursor: pointer;
+}
+
+.section .div_login_sns img{
+    width: 25px;
+    height: 25px;
+}
+
+/* 회원가입 버튼 div*/
+.section .div_signup_button{
+    display: flex;
+    justify-content: center;
+}
+
+/* 회원가입 버튼 */
+.section .div_signup_button a{
+    width: 350px;
+    height: 50px;
+    margin-top: 35px;
+    font-size: 16px; 
+    border: 1px solid #48A0FF;
+    background-color: #FFFFFF;
+    cursor: pointer;
+    text-align: center;
+    line-height: 50px;
+}
+
+/* signup.html */
+.section .div_signup_button a{
+  color: #48A0FF;
+}
+
+/* /////////////////////////////////////// */

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>쿨탐찼다! 여행가자! - 쿨타임트립</title>
+  <!-- ico -->
+  <link rel="icon" href="../images/ico_logo.ico" />
+  <!-- login.css -->
+  <link rel="stylesheet" href="../css/common.css"/>
+  <link rel="stylesheet" href="../css/login.css"/>
+  <!-- login.js -->
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script src="../js/login.js"></script>
+</head>
+  
+<body>
+  <header class="header">
+    <!-- 헤더 wrap -->
+    <div class="wrap">
+      <div>
+        <img class="lg_title" src="../images/lg_title.png" alt="로고">
+        <!-- 로그인/회원가입 > 마이페이지 -->
+        <div class="div_account">
+          <a class="btn_account" href="login.html">로그인</a>
+          <a class="btn_account txt_blue mr_0 pr_0" href="signup.html">회원가입</a>
+          <a class="btn_account btn_mypage" href="#">마이페이지</a>
+        </div>
+      </div>
+      <nav>
+        <!-- 항공/숙박/렌터카 -->
+        <ul>
+          <li class="nav_active"><a href="#"><img class="ic_nav" src="../images/ic_plane.png" alt="항공"><span>항공</span></a></li>
+          <li><a href="#"><img class="ic_nav" src="../images/ic_lodgment.png" alt="숙박"><span>숙박</span></a></li>
+          <li><a href="#"><img class="ic_nav" src="../images/ic_rent.png" alt="렌터카"><span>렌터카</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- section -->
+  <section class="section">
+    <div class="wrap">
+      <div class="div_login_panel">
+        <div class="div_login_title">
+          <div class="div_login_title title_main">
+            WELCOME!
+          </div>
+          <div class="div_login_title title_sub">
+            여행 쿨탐 찼다! 떠나자!
+          </div>
+        </div>
+        <div class="div_login_id">
+          <p class="text_login_id">아이디</p>
+          <input class="input_login_id" type="text" placeholder="아이디 입력">
+          <div class="error_login_id">아이디를 다시 확인해주세요</div>
+        </div>
+        <div class="div_login_password">
+          <p class="text_login_password">비밀번호</p>
+          <input class="input_login_password" type="password" placeholder="비밀번호 입력">
+          <div class="error_login_password">비밀번호가 일치하지 않습니다</div>
+        </div>
+        <div class="div_login_savefind">
+          <input class="checkbox_login_save" id="checkbox_login_save" type="checkbox">
+          <!-- <label for="checkbox_login_save"><img class="ic_check" src="../images/ic_check-solid.png"></label> -->
+          <div class="div_ic_check"></div>
+          <p>로그인 상태 유지</p>
+          <a class="link_login_find" href="#">아이디/비밀번호 찾기</a>
+        </div>
+        <div class="div_login_button">
+          <button class="btn_login">로그인</button>
+        </div>
+        <hr>
+        <p class="p_sns_title">SNS로 간편하게 로그인하기</p>
+        <div class="div_login_sns">
+          <button class="btn_login_kakao"><img src="../images/lg_kakao.png">카카오</button>
+          <button class="btn_login_naver"><img src="../images/lg_naver.png">네이버</button>
+          <button class="btn_login_google"><img src="../images/lg_google.png">구글</button>
+        </div>
+        <div class="div_signup_button">
+          <a class="btn_signup" href="signup.html">회원가입</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- footer -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="div_terms ml_0">
+        <a class="btn_terms ml_0 pl_0" href="#">이용 약관</a>
+        <a class="btn_terms bold" href="#">개인정보 처리방침</a>
+        <a class="btn_terms" href="#">취소 및 환불 정책</a>
+      </div>
+      <div class="div_service">
+        <a class="btn_service" href="#">고객센터</a>
+        <a class="btn_service mr_0 pr_0" href="#">FAQ</a>
+      </div>
+      <div class="div_cpy_info">
+        <p>
+          상호명 (주)쿨타임트립 | 대표 채동혁 | 개인정보보호책임자 곽경록<br>
+          주소 서울 강남구 선릉로 428, 위워크 2층 | 이메일 help@cooltimetrip.com | 마케팅/제휴 문의 marketing@cooltimetrip.com
+        </p>
+        <p>
+          쿨타임트립은 통신판매중개자이며 통신판매의 당사자가 아닙니다. 따라서 상품·거래정보 및 거래에 대하여 책임을 지지않습니다.
+        </p>
+      </div>
+      <img class="lg_title_gray" src="../images/lg_title_gray.png" alt="">
+    </div>
+  </footer>
+</body>
+
+</html>
