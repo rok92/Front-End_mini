@@ -1,0 +1,1011 @@
+/* 마이페이지 보이게 */
+.btn_account{
+  display: none;
+}
+.header .div_account .btn_mypage{
+  display: block;
+}
+
+/* 비행기 예약 section */
+section.air_reservation{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+/* 항공 예약 내용들 */
+.air_reservation_content{
+  position: absolute;
+  top: 191px;
+  width: 1280px;
+  height: 192px;
+  padding:  37px 70px;
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 3px 3px 18px #0002;
+}
+
+/* 왕복 편도 다구간 */
+.air_shuttle_button button{
+  border-radius: 25px;
+  background-color: #eeeeee;
+  border: none;
+  width: 67px;
+  height: 39px;
+  margin-right: 10px;
+  font-weight: normal;
+  font-size: 16px;
+}
+.air_shuttle_button button:nth-child(3){
+  width: 81px;
+}
+.air_shuttle_button button:hover{
+  background-color: #FBDB03;
+  cursor: pointer;
+}
+
+/* 항공 예약 공통 적용 */
+.air_reservation_subtitle{
+  color: #666666;
+  font-weight: normal;
+  font-size: 16px;
+}
+.departure_location, .arrival_location, .sit_class{
+  margin-top: 10px;
+}
+
+/* 출발지 도착지 */
+.departure_arrival_container{
+  display: flex;
+  justify-content: space-between;
+  height: 60%;
+}
+.location_box{
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 480px;
+}
+.depart_location, .arrive_location{
+  width: 190px;
+  margin-top: 24px;
+}
+.departure_location , .arrival_location {
+  font-size: 22px;
+  font-weight: bold;
+  background-color: transparent;
+  outline-style: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* 쌍방화살표 폰트 */
+.roundArrow{
+  height: 30px;
+  width: 30px;
+  background-color: #eeeeee;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30px;
+  font-size: 13px;
+  color: #666666;
+  margin-top: 41px;
+}
+
+/* 여행지랑 날짜 사이에 중간에 나누는 선 */
+.partition{
+  height: 64px;
+  font-weight: lighter;
+  font-size: 60px;
+  color: #eeeeee;
+}
+
+/* 여행 날짜 선택 */
+.air_date_box{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 220px;
+  height: 55px;
+  margin-top: 20px;
+}
+
+.air_date_box input{
+  width: 220px;
+  height: 30px;
+  border: none;
+  outline-style: none;
+  font-size: 22px;
+  font-weight: bold;
+  padding-left: 4px
+}
+
+
+/* 인원 좌석등급 선택 */
+.sit_class_box{
+  width: 120px;
+  margin-top: 19px;
+}
+.sit_class{
+  font-size: 22px;
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* 항공 예약 검색 버튼 */
+button.air_search{
+  width: 150px;
+  height: 68px;
+  border: transparent;
+  border-radius: 30px;
+  background-color:#48A0FF;
+  color: #fff;
+  font-weight: normal;
+  font-size: 20px;
+}
+button.air_search:hover{
+  cursor: pointer;
+}
+
+/* 헤더 밑에 비행기 배경 */
+.air_background{
+  position: relative;
+
+}
+
+.air_background img{
+  width: 100%;
+  height: 319px;
+  opacity: 0.85;
+}
+
+/* 항공예약 글자 */
+.air_reservation_title{
+  position: absolute;
+  top: 112px;
+  left: 900px;
+  width:120px;
+  color: #ffffff;
+  font-weight: 200;
+  font-size: 32px;
+  opacity: 0.7;
+}
+
+/* 최근 검색한 항공권 */
+.recently_search_air{
+  width: 1400px;
+  margin: 134px auto 0;
+}
+
+.recently_air_title{
+  font-weight: bold;
+  font-size: 22px;
+  margin: 0 0 28px 60px;
+}
+
+.recently_air_container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1400px;
+}
+
+.recently_air_content{
+  display: flex;
+  align-items: center;
+  width: 1280px;
+  overflow: hidden;
+}
+
+.recently_air_box{
+  min-width: 400px;
+  height: 120px;
+  margin-right: 40px;
+  padding: 17px 24px;
+  border: 1px solid #bbb;
+  cursor: pointer;
+}
+
+.recently_close_line{
+  display: flex;
+  justify-content: space-between;
+  height: 20px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.recently_shuttle_type{
+  width: 50px;
+  height: 25px;
+  border: 2px solid #48A0FF;
+  color: #48A0FF;
+  font-weight: normal;
+  font-size: 14px;
+  text-align: center;
+  line-height: 25px;
+}
+.recently_close_line button{
+  width: 16px;
+  height: 16px;
+  border-style: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.recently_close_line button img{
+  width: 100%;
+  height: 100%;
+  color: #222222;
+  font-weight: bold;
+}
+
+.recently_air_location{
+  margin-bottom: 6px;
+}
+.recently_air_location span{
+  font-weight: bold;
+  font-size: 22px;
+}
+.recently_air_location i{
+  font-size: 13px;
+  color: #666666;
+  margin: 0 10px;
+}
+
+.recently_air_desc span{
+  color: #aaaaaa;
+  font-weight: normal;
+  font-size: 16px;
+}
+
+/* 옆으로 넘기는 버튼 (화살표) */
+.recently_prev_btn, .recently_next_btn{
+  width: 12px;
+  height: 24px;
+  cursor: pointer;
+}
+
+
+/* 제주도 여행, 신혼여행 */
+.jeju_trip, .honeymoon_trip{
+  width: 1280px;
+  margin: 0 auto;
+  height: 382px;
+  margin-top: 100px;
+}
+
+.jeju_title, .honeymoon_title{
+  font-weight: bold;
+  font-size: 26px;
+}
+
+/* 각 box들을 감싸는 container */
+.jeju_container, .honeymoon_container{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 28px;
+}
+
+/* 이미지와 내용을 포함하는 box */
+.jeju_box, .honeymoon_box{
+  width: 290px;
+  height: 320px;
+  border: 1px solid #dddddd;
+  cursor: pointer;
+}
+
+/* 이미지 */
+.jeju_box img, .honeymoon_box img{
+  width: 100%;
+  height: 180px;
+}
+
+/* 내용 */
+.jeju_content, .honeymoon_content{
+  padding: 24px 0 26px 25px;
+}
+
+.jeju_location_direction, .honeymoon_location_direction{
+  margin-bottom: 6px;
+}
+.jeju_location_direction span, .honeymoon_location_direction span{
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.jeju_location_direction i, .honeymoon_location_direction i{
+  margin: 0 10px;
+  font-size: 20px;
+}
+
+.jeju_date, .honeymoon_date{
+  margin-bottom: 15px;
+}
+.jeju_date span, .honeymoon_date span{
+  color: #aaaaaa;
+  font-weight: normal;
+  font-size: 16px;
+}
+.jeju_price span, .honeymoon_price span{
+  font-weight: normal;
+  font-size: 20px;
+  color: #222222;
+}
+
+/* 탑버튼 */
+.top_btn{
+  position: fixed;
+  top: 45vh;
+  right: 40px;
+}
+
+.top_btn img{
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+
+
+/* 출발지 팝업창 */
+
+.depart_popup{
+  display: none;
+  position: absolute;
+  top: 130px;
+  left: -70px;
+  width: 880px;
+  height: 920px;
+  background-color: #ffffff;
+  border-radius: 30px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.arrive_popup{
+  display: none;
+  position: absolute;
+  top: 130px;
+  left: 222px;
+  width: 880px;
+  height: 920px;
+  background-color: #ffffff;
+  border-radius: 30px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.popup_wrap{
+  width:740.5px;
+  margin: 50px auto;
+}
+
+.depart_popup_title, .arrive_popup_title{
+  font-size: 22px;
+  font-weight: bold;
+  color:#222222;
+  margin-bottom: 20px;
+}
+
+.depart_popup_search_box, .arrive_popup_search_box{
+  display: flex;
+  margin-bottom: 40px;
+}
+.depart_popup input, .arrive_popup input{
+  height: 50px;
+  width: 660px;
+}
+
+.depart_popup button, .arrive_popup button{
+  height: 50px;
+  width: 140px;
+  border: none;
+  background-color: #48A0FF;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.depart_popup_subtitle, .arrive_popup_subtitle{
+  font-size: 18px;
+  font-weight: bold;
+  color: #222222;
+  margin-bottom: 20px;
+}
+.location_table{
+  width: 740.5px;
+  border-top: 1px solid #DDDDDD;
+}
+
+.location_table tr{
+  height: 40px;
+  width: 740.5px;
+}
+
+.location_table th{
+  font-weight: bold;
+  font-size: 16px;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.location_table td{
+  font-weight: 500;
+  font-size: 15px;
+  color: #444444;
+  border-bottom: 1px solid #DDDDDD;
+  border-spacing: none;
+  cursor: pointer;
+}
+
+/* 인원, 좌석 클래스 팝업창 */
+
+.customer_airclass_popup{
+  display: none;
+  position: absolute;
+  top: 206px;
+  right: 0;
+  width: 468px;
+  height: 484px;
+  border-radius: 30px;
+  background-color: #ffffff;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.customer_airclass_wrap{
+  width: 328px;
+  margin: 50px auto;
+}
+
+.customer_airclass_wrap p{
+  font-size: 18px;
+  font-weight: bold;
+  color:#222222;
+  margin-bottom: 40px;
+}
+
+.age_container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.age_box div:nth-child(1){
+  font-size: 22px;
+  font-weight: 500;
+  color: #222222;
+}
+
+.age_box div:nth-child(2){
+  font-size: 14px;
+  font-weight: 500;
+  color: #BBBBBB;
+  margin-top: 5px;
+}
+
+.person_count_box{
+  display: flex;
+  justify-content: space-between;
+  width: 156px;
+  height: 46px;
+  margin-bottom: 30px;
+}
+
+.person_minus_button, .person_plus_button{
+  width: 46px;
+  height: 46px;
+  line-height: 42px;
+  text-align: center;
+  border: 2px solid #BBBBBB;
+  color: #bbbbbb;
+  border-radius: 50%;
+  font-size: 33px;
+  cursor: pointer;
+}
+.person_minus_button:hover{
+  border: 2px solid #48A0FF;
+  color: #48A0FF;
+}
+
+.person_number{
+  font-size: 24px;
+  font-weight: 500;
+  color: #222222;
+  height: 46px;
+  line-height: 46px;
+  margin: 0 25px;
+}
+
+.person_plus_button{
+  border: 2px solid #48A0FF;
+  color: #48A0FF;
+}
+
+.air_sit_choice{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 328px;
+  height: 70px;
+  border-top: 1px solid #DDDDDD;
+  margin-top: 20px;
+}
+
+.air_sit_choice div{
+  display: flex;
+  align-items: center;
+  width: 140px;
+  height: 20px;
+  margin-top: 20px;
+}
+
+.air_sit_choice input{
+  width: 22px;
+  height: 22px;
+}
+
+.air_sit_choice label{
+  margin-left: 10px;
+  font-size: 16px;
+  color: #222222;
+}
+
+/* 항공 좌석 등급 라디오버튼 */
+.airsit_choice_box{
+  width: 328px;
+  height: 92px;
+  border-top: 1px solid #DDDDDD;
+}
+
+.airsit_choice_box input{
+  font-size: 16px;
+}
+
+/* 데이터피커 */
+
+.daterangepicker {
+  position: absolute;
+  color: inherit;
+  background-color: #fff;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  width: 278px;
+  max-width: none;
+  padding: 0;
+  margin-top: 7px;
+  top: 100px;
+  left: 20px;
+  z-index: 3001;
+  display: none;
+  font-family: arial;
+  font-size: 15px;
+  line-height: 1em;
+}
+
+.daterangepicker:before, .daterangepicker:after {
+  position: absolute;
+  display: inline-block;
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+  content: '';
+}
+
+.daterangepicker:before {
+  top: -7px;
+  border-right: 7px solid transparent;
+  border-left: 7px solid transparent;
+  border-bottom: 7px solid #ccc;
+}
+
+.daterangepicker:after {
+  top: -6px;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #fff;
+  border-left: 6px solid transparent;
+}
+
+.daterangepicker.opensleft:before {
+  right: 9px;
+}
+
+.daterangepicker.opensleft:after {
+  right: 10px;
+}
+
+.daterangepicker.openscenter:before {
+  left: 0;
+  right: 0;
+  width: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.daterangepicker.openscenter:after {
+  left: 0;
+  right: 0;
+  width: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.daterangepicker.opensright:before {
+  left: 9px;
+  display: none;
+}
+
+.daterangepicker.opensright:after {
+  left: 40px;
+  display: none;
+}
+
+.daterangepicker.drop-up {
+  margin-top: -7px;
+}
+
+.daterangepicker.drop-up:before {
+  top: initial;
+  bottom: -7px;
+  border-bottom: initial;
+  border-top: 7px solid #ccc;
+}
+
+.daterangepicker.drop-up:after {
+  top: initial;
+  bottom: -6px;
+  border-bottom: initial;
+  border-top: 6px solid #fff;
+}
+
+.daterangepicker.single .daterangepicker .ranges, .daterangepicker.single .drp-calendar {
+  float: none;
+}
+
+.daterangepicker.single .drp-selected {
+  display: none;
+}
+
+.daterangepicker.show-calendar .drp-calendar {
+  display: block;
+}
+
+.daterangepicker.show-calendar .drp-buttons {
+  display: block;
+}
+
+.daterangepicker.auto-apply .drp-buttons {
+  display: none;
+}
+
+.daterangepicker .drp-calendar {
+  display: none;
+  max-width: 270px;
+}
+
+.daterangepicker .drp-calendar.left {
+  padding: 50px 25px 50px 50px;
+}
+
+.daterangepicker .drp-calendar.right {
+  padding: 50px 50px 50px 49px;
+}
+
+.daterangepicker .drp-calendar.single .calendar-table {
+  border: none;
+}
+
+.daterangepicker .calendar-table .next span, .daterangepicker .calendar-table .prev span {
+  color: #fff;
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  border-radius: 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.daterangepicker .calendar-table .next span {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.daterangepicker .calendar-table .prev span {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.daterangepicker .calendar-table th, .daterangepicker .calendar-table td {
+  white-space: nowrap;
+  text-align: center;
+  vertical-align: middle;
+  min-width: 55px;
+  width: 55px;
+  height: 55px;
+  line-height: 24px;
+  font-size: 20px;
+  border-radius: 4px;
+  /* border: 1px solid transparent; */
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.daterangepicker .calendar-table {
+  border: 1px solid #fff;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.daterangepicker .calendar-table table {
+  width: 100%;
+  margin: 0;
+  border-spacing: 0;
+  border-collapse: unset;
+}
+
+.daterangepicker td.available:hover{
+  background-color: #ffffff;
+  border: 2px solid #48A0FF;
+  border-radius: 50px;
+  color: #48A0FF;
+}
+
+.daterangepicker th.available:hover{
+  background-color: #ffffff;
+  color: #48A0FF;
+}
+
+.daterangepicker td.week, .daterangepicker th.week {
+  font-size: 80%;
+  color: #ccc;
+}
+
+.daterangepicker td.off, .daterangepicker td.off.in-range, .daterangepicker td.off.start-date, .daterangepicker td.off.end-date {
+  background-color: #fff;
+  border-color: transparent;
+  color: #fff;
+}
+
+.daterangepicker td.in-range {
+  background-color: #DAECFF;
+  border-color: transparent;
+  color: #000;
+  border-radius: 0;
+}
+
+.daterangepicker td.start-date {
+  border-radius: 4px 0 0 4px;
+}
+
+.daterangepicker td.end-date {
+  border-radius: 0 4px 4px 0;
+}
+
+.daterangepicker td.start-date.end-date {
+  border-radius: 40px;
+}
+
+.daterangepicker td.active {
+  width: 55px;
+  height: 55px;
+  background-color: #48A0FF;
+  border-radius: 50px;
+  border-color: transparent;
+  color: #fff;
+}
+
+.daterangepicker td.active:hover {
+  width: 55px;
+  height: 55px;
+  background-color: #FFFFFF;
+  border: 2px solid #48A0FF;
+  border-radius: 50px;
+  color: #48A0FF;
+  overflow: hidden;
+}
+
+.daterangepicker th.month {
+  width: auto;
+  font-size: 26px;
+}
+
+.daterangepicker td.disabled, .daterangepicker option.disabled {
+  color: #BBBBBB;
+  cursor: not-allowed;
+  text-decoration: none;
+}
+
+.daterangepicker select.monthselect, .daterangepicker select.yearselect {
+  font-size: 12px;
+  padding: 1px;
+  height: auto;
+  margin: 0;
+  cursor: default;
+}
+
+.daterangepicker select.monthselect {
+  margin-right: 2%;
+  width: 56%;
+}
+
+.daterangepicker select.yearselect {
+  width: 40%;
+}
+
+.daterangepicker select.hourselect, .daterangepicker select.minuteselect, .daterangepicker select.secondselect, .daterangepicker select.ampmselect {
+  width: 50px;
+  margin: 0 auto;
+  background: #eee;
+  border: 1px solid #eee;
+  padding: 2px;
+  outline: 0;
+  font-size: 12px;
+}
+
+.daterangepicker .calendar-time {
+  text-align: center;
+  margin: 4px auto 0 auto;
+  line-height: 30px;
+  position: relative;
+}
+
+.daterangepicker .calendar-time select.disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.daterangepicker .drp-buttons {
+  clear: both;
+  text-align: right;
+  padding: 8px;
+  border-top: 1px solid #ddd;
+  display: none;
+  line-height: 12px;
+  vertical-align: middle;
+}
+
+.daterangepicker .drp-selected {
+  display: inline-block;
+  font-size: 12px;
+  padding-right: 8px;
+}
+
+.daterangepicker .drp-buttons .btn {
+  margin-left: 8px;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 8px;
+}
+
+.daterangepicker.show-ranges.single.rtl .drp-calendar.left {
+  border-right: 1px solid #ddd;
+}
+
+.daterangepicker.show-ranges.single.ltr .drp-calendar.left {
+  border-left: 1px solid #ddd;
+}
+
+.daterangepicker.show-ranges.rtl .drp-calendar.right {
+  border-right: 1px solid #ddd;
+}
+
+.daterangepicker.show-ranges.ltr .drp-calendar.left {
+  border-left: 1px solid #ddd;
+}
+
+.daterangepicker .ranges {
+  float: none;
+  text-align: left;
+  margin: 0;
+}
+
+.daterangepicker.show-calendar .ranges {
+  margin-top: 8px;
+}
+
+.daterangepicker .ranges ul {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+
+.daterangepicker .ranges li {
+  font-size: 12px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.daterangepicker .ranges li:hover {
+  background-color: #eee;
+}
+
+.daterangepicker .ranges li.active {
+  background-color: #08c;
+  color: #fff;
+}
+
+.show-calender{
+  top: 490px;
+}
+
+/*  Larger Screen Styling */
+@media (min-width: 564px) {
+  .daterangepicker {
+    width: 890px;
+    margin-left: -25px;
+    margin-top: 55px;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 3px 3px 18px #0002;
+  }
+
+  .daterangepicker .ranges ul {
+    width: 140px;
+  }
+
+  .daterangepicker.single .ranges ul {
+    width: 100%;
+  }
+
+  .daterangepicker.single .drp-calendar.left {
+    clear: none;
+  }
+
+  .daterangepicker.single .ranges, .daterangepicker.single .drp-calendar {
+    float: left;
+  }
+
+  .daterangepicker {
+    direction: ltr;
+    text-align: left;
+  }
+
+  .daterangepicker .drp-calendar.left {
+    clear: left;
+    margin-right: 0;
+  }
+
+  .daterangepicker .drp-calendar.left .calendar-table {
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .daterangepicker .drp-calendar.right {
+    margin-left: 137px;
+  }
+
+  .daterangepicker .drp-calendar.right .calendar-table {
+    border-left: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .daterangepicker .drp-calendar.left .calendar-table {
+    padding-right: 8px;
+  }
+
+  .daterangepicker .ranges, .daterangepicker .drp-calendar {
+    float: left;
+  }
+}
+
+@media (min-width: 730px) {
+  .daterangepicker .ranges {
+    width: auto;
+  }
+
+  .daterangepicker .ranges {
+    float: left;
+  }
+
+  .daterangepicker.rtl .ranges {
+    float: right;
+  }
+
+  .daterangepicker .drp-calendar.left {
+    clear: none !important;
+  }
+}
+
+.show-calender{
+  top: 490px;
+}
+

@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>쿨탐찼다! 여행가자! - 쿨타임트립</title>
+  <link rel="icon" href="../images/ico_logo.ico" />
+  <script defer type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+  <script defer type="text/javascript" src="../js/moment.min.js"></script>
+  <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+  <script defer src="https://kit.fontawesome.com/c1d526d71a.js" crossorigin="anonymous"></script>
+  <script defer src="../js/air_main.js"></script>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+  <header class="header">
+    <!-- 헤더 wrap -->
+    <div class="wrap">
+      <div>
+        <img class="lg_title" src="../images/lg_title.png" alt="로고">
+        <!-- 로그인/회원가입 > 마이페이지 -->
+        <div class="div_account">
+          <a class="btn_account" href="#">로그인</a>
+          <a class="btn_account txt_blue mr_0 pr_0" href="#">회원가입</a>
+          <a class="btn_account btn_mypage" href="#">마이페이지</a>
+        </div>
+      </div>
+      <nav>
+        <!-- 항공/숙박/렌터카 -->
+        <ul>
+          <li class="nav_active"><a href="#"><img class="ic_nav" src="../images/ic_plane.png" alt="항공"><span>항공</span></a></li>
+          <li><a href="#"><img class="ic_nav" src="../images/ic_lodgment.png" alt="숙박"><span>숙박</span></a></li>
+          <li><a href="#"><img class="ic_nav" src="../images/ic_rent.png" alt="렌터카"><span>렌터카</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 항공 예약 -->
+  <section class="air_reservation">
+    <div class="air_reservation_content">
+      <div class="air_shuttle_button">
+        <button>왕복</button>
+        <button>편도</button>
+        <button>다구간</button>
+      </div>
+      <div class="departure_arrival_container">
+        <div class="location_box">
+          <div class="depart_location">
+            <span class="air_reservation_subtitle">출발</span>
+            <button class="departure_location" id="depart_loacation">출발지를 선택하세요</button>
+          </div>
+          <div class="depart_popup" id="depart_pop">
+            <div class="popup_wrap">
+              <p class="depart_popup_title">출발 도시/공항 선택</p>
+              <div class="depart_popup_search_box">
+                <input type="text" placeholder="도시를 검색하세요">
+                <button>검색하기</button>
+              </div>
+              <p class="depart_popup_subtitle">주요도시 바로 선택</p>
+              <table class="location_table">
+                <tr>
+                  <th rowspan="3">국내</th>
+                  <td>제주</td>
+                  <td>김포</td>
+                  <td>부산</td>
+                  <td>청주</td>
+                </tr>
+                <tr>
+                  <td>여수</td>
+                  <td>광주</td>
+                  <td>대구</td>
+                  <td>양양</td>
+                </tr>
+                <tr>
+                  <td>군산</td>
+                  <td>울산</td>
+                  <td>포항</td>
+                  <td>인천</td>
+                </tr>
+                <tr>
+                  <th rowspan="2">아시아</th>
+                  <td>다낭</td>
+                  <td>방콕</td>
+                  <td>세부</td>
+                  <td>대만/타오위완</td>
+                </tr>
+                <tr>
+                  <td>코타키나발루</td>
+                  <td>나트랑/캄란</td>
+                  <td>싱가포르</td>
+                  <td>팡라오</td>
+                </tr>
+                <tr>
+                  <th>중국</th>
+                  <td>북경</td>
+                  <td>상해</td>
+                  <td>청도</td>
+                  <td>성도</td>
+                </tr>
+                <tr>
+                  <th rowspan="2">일본</th>
+                  <td>도쿄/나리타</td>
+                  <td>도쿄/하네다</td>
+                  <td>오사카/간사이</td>
+                  <td>오키나와</td>
+                </tr>
+                <tr>
+                  <td>후쿠오카</td>
+                  <td>키타큐슈</td>
+                  <td>나고야</td>
+                  <td>삿포로/치토세</td>
+                </tr>
+                <tr>
+                  <th rowspan="2">미주</th>
+                  <td>로스앤젤레스</td>
+                  <td>하와이</td>
+                  <td>뉴욕</td>
+                  <td>토론토</td>
+                </tr>
+                <tr>
+                  <td>밴쿠버</td>
+                  <td>시카고</td>
+                  <td>샌프란시스코</td>
+                  <td>라스베가스</td>
+                </tr>
+                <tr>
+                  <th>중남미</th>
+                  <td>상파울로</td>
+                  <td>칸쿤</td>
+                  <td>산티아고</td>
+                  <td>하바나</td>
+                </tr>
+                <tr>
+                  <th rowspan="2">유럽</th>
+                  <td>블라디보스크</td>
+                  <td>파리</td>
+                  <td>런던</td>
+                  <td>로마</td>
+                </tr>
+                <tr>
+                  <td>프랑크프루트</td>
+                  <td>프라하</td>
+                  <td>바르셀로나</td>
+                  <td>이스탄불</td>
+                </tr>
+                <tr>
+                  <th>대양주</th>
+                  <td>시드니</td>
+                  <td>맬버른</td>
+                  <td>괌</td>
+                  <td>사이판</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <i class="fa fa-exchange roundArrow" aria-hidden="true"></i>
+          <div class="arrive_location">
+            <span class="air_reservation_subtitle">도착</span>
+          <button class="arrival_location" id="arrive_location">도착지를 선택하세요</button>
+          </div>
+          <div class="arrive_popup" id="arrive_pop">
+            <div class="popup_wrap">
+              <p class="arrive_popup_title">도착 도시/공항 선택</p>
+              <div class="arrive_popup_search_box">
+                <input type="text" placeholder="도시를 검색하세요">
+                <button>검색하기</button>
+              </div>
+              <p class="arrive_popup_subtitle">주요도시 바로 선택</p>
+              <table class="location_table">
+                <tr>
+                  <th rowspan="3">국내</th>
+                  <td>제주</td>
+                  <td>김포</td>
+                  <td>부산</td>
+                  <td>청주</td>
+                </tr>
+                <tr>
+                  <td>여수</td>
+                  <td>광주</td>
+                  <td>대구</td>
+                  <td>양양</td>
+                </tr>
+                <tr>
+                  <td>군산</td>
+                  <td>울산</td>
+                  <td>포항</td>
+                  <td>인천</td>
+                </tr>
+                <tr>
+                  <th rowspan="2">아시아</th>
+                  <td>다낭</td>
+                  <td>방콕</td>
+                  <td>세부</td>
+                  <td>대만/타오위완</td>
+                </tr>
+                <tr>
+                  <td>코타키나발루</td>
+                  <td>나트랑/캄란</td>
+                  <td>싱가포르</td>
+                  <td>팡라오</td>
+                </tr>
+                <tr>
+                  <th>중국</th>
+                  <td>북경</td>
+                  <td>상해</td>
+                  <td>청도</td>
+                  <td>성도</td>
+                </tr>
+                <tr>
+                  <th rowspan="2">일본</th>
+                  <td>도쿄/나리타</td>
+                  <td>도쿄/하네다</td>
+                  <td>오사카/간사이</td>
+                  <td>오키나와</td>
+                </tr>
+                <tr>
+                  <td>후쿠오카</td>
+                  <td>키타큐슈</td>
+                  <td>나고야</td>
+                  <td>삿포로/치토세</td>
+                </tr>
+                <tr>
+                  <th rowspan="2">미주</th>
+                  <td>로스앤젤레스</td>
+                  <td>하와이</td>
+                  <td>뉴욕</td>
+                  <td>토론토</td>
+                </tr>
+                <tr>
+                  <td>밴쿠버</td>
+                  <td>시카고</td>
+                  <td>샌프란시스코</td>
+                  <td>라스베가스</td>
+                </tr>
+                <tr>
+                  <th>중남미</th>
+                  <td>상파울로</td>
+                  <td>칸쿤</td>
+                  <td>산티아고</td>
+                  <td>하바나</td>
+                </tr>
+                <tr>
+                  <th rowspan="2">유럽</th>
+                  <td>블라디보스크</td>
+                  <td>파리</td>
+                  <td>런던</td>
+                  <td>로마</td>
+                </tr>
+                <tr>
+                  <td>프랑크프루트</td>
+                  <td>프라하</td>
+                  <td>바르셀로나</td>
+                  <td>이스탄불</td>
+                </tr>
+                <tr>
+                  <th>대양주</th>
+                  <td>시드니</td>
+                  <td>맬버른</td>
+                  <td>괌</td>
+                  <td>사이판</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <p class="partition">|</p>
+        <div class="air_date_box">
+          <div class="air_reservation_subtitle">출발일 - 도착일</div>
+          <input type="text" class="air_date" id="rangepicker" name="daterange" placeholder="여행 날짜 선택">
+        </div>
+        <div class="sit_class_box">
+          <span class="air_reservation_subtitle">인원, 좌석등급</span>
+          <button class="sit_class" id="person_sit">1명, 좌석전체</button>
+        </div>
+        <div class="customer_airclass_popup" id="custom_air_pop">
+          <div class="customer_airclass_wrap">
+            <p>인원 & 좌석등급</p>
+            <div class="age_container">
+              <div class="age_box">
+                <div>성인</div>
+                <div>만 12세 이상</div>
+              </div>
+              <div class="person_count_box">
+                <span class="person_minus_button">-</span>
+                <span class="person_number">1</span>
+                <span class="person_plus_button">+</span>
+              </div>
+            </div>
+            <div class="age_container">
+              <div class="age_box">
+                <div>소아</div>
+                <div>만 12세 미만</div>
+              </div>
+              <div class="person_count_box">
+                <span class="person_minus_button">-</span>
+                <span class="person_number">0</span>
+                <span class="person_plus_button">+</span>
+              </div>
+            </div>
+            <div class="age_container">
+              <div class="age_box">
+                <div>유아</div>
+                <div>24개월 미만</div>
+              </div>
+              <div class="person_count_box">
+                <span class="person_minus_button">-</span>
+                <span class="person_number">0</span>
+                <span class="person_plus_button">+</span>
+              </div>
+            </div>
+            <div class="air_sit_choice">
+              <div>
+                <input id="sitsGen" type="radio" name="sits" value="일반석" checked="checked">
+                <label id="sitsGenLabel" for="sitsGen"> 일반석</label>
+              </div>
+              <div>
+                <input id="sitsPreGen" type="radio" name="sits" value="프리미엄 일반석">
+                <label id="sitsPreGenLabel" for="sitsPreGen"> 프리미엄 일반석</label>
+              </div>
+              <div>
+                <input id="sitsBusi" type="radio" name="sits" value="비즈니스석">
+                <label id="sitsBusiLabel" for="sitsBusi">비즈니스석</label>
+              </div>
+              <div>
+                <input id="sitsFir" type="radio" name="sits" value="일등석">
+                <label id="sitsFirLabel" for="sitsFir">일등석</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="air_search">검색하기</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 비행기 배경 -->
+  <section class="air_background">
+    <img src="../images/bg_plane@2x.png" alt="비행기 배경">
+    <div class="air_reservation_title">
+      항공 예약
+    </div>
+  </section>
+
+  <!-- 최근 검색한 항공권 -->
+  <section class="recently_search_air">
+    <div class="recently_air_title">최근 검색한 항공권</div>
+    <div class="recently_air_container">
+      <img id="rct_prev_btn" class="recently_prev_btn"  src="../images/btn_left.png" alt="최근 검색한 항공권 왼쪽버튼">
+      
+      <div class="recently_air_content" id="rctAirContent">
+
+        <div class="recently_air_box">
+          <div class="recently_close_line">
+            <div class="recently_shuttle_type">왕복</div>
+            <button><img src="../images/btn_delete.png" alt="닫는버튼"></button>
+          </div>
+          <div class="recently_air_location"><span>김포 (GMP)</span><i class="fa fa-exchange" aria-hidden="true"></i><span>제주 (CJU)</span></div>
+          <div class="recently_air_desc"><span>6월 20일 - 6월 25일 · 성인1 · 전체</span></div>
+        </div>
+        <div class="recently_air_box">
+          <div class="recently_close_line">
+            <div class="recently_shuttle_type">편도</div>
+            <button><img src="../images/btn_delete.png" alt="닫는버튼"></button>
+          </div>
+          <div class="recently_air_location"><span>김포 (GMP)</span><i class="fa fa-exchange" aria-hidden="true"></i><span>제주 (CJU)</span></div>
+          <div class="recently_air_desc"><span>6월 22일 - 6월 28일 · 성인1 · 전체</span></div>
+        </div>
+        <div class="recently_air_box">
+          <div class="recently_close_line">
+            <div class="recently_shuttle_type">왕복</div>
+            <button><img src="../images/btn_delete.png" alt="닫는버튼"></button>
+          </div>
+          <div class="recently_air_location"><span>김포 (GMP)</span><i class="fa fa-exchange" aria-hidden="true"></i><span>괌 (GUM)</span></div>
+          <div class="recently_air_desc"><span>6월 20일 - 6월 25일 · 성인1 · 전체</span></div>
+        </div>
+        <div class="recently_air_box">
+          <div class="recently_close_line">
+            <div class="recently_shuttle_type">왕복</div>
+            <button><img src="../images/btn_delete.png" alt="닫는버튼"></button>
+          </div>
+          <div class="recently_air_location"><span>김포 (GMP)</span><i class="fa fa-exchange" aria-hidden="true"></i><span>제주 (CJU)</span></div>
+          <div class="recently_air_desc"><span>6월 20일 - 6월 25일 · 성인1 · 전체</span></div>
+        </div>
+        <div class="recently_air_box">
+          <div class="recently_close_line">
+            <div class="recently_shuttle_type">왕복</div>
+            <button><img src="../images/btn_delete.png" alt="닫는버튼"></button>
+          </div>
+          <div class="recently_air_location"><span>김포 (GMP)</span><i class="fa fa-exchange" aria-hidden="true"></i><span>제주 (CJU)</span></div>
+          <div class="recently_air_desc"><span>6월 20일 - 6월 25일 · 성인1 · 전체</span></div>
+        </div>
+        <div class="recently_air_box">
+          <div class="recently_close_line">
+            <div class="recently_shuttle_type">왕복</div>
+            <button><img src="../images/btn_delete.png" alt="닫는버튼"></button>
+          </div>
+          <div class="recently_air_location"><span>김포 (GMP)</span><i class="fa fa-exchange" aria-hidden="true"></i><span>제주 (CJU)</span></div>
+          <div class="recently_air_desc"><span>6월 20일 - 6월 25일 · 성인1 · 전체</span></div>
+        </div>
+        <div class="recently_air_box">
+          <div class="recently_close_line">
+            <div class="recently_shuttle_type">왕복</div>
+            <button><img src="../images/btn_delete.png" alt="닫는버튼"></button>
+          </div>
+          <div class="recently_air_location"><span>김포 (GMP)</span><i class="fa fa-exchange" aria-hidden="true"></i><span>제주 (CJU)</span></div>
+          <div class="recently_air_desc"><span>6월 20일 - 6월 25일 · 성인1 · 전체</span></div>
+        </div>
+        
+      </div>
+      <img id="rct_next_btn" class="recently_next_btn" src="../images/btn_right.png" alt="최근 검색한 항공권 오른쪽버튼">
+    </div>
+  </section>
+
+  <!-- 제주여행 -->
+  <section class="jeju_trip">
+    <div class="jeju_title">제주 휴가 즐겨요</div>
+    <div class="jeju_container">
+      <div class="jeju_box">
+        <img src="/images/jeju1.jfif">
+        <div class="jeju_content">
+          <div class="jeju_location_direction">
+            <span>서울</span><i class="fas fa-long-arrow-alt-right"></i><span>제주</span>
+          </div>
+          <div class="jeju_date">
+            <span>6월 20일 - 6월 25일</span>
+          </div>
+          <div class="jeju_price">
+            <span>37,500 ~</span>
+          </div>
+        </div>
+      </div>
+      <div class="jeju_box">
+        <img src="../images/jeju2.jfif">
+        <div class="jeju_content">
+          <div class="jeju_location_direction">
+            <span>서울</span><i class="fas fa-long-arrow-alt-right"></i><span>제주</span>
+          </div>
+          <div class="jeju_date">
+            <span>6월 20일 - 6월 25일</span>
+          </div>
+          <div class="jeju_price">
+            <span>37,500 ~</span>
+          </div>
+        </div>
+      </div>
+      <div class="jeju_box">
+        <img src="../images/jeju3.jfif">
+        <div class="jeju_content">
+          <div class="jeju_location_direction">
+            <span>서울</span><i class="fas fa-long-arrow-alt-right"></i><span>제주</span>
+          </div>
+          <div class="jeju_date">
+            <span>6월 20일 - 6월 25일</span>
+          </div>
+          <div class="jeju_price">
+            <span>37,500 ~</span>
+          </div>
+        </div>
+      </div>
+      <div class="jeju_box">
+        <img src="../images/jeju4.jfif">
+        <div class="jeju_content">
+          <div class="jeju_location_direction">
+            <span>서울</span><i class="fas fa-long-arrow-alt-right"></i><span>제주</span>
+          </div>
+          <div class="jeju_date">
+            <span>6월 20일 - 6월 25일</span>
+          </div>
+          <div class="jeju_price">
+            <span>37,500 ~</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 신혼여행 -->
+  <section class="honeymoon_trip">
+    <div class="honeymoon_title">신혼여행</div>
+    <div class="honeymoon_container">
+      <div class="honeymoon_box">
+        <img src="/images/guam1.jfif">
+        <div class="honeymoon_content">
+          <div class="honeymoon_location_direction">
+            <span>서울</span><i class="fas fa-long-arrow-alt-right"></i><span>괌</span>
+          </div>
+          <div class="honeymoon_date">
+            <span>6월 20일 - 6월 25일</span>
+          </div>
+          <div class="honeymoon_price">
+            <span>437,500 ~</span>
+          </div>
+        </div>
+      </div>
+      <div class="honeymoon_box">
+        <img src="/images/guam2.jfif">
+        <div class="honeymoon_content">
+          <div class="honeymoon_location_direction">
+            <span>서울</span><i class="fas fa-long-arrow-alt-right"></i><span>괌</span>
+          </div>
+          <div class="honeymoon_date">
+            <span>6월 20일 - 6월 25일</span>
+          </div>
+          <div class="honeymoon_price">
+            <span>437,500 ~</span>
+          </div>
+        </div>
+      </div>
+      <div class="honeymoon_box">
+        <img src="/images/guam3.jfif">
+        <div class="honeymoon_content">
+          <div class="honeymoon_location_direction">
+            <span>서울</span><i class="fas fa-long-arrow-alt-right"></i><span>괌</span>
+          </div>
+          <div class="honeymoon_date">
+            <span>6월 20일 - 6월 25일</span>
+          </div>
+          <div class="honeymoon_price">
+            <span>437,500 ~</span>
+          </div>
+        </div>
+      </div>
+      <div class="honeymoon_box">
+        <img src="/images/guam4.jfif">
+        <div class="honeymoon_content">
+          <div class="honeymoon_location_direction">
+            <span>서울</span><i class="fas fa-long-arrow-alt-right"></i><span>괌</span>
+          </div>
+          <div class="honeymoon_date">
+            <span>6월 20일 - 6월 25일</span>
+          </div>
+          <div class="honeymoon_price">
+            <span>437,500 ~</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 탑버튼 -->
+  <section class="top_btn">
+    <img src="../images/btn_top.png" alt="탑버튼" id="topBtn">
+  </section>
+  <!-- footer -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="div_terms ml_0">
+        <a class="btn_terms ml_0 pl_0" href="#">이용 약관</a>
+        <a class="btn_terms bold" href="#">개인정보 처리방침</a>
+        <a class="btn_terms" href="#">취소 및 환불 정책</a>
+      </div>
+      <div class="div_service">
+        <a class="btn_service" href="#">고객센터</a>
+        <a class="btn_service mr_0 pr_0" href="#">FAQ</a>
+      </div>
+      <div class="div_cpy_info">
+        <p>
+          상호명 (주)쿨타임트립 | 대표 채동혁 | 개인정보보호책임자 곽경록<br>
+          주소 서울 강남구 선릉로 428, 위워크 2층 | 이메일 help@cooltimetrip.com | 마케팅/제휴 문의 marketing@cooltimetrip.com
+        </p>
+        <p>
+          쿨타임트립은 통신판매중개자이며 통신판매의 당사자가 아닙니다. 따라서 상품·거래정보 및 거래에 대하여 책임을 지지않습니다.
+        </p>
+      </div>
+      <img class="lg_title_gray" src="../images/lg_title_gray.png" alt="">
+    </div>
+  </footer>
+</body>
+</html>
