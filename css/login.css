@@ -98,10 +98,11 @@
 }
 
 /* 로그인 상태 유지 */
-.section .div_login_savefind p{
+.section .div_login_savefind label{
     margin-left: 10px;
     color: #666666;
     font-size: 14px;
+    cursor: pointer;
 }
 
 /* 로그인 상태 유지 - 체크 박스 */
