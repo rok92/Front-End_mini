@@ -28,7 +28,7 @@
   border-radius: 10px;
   background-color: #FFFFFF;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 600;
   outline: none;
 }
 
@@ -231,6 +231,7 @@
   font-weight: 200;
   text-align: center;
   line-height: 38px;
+  cursor: pointer;
 }
 
 .sec_search_list .popup_person .div_person_count .box_plus_minus a.btn_count_active{

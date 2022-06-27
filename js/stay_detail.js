@@ -84,7 +84,6 @@ $(document).ready(function () {
     // 2명부터 -버튼 활성화
     if(adultCount > 1){
       $('#adultMinusBtn').addClass('btn_count_active');
-      $('#adultMinusBtn').attr('href', '#');
     }
     $('#adultCount').text(adultCount);
     $('#lodPersonCount').attr('value', '성인'+adultCount+', 어린이'+childCount);
@@ -96,7 +95,6 @@ $(document).ready(function () {
     // 1명이 된다면 -버튼 비활성화
     if(adultCount == 1){
       $('#adultMinusBtn').removeClass('btn_count_active');
-      $('#adultMinusBtn').removeAttr('href');
     }else if(adultCount == 0){
       // 만약에 비활성화 상태여도 누른다면,
       alert("성인은 최소 1명 이상이어야 합니다");
@@ -113,7 +111,6 @@ $(document).ready(function () {
     // 1명부터 -버튼 활성화
     if(childCount > 0){
       $('#childMinusBtn').addClass('btn_count_active');
-      $('#childMinusBtn').attr('href', '#');
     }
     $('#childCount').text(childCount);
     $('#lodPersonCount').attr('value', '성인'+adultCount+', 어린이'+childCount);
@@ -125,7 +122,6 @@ $(document).ready(function () {
     // 어린이는 0명이 된다면 -버튼 비활성화
     if(childCount == 0){
       $('#childMinusBtn').removeClass('btn_count_active');
-      $('#childMinusBtn').removeAttr('href');
     }else if(childCount == -1){
       // -1명은 존재하지 않기 때문에
       alert("0명 이상이어야 합니다");

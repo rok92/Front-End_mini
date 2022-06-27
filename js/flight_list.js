@@ -109,7 +109,6 @@ $(document).ready(function(){
     adultFlightCount++;
     if(adultFlightCount > 1){
       $('#adultFlightMinusBtn').addClass('btn_count_active');
-      $('#adultFlightMinusBtn').attr('href', '#');
     }
     $('#adultFlightCount').text(adultFlightCount);
     $('#flightPersonCount').attr('value', (adultFlightCount+childFlightCount+babyFlightCount) + '명, ' + sitRadioCheck);
@@ -120,7 +119,6 @@ $(document).ready(function(){
     adultFlightCount--;
     if(adultFlightCount == 1){
       $('#adultFlightMinusBtn').removeClass('btn_count_active');
-      $('#adultFlightMinusBtn').removeAttr('href');
     }else if(adultFlightCount == 0){
       alert("성인은 최소 1명 이상이어야 합니다");
       adultFlightCount = 1;
@@ -134,7 +132,6 @@ $(document).ready(function(){
     childFlightCount++;
     if(childFlightCount > 0){
       $('#childFlightMinusBtn').addClass('btn_count_active');
-      $('#childFlightMinusBtn').attr('href', '#');
     }
     $('#childFlightCount').text(childFlightCount);
     $('#flightPersonCount').attr('value', (adultFlightCount+childFlightCount+babyFlightCount) + '명, ' + sitRadioCheck);
@@ -145,7 +142,6 @@ $(document).ready(function(){
     childFlightCount--;
     if(childFlightCount == 0){
       $('#childFlightMinusBtn').removeClass('btn_count_active');
-      $('#childFlightMinusBtn').removeAttr('href');
     }else if(childFlightCount == -1){
       alert("0명 이상이어야 합니다");
       childFlightCount = 0;
@@ -159,7 +155,6 @@ $(document).ready(function(){
     babyFlightCount++;
     if(babyFlightCount > 0){
       $('#babyFlightMinusBtn').addClass('btn_count_active');
-      $('#babyFlightMinusBtn').attr('href', '#');
     }
     $('#babyFlightCount').text(babyFlightCount);
     $('#flightPersonCount').attr('value', (adultFlightCount+childFlightCount+babyFlightCount) + '명, ' + sitRadioCheck);
@@ -170,7 +165,6 @@ $(document).ready(function(){
     babyFlightCount--;
     if(babyFlightCount == 0){
       $('#babyFlightMinusBtn').removeClass('btn_count_active');
-      $('#babyFlightMinusBtn').removeAttr('href');
     }else if(babyFlightCount == -1){
       alert("0명 이상이어야 합니다");
       babyFlightCount = 0;

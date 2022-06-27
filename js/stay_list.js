@@ -113,7 +113,6 @@ $(document).ready(function(){
     adultListCount++;
     if(adultListCount > 1){
       $('#adultListMinusBtn').addClass('btn_count_active');
-      $('#adultListMinusBtn').attr('href', '#');
     }
     $('#adultListCount').text(adultListCount);
     $('#lodListPersonCount').attr('value', '성인'+adultListCount+', 어린이'+childListCount);
@@ -124,7 +123,6 @@ $(document).ready(function(){
     adultListCount--;
     if(adultListCount == 1){
       $('#adultListMinusBtn').removeClass('btn_count_active');
-      $('#adultListMinusBtn').removeAttr('href');
     }else if(adultListCount == 0){
       alert("성인은 최소 1명 이상이어야 합니다");
       adultListCount = 1;
@@ -138,7 +136,6 @@ $(document).ready(function(){
     childListCount++;
     if(childListCount > 0){
       $('#childListMinusBtn').addClass('btn_count_active');
-      $('#childListMinusBtn').attr('href', '#');
     }
     $('#childListCount').text(childListCount);
     $('#lodListPersonCount').attr('value', '성인'+adultListCount+', 어린이'+childListCount);
@@ -149,7 +146,6 @@ $(document).ready(function(){
     childListCount--;
     if(childListCount == 0){
       $('#childListMinusBtn').removeClass('btn_count_active');
-      $('#childListMinusBtn').removeAttr('href');
     }else if(childListCount == -1){
       alert("0명 이상이어야 합니다");
       childListCount = 0;
