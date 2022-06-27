@@ -118,6 +118,11 @@
   border-bottom: 4px solid #48A0FF;
 }
 
+.header nav ul li:hover{
+  border-bottom: 4px solid #48A0FF;
+}
+
+
 .header nav ul li a{
   display: flex;
   align-items: center;

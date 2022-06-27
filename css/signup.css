@@ -130,14 +130,14 @@
 .div_signup_panel .div_check_phone button{
   width: 76px;
   height: 50px;
-  margin-left: 10px;
+  margin-left: 5px;
 }
 
 .div_signup_panel .div_agreeTos{
   display: flex;
   flex-direction: column;
   align-content: center;
-  margin-top: 40px;
+  margin-top: 10px;
 }
 
 .div_agreeTos .div_agreeTos_total{
@@ -162,7 +162,7 @@
   flex-direction: column;
   border: 1px solid #DDDDDD;
   padding: 10px;
-  margin-top: 10px;
+  margin-top: 0px;
 }
 
 .div_agreeTos .div_agreeTos_sub div{
@@ -207,7 +207,7 @@
 .div_signup_button button{
   width: 350px;
   height: 50px;
-  margin-top: 30px;
+  margin-top: 0px;
   margin-bottom: 70px;
 }
 
