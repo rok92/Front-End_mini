@@ -103,6 +103,31 @@ $(".btn_top").click(function () {
   return false;
 });
 
+// 출발지 팝업 내 검색하기 버튼 클릭 시
+$('#popupLodSearchBtn').click(function(){
+  var txt = $('#popupLodSearch').val() + " (ICN)";
+  if(txt == ''){
+    alert("여행지를 입력하세요");
+  }else{
+    $('#depart_loacation').attr('value', txt);
+    $('#depart_loacation').removeClass('txt_gray');
+    $('.depart_popup').css('display','none');
+  }
+});
 
+// 도착지 팝업 내 검색하기 버튼 클릭 시
+$('#popupLodSearchBtn2').click(function(){
+  var txt = $('#popupLodSearch2').val() + " (GUM)";
+  if(txt == ''){
+    alert("여행지를 입력하세요");
+  }else{
+    $('#arrive_location').attr('value', txt);
+    $('#arrive_location').removeClass('txt_gray');
+    $('.arrive_popup').css('display','none');
+  }
+});
 
-
+// 다음 페이지로 이동
+$('.air_search').click(function(){
+  location.href = 'flight_list.html';
+});

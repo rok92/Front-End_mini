@@ -15,7 +15,7 @@ $(document).ready(function(){
   $(function() {
     $('#flightDatepicker').daterangepicker({
       startDate: "06/27/2022",
-      endDate: "06/30/2022",
+      endDate: "07/01/2022",
       autoUpdateInput: false,
       autoApply: true,
       minDate: today,

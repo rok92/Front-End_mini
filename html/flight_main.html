@@ -53,14 +53,14 @@
         <div class="location_box">
           <div class="depart_location">
             <span class="air_reservation_subtitle">출발</span>
-            <button class="departure_location" id="depart_loacation">출발지를 선택하세요</button>
+            <input type="text" class="departure_location txt_gray" id="depart_loacation" value="출발지를 선택하세요">
           </div>
           <div class="depart_popup" id="depart_pop">
             <div class="popup_wrap">
               <p class="depart_popup_title">출발 도시/공항 선택</p>
               <div class="depart_popup_search_box">
-                <input type="text" placeholder="도시를 검색하세요">
-                <button>검색하기</button>
+                <input id="popupLodSearch" type="text" placeholder="도시를 검색하세요">
+                <button id="popupLodSearchBtn">검색하기</button>
               </div>
               <p class="depart_popup_subtitle">주요도시 바로 선택</p>
               <table class="location_table">
@@ -162,14 +162,14 @@
           <i class="fa fa-exchange roundArrow" aria-hidden="true"></i>
           <div class="arrive_location">
             <span class="air_reservation_subtitle">도착</span>
-          <button class="arrival_location" id="arrive_location">도착지를 선택하세요</button>
+            <input type="text" class="arrival_location txt_gray" id="arrive_location" value="도착지를 선택하세요">
           </div>
           <div class="arrive_popup" id="arrive_pop">
             <div class="popup_wrap">
               <p class="arrive_popup_title">도착 도시/공항 선택</p>
               <div class="arrive_popup_search_box">
-                <input type="text" placeholder="도시를 검색하세요">
-                <button>검색하기</button>
+                <input id="popupLodSearch2" type="text" placeholder="도시를 검색하세요">
+                <button id="popupLodSearchBtn2">검색하기</button>
               </div>
               <p class="arrive_popup_subtitle">주요도시 바로 선택</p>
               <table class="location_table">
