@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>쿨탐찼다! 여행가자! - 쿨타임트립</title>
+  <link rel="icon" href="../images/ico_logo.ico" />
+  <script defer type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+  <script defer type="text/javascript" src="../js/moment.min.js"></script>
+  <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+  <script defer src="https://kit.fontawesome.com/c1d526d71a.js" crossorigin="anonymous"></script>
+  <script defer src="../js/mypage.js"></script>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/mypage.css">
+</head>
+
+<body>
+  <header class="header">
+    <!-- 헤더 wrap -->
+    <div class="wrap">
+      <div>
+        <img class="lg_title" src="../images/lg_title.png" alt="로고">
+        <!-- 로그인/회원가입 > 마이페이지 -->
+        <div class="div_account">
+          <a class="btn_account" href="#">로그인</a>
+          <a class="btn_account txt_blue mr_0 pr_0" href="#">회원가입</a>
+          <a class="btn_account btn_mypage" href="#">마이페이지</a>
+        </div>
+      </div>
+      <nav>
+        <!-- 항공/숙박/렌터카 -->
+        <ul>
+          <li class="nav_active"><a href="#"><img class="ic_nav" src="../images/ic_plane.png" alt="항공"><span>항공</span></a></li>
+          <li><a href="#"><img class="ic_nav" src="../images/ic_lodgment.png" alt="숙박"><span>숙박</span></a></li>
+          <li><a href="#"><img class="ic_nav" src="../images/ic_rent.png" alt="렌터카"><span>렌터카</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="wrap">
+    <div class="mypage_title_box">
+      <span>내 여행</span>
+    </div>
+    <section class="mypage_content_container">
+      <div class="mypage_nav" id="mypageNav">
+        <a href="#"><div class="mypage_nav_hover1" id="myBookedAirline"><p>예약한 항공권</p></div></a>
+        <a href="#"><div id="myBookedHotel"><p>예약한 숙박</p></div></a>
+        <a href="#"><div id="myCheckList"><p>여행 필수 체크리스트</p></div></a>
+        <a href="#"><div class="mypage_nav_hover2"><p>지난 여행기록</p></div></a>
+      </div>
+      <div class="mypage_content_box">
+        <div class="checklist_link_box" id="check_link">
+          <div class="checklist_link_text">
+            <div>여행갈 때 필요한 물건은 다 챙기셨나요?</div>
+            <div>꼭 필요한 물건들을 자동으로 입력해 드릴게요! 여기에 나의 잇템을 추가하면 나만의 체크리스트 완성 :)</div>
+          </div>
+          <a href="#"><img src="../images/btn_right.png"></a>
+        </div>
+
+        <!-- 마이페이지 항공리스트 -->
+        <section class="reservation_air_container" id="booked_air_page">
+          <div class="reservation_air_box">
+            <div class="reservation_air_contents">
+              <div>
+                <div class="reservation_air_content1">
+                  <div class="reservation_airline">
+                    <img src="../images/jinair_logo.png" alt="진에어 로고">
+                    <div>진에어</div>
+                  </div>
+                  <div class="air_fly">
+                    <div class="air_fly_time1">
+                      <span>09:40</span><img src="../images/ic_arrow_right_plane.png" alt="화살표"><span>15:05</span>
+                    </div>
+                    <div class="air_fly_time2">
+                      <span>ICN</span><span>04시간 25분</span><span>GUM</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="reservation_air_content2">
+                  <div class="reservation_airline">
+                    <img src="../images/jinair_logo.png" alt="진에어 로고">
+                    <div>진에어</div>
+                  </div>
+                  <div class="air_fly">
+                    <div class="air_fly_time1">
+                      <span>09:40</span><img src="../images/ic_arrow_right_plane.png" alt="화살표"><span>15:05</span>
+                    </div>
+                    <div class="air_fly_time2">
+                      <span>ICN</span><span>04시간 40분</span><span>GUM</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="air_total_pay">
+                <div>총 결제 금액</div>
+                <div>455,700<span>원</span></div>
+                <div>
+                  <a href="#"><span class="detail_info_link">상세 정보 보기</span><i class="fas fa-chevron-right right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="reservation_air_box">
+            <div class="reservation_air_contents">
+              <div>
+                <div class="reservation_air_content1">
+                  <div class="reservation_airline">
+                    <img src="../images/jinair_logo.png" alt="진에어 로고">
+                    <div>진에어</div>
+                  </div>
+                  <div class="air_fly">
+                    <div class="air_fly_time1">
+                      <span>09:40</span><img src="../images/ic_arrow_right_plane.png" alt="화살표"><span>15:05</span>
+                    </div>
+                    <div class="air_fly_time2">
+                      <span>ICN</span><span>04시간 25분</span><span>GUM</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="reservation_air_content2">
+                  <div class="reservation_airline">
+                    <img src="../images/jinair_logo.png" alt="진에어 로고">
+                    <div>진에어</div>
+                  </div>
+                  <div class="air_fly">
+                    <div class="air_fly_time1">
+                      <span>09:40</span><img src="../images/ic_arrow_right_plane.png" alt="화살표"><span>15:05</span>
+                    </div>
+                    <div class="air_fly_time2">
+                      <span>ICN</span><span>04시간 40분</span><span>GUM</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="air_total_pay">
+                <div>총 결제 금액</div>
+                <div>455,700<span>원</span></div>
+                <div>
+                  <a href="#"><span class="detail_info_link">상세 정보 보기</span><i class="fas fa-chevron-right right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="reservation_air_box">
+            <div class="reservation_air_contents">
+              <div>
+                <div class="reservation_air_content1">
+                  <div class="reservation_airline">
+                    <img src="../images/jinair_logo.png" alt="진에어 로고">
+                    <div>진에어</div>
+                  </div>
+                  <div class="air_fly">
+                    <div class="air_fly_time1">
+                      <span>09:40</span><img src="../images/ic_arrow_right_plane.png" alt="화살표"><span>15:05</span>
+                    </div>
+                    <div class="air_fly_time2">
+                      <span>ICN</span><span>04시간 25분</span><span>GUM</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="reservation_air_content2">
+                  <div class="reservation_airline">
+                    <img src="../images/jinair_logo.png" alt="진에어 로고">
+                    <div>진에어</div>
+                  </div>
+                  <div class="air_fly">
+                    <div class="air_fly_time1">
+                      <span>09:40</span><img src="../images/ic_arrow_right_plane.png" alt="화살표"><span>15:05</span>
+                    </div>
+                    <div class="air_fly_time2">
+                      <span>ICN</span><span>04시간 40분</span><span>GUM</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="air_total_pay">
+                <div>총 결제 금액</div>
+                <div>455,700<span>원</span></div>
+                <div>
+                  <a href="#"><span class="detail_info_link">상세 정보 보기</span><i class="fas fa-chevron-right right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 마이페이지 예약한 숙박 -->
+        <section class="reservation_hotel_container" id="booked_hotel_page">
+          <div class="reservation_hotel_box">
+            <img src="../images/mjeju.jpg" alt="메종글래드 제주">
+            <div class="reservation_hotel_contents">
+              <div class="reservation_hotel_content1">
+                <div>메종 글래드 제주</div>
+                <div>4성급 · 제주시 연동 노연로 80</div>
+                <div><i class="fas fa-star star"></i></i><span class="star_grade">4.5</span><span class="customer_num">(131)</span></div>
+              </div>
+              <div class="reservation_hotel_content2">
+                <div>178,700원</div>
+                <div>
+                  <a href="#"><span class="detail_info_link">상세 정보 보기</span><i class="fas fa-chevron-right right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="reservation_hotel_box">
+            <img src="../images/mjeju.jpg" alt="메종글래드 제주">
+            <div class="reservation_hotel_contents">
+              <div class="reservation_hotel_content1">
+                <div>메종 글래드 제주</div>
+                <div>4성급 · 제주시 연동 노연로 80</div>
+                <div><i class="fas fa-star star"></i></i><span class="star_grade">4.5</span><span class="customer_num">(131)</span></div>
+              </div>
+              <div class="reservation_hotel_content2">
+                <div>178,700원</div>
+                <div>
+                  <a href="#"><span class="detail_info_link">상세 정보 보기</span><i class="fas fa-chevron-right right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="reservation_hotel_box">
+            <img src="../images/mjeju.jpg" alt="메종글래드 제주">
+            <div class="reservation_hotel_contents">
+              <div class="reservation_hotel_content1">
+                <div>메종 글래드 제주</div>
+                <div>4성급 · 제주시 연동 노연로 80</div>
+                <div><i class="fas fa-star star"></i></i><span class="star_grade">4.5</span><span class="customer_num">(131)</span></div>
+              </div>
+              <div class="reservation_hotel_content2">
+                <div>178,700원</div>
+                <div>
+                  <a href="#"><span class="detail_info_link">상세 정보 보기</span><i class="fas fa-chevron-right right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 마이페이지 체크 리스트 -->
+        <section class="check_list_container" id="check_list">
+          <div class="check_list_box">
+            <div class="check_list_title">
+              체크리스트
+            </div>
+            <div class="check_list_contents">
+              <div class="check_list_input">
+                <div><i class="fa fa-circle-o default_circle" aria-hidden="true"></i></div>
+                <input type="text" id="list_input" onkeyup="enter()" placeholder="나만의 체크리스트를 완성해보세요"/>
+                <button id="add_btn"><i class='fas fa-plus new_list'></i></button>
+              </div>
+              <div id="check_list_board">
+
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </section>  
+    <!-- footer -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="div_terms ml_0">
+        <a class="btn_terms ml_0 pl_0" href="#">이용 약관</a>
+        <a class="btn_terms bold" href="#">개인정보 처리방침</a>
+        <a class="btn_terms" href="#">취소 및 환불 정책</a>
+      </div>
+      <div class="div_service">
+        <a class="btn_service" href="#">고객센터</a>
+        <a class="btn_service mr_0 pr_0" href="#">FAQ</a>
+      </div>
+      <div class="div_cpy_info">
+        <p>
+          상호명 (주)쿨타임트립 | 대표 채동혁 | 개인정보보호책임자 곽경록<br>
+          주소 서울 강남구 선릉로 428, 위워크 2층 | 이메일 help@cooltimetrip.com | 마케팅/제휴 문의 marketing@cooltimetrip.com
+        </p>
+        <p>
+          쿨타임트립은 통신판매중개자이며 통신판매의 당사자가 아닙니다. 따라서 상품·거래정보 및 거래에 대하여 책임을 지지않습니다.
+        </p>
+      </div>
+      <img class="lg_title_gray" src="../images/lg_title_gray.png" alt="">
+    </div>
+  </footer>
+</body>
+</html>

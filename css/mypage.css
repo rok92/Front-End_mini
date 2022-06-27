@@ -1,0 +1,356 @@
+.header .div_account .btn_mypage{
+  display: inline-block;
+}
+.btn_account, .mr_0{
+  display: none;
+}
+
+button{
+  background-color: transparent;
+  border-style: none;;
+}
+
+.mypage_title_box{
+  height: 162px;
+}
+
+.mypage_title_box span{
+  position: relative;
+  top: 101px;
+  left: 0;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.mypage_content_container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.mypage_nav{
+  height: 312px;
+  width: 310px;
+  border: 1px solid #DDDDDD;
+  border-radius: 5px;
+}
+
+.mypage_nav div{
+  display: flex;
+  align-items: center;
+  height: 25%;
+  padding-left: 40px;
+}
+.mypage_nav div p{
+  color: #222222;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.mypage_nav div:hover{
+  border-left: 8px solid #48A0FF;
+  background-color: #eeeeee;
+}
+.mypage_nav_hover1:hover{
+  border-radius: 5px 5px 0 0;
+}
+.mypage_nav_hover2:hover{
+  border-radius: 0 0 5px 5px;
+}
+
+.checklist_link_box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 120px;
+  width: 880px;
+  padding: 32px 40px;
+  background-color: #F9F9F9;
+  cursor: pointer;
+}
+
+.checklist_link_text div:nth-child(1){
+  color: #222222;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+.checklist_link_text div:nth-child(2){
+  color: #222222;
+  font-size: 16px;
+}
+
+.checklist_link_box img{
+  height: 18px;
+  width: 10px;
+  color: #999999;
+}
+
+/* 각 메뉴의 컨테이너 밑에 여백주기 */
+.reservation_air_container, .reservation_hotel_container, .check_list_container{
+  margin-bottom: 344px;
+}
+
+/* 나의 항공 예약 내역 */
+.reservation_air_box{
+  width: 880px;
+  height: 200px;
+}
+
+.reservation_air_contents{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 880px;
+  height: 200px;
+  border: 1px solid #DDDDDD;
+  border-radius: 5px;
+  margin-top: 20px;
+  padding: 45px 40px;
+}
+
+.reservation_airline{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100px;
+}
+
+.reservation_airline img{
+  width: 40px;
+}
+.reservation_airline div{
+  width: 42px;
+  font-size: 16px;
+  color: #222222;
+  margin-left: 15px;
+}
+
+.reservation_air_content1, .reservation_air_content2{
+  display: flex;
+  justify-content: space-between;
+  width: 445px;
+}
+
+.reservation_air_content1{
+  margin-bottom: 30px;
+}
+
+.air_fly{
+  display: flex;
+  flex-direction: column;
+}
+
+.air_fly_time1 span{
+  font-size: 20px;
+  font: 20px;
+  font-weight: 600;
+}
+.air_fly_time1 img{
+  width: 88px;
+  margin: 0 28px;
+}
+
+.air_fly_time2 span{
+  font-size: 14px;
+  font-weight: 300;
+  margin-left: 35.5px;
+}
+
+.air_total_pay{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.air_total_pay > div:nth-of-type(1){
+  margin-bottom: 5px;
+}
+.air_total_pay > div:nth-of-type(2){
+  margin-bottom: 12px;
+}
+
+.air_total_pay > div{
+  font-size: 18px;
+}
+.air_total_pay div:nth-of-type(2){
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.air_total_pay div:nth-of-type(2) span{
+  font-weight: normal;
+}
+
+.air_total_pay div:nth-of-type(3) span{
+  font-size: 16px;
+}
+
+/* 상세 정보 보기 */
+.detail_info_link{
+  font-size: 16px;
+  color:#222222;
+}
+
+.right{
+  font-size: 16px;
+  color: #222222;
+  margin-left: 7.5px;
+}
+
+
+
+/* 여기서부터는 숙박 예약 내역 */
+.reservation_hotel_box{
+  display: flex;
+  height: 200px;
+  width: 880px;
+  border: 1px solid #DDDDDD;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.reservation_hotel_box img{
+  width: 330px;
+  height: 200px;
+  border-radius: 5px 0 0 5px;
+}
+
+.reservation_hotel_contents{
+  padding: 30px 30px 30px 40px;
+}
+
+.reservation_hotel_content2{
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+}
+
+.reservation_hotel_content1 div:nth-child(1){
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.reservation_hotel_content1 div:nth-child(2){
+  font-size: 16px;
+  color: #aaaaaa;
+  margin-bottom: 10px;
+}
+
+.star{
+  font-size: 20px;
+  color: #48A0FF;
+}
+
+.star_grade{
+  font-size: 18px;
+  font-weight: 600;
+  margin-right: 5px;
+  margin-left: 10px;
+}
+
+.customer_num{
+  font-size: 18px;
+  color: #999999;
+}
+
+.reservation_hotel_content2{
+  display: flex;
+  margin-top: 29px;
+}
+
+.reservation_hotel_content2 div:nth-child(1){
+  font-size: 24px;
+  font-weight: bold;
+}
+.reservation_hotel_content2 .right{
+  margin-right: 15px;
+}
+
+/* 여기서 부터는 체크리스트 */
+.check_list_box{
+  width: 900px;
+}
+.check_list_title{
+  border-bottom: 1px solid #DDDDDD;
+  padding-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #222222;
+}
+
+.check_list_content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 59px;
+  border-bottom: 1px solid #DDDDDD;
+}
+.list_content{
+  font-size: 16px;
+}
+
+.check_list_input{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 59px;
+  border-bottom: 1px solid #DDDDDD;
+}
+.check_list_input input{
+  border-style: none;
+  outline: none;
+  width: 776px;
+  height: 100%;
+  font-size: 16px;
+}
+
+.check_toggle, .list_content, .empty_circle{
+  margin-left: 20px;
+}
+
+.comTrue{
+  text-decoration: line-through;
+}
+
+.list_delete{
+  margin-right: 20px;
+  color: #DDDDDD;
+  font-size: 20px;
+  cursor: pointer;
+}
+.list_delete:hover{
+  color: #aaaaaa;
+}
+
+.check_toggle{
+  color: #48A0FF;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.empty_circle, .default_circle{
+  color: #DDDDDD;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.check_list_input > button{
+  cursor: pointer;
+}
+.new_list{
+  color: #48A0FF;
+  font-size: 18px;
+}
+
+
+
+
+/* 여기부터는 예약된 숙박 메뉴 누르면 화면 바뀌는 css */
+
+section.reservation_hotel_container, section.check_list_container{
+  display: none;
+}
+
+
+
