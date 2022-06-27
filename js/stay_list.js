@@ -113,6 +113,7 @@ $(document).ready(function(){
     adultListCount++;
     if(adultListCount > 1){
       $('#adultListMinusBtn').addClass('btn_count_active');
+      $('#adultListMinusBtn').attr('href', '#');
     }
     $('#adultListCount').text(adultListCount);
     $('#lodListPersonCount').attr('value', '성인'+adultListCount+', 어린이'+childListCount);
@@ -123,6 +124,7 @@ $(document).ready(function(){
     adultListCount--;
     if(adultListCount == 1){
       $('#adultListMinusBtn').removeClass('btn_count_active');
+      $('#adultListMinusBtn').removeAttr('href');
     }else if(adultListCount == 0){
       alert("성인은 최소 1명 이상이어야 합니다");
       adultListCount = 1;
@@ -136,6 +138,7 @@ $(document).ready(function(){
     childListCount++;
     if(childListCount > 0){
       $('#childListMinusBtn').addClass('btn_count_active');
+      $('#childListMinusBtn').attr('href', '#');
     }
     $('#childListCount').text(childListCount);
     $('#lodListPersonCount').attr('value', '성인'+adultListCount+', 어린이'+childListCount);
@@ -146,6 +149,7 @@ $(document).ready(function(){
     childListCount--;
     if(childListCount == 0){
       $('#childListMinusBtn').removeClass('btn_count_active');
+      $('#childListMinusBtn').removeAttr('href');
     }else if(childListCount == -1){
       alert("0명 이상이어야 합니다");
       childListCount = 0;
@@ -181,5 +185,18 @@ $(document).ready(function(){
       $('#arrowDown').toggleClass('fa-angle-down');
       $('#arrowDown').toggleClass('fa-angle-up');
     });
+  });
+
+  // 페이지 이동
+  $('.wrap_result_hotel_info').click(function(){
+    location.href='stay_detail.html';
+  });
+
+  // 탑 버튼 눌렀을 때 최상단으로
+  $(".btn_top").click(function () {
+    $('html, body').animate({
+        scrollTop: 0
+    }, 400);
+    return false;
   });
 });

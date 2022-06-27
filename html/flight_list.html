@@ -28,19 +28,19 @@
     <!-- 헤더 wrap -->
     <div class="wrap">
       <div>
-        <img class="lg_title" src="../images/lg_title.png" alt="로고">
+        <img class="lg_title" src="../images/lg_title.png" alt="로고" onclick="location.href='flight_main.html'">
         <!-- 로그인/회원가입 > 마이페이지 -->
         <div class="div_account">
-          <a class="btn_account" href="#">로그인</a>
-          <a class="btn_account txt_blue mr_0 pr_0" href="#">회원가입</a>
-          <a class="btn_account btn_mypage" href="#">마이페이지</a>
+          <a class="btn_account" href="login.html">로그인</a>
+          <a class="btn_account txt_blue mr_0 pr_0" href="signup.html">회원가입</a>
+          <a class="btn_account btn_mypage" href="mypage.html">마이페이지</a>
         </div>
       </div>
       <nav>
         <!-- 항공/숙박/렌터카 -->
         <ul>
-          <li class="nav_active"><a href="#"><img class="ic_nav" src="../images/ic_plane.png" alt="항공"><span>항공</span></a></li>
-          <li><a href="#"><img class="ic_nav" src="../images/ic_lodgment.png" alt="숙박"><span>숙박</span></a></li>
+          <li class="nav_active"><a href="flight_main.html"><img class="ic_nav" src="../images/ic_plane.png" alt="항공"><span>항공</span></a></li>
+          <li><a href="stay_main.html"><img class="ic_nav" src="../images/ic_lodgment.png" alt="숙박"><span>숙박</span></a></li>
           <li><a href="#"><img class="ic_nav" src="../images/ic_rent.png" alt="렌터카"><span>렌터카</span></a></li>
         </ul>
       </nav>
@@ -120,7 +120,7 @@
             <div class="box_plus_minus">
               <a id="adultFlightMinusBtn" class="btn_popup_count">-</a>
               <span id="adultFlightCount" class="popup_count_person">1</span>
-              <a id="adultFlightPlusBtn" class="btn_popup_count btn_adult_plus btn_count_active">+</a>
+              <a href="#" id="adultFlightPlusBtn" class="btn_popup_count btn_adult_plus btn_count_active">+</a>
             </div>
           </div>
           <div class="div_person_count">
@@ -131,7 +131,7 @@
             <div class="box_plus_minus">
               <a id="childFlightMinusBtn" class="btn_popup_count">-</a>
               <span id="childFlightCount" class="popup_count_person">0</span>
-              <a id="childFlightPlusBtn" class="btn_popup_count btn_count_active">+</a>
+              <a href="#" id="childFlightPlusBtn" class="btn_popup_count btn_count_active">+</a>
             </div>
           </div>
           <div class="div_person_count">
@@ -142,7 +142,7 @@
             <div class="box_plus_minus">
               <a id="babyFlightMinusBtn" class="btn_popup_count">-</a>
               <span id="babyFlightCount" class="popup_count_person">0</span>
-              <a id="babyFlightPlusBtn" class="btn_popup_count btn_adult_plus btn_count_active">+</a>
+              <a href="#" id="babyFlightPlusBtn" class="btn_popup_count btn_adult_plus btn_count_active">+</a>
             </div>
           </div>
           <div class="popup_person_radio">
@@ -232,7 +232,7 @@
                 <tr>
                   <td><span class="start_time">09:40</span></td>
                   <td><img src="../images/ic_arrow_right_plane.png"></td>
-                  <td><span class="end_time">09:40</span></td>
+                  <td><span class="end_time">15:05</span></td>
                 </tr>
                 <tr>
                   <td><span class="start_airport">ICN</span></td>
@@ -248,12 +248,12 @@
                 <tr>
                   <td><span class="start_time">09:40</span></td>
                   <td><img src="../images/ic_arrow_right_plane.png"></td>
-                  <td><span class="end_time">09:40</span></td>
+                  <td><span class="end_time">15:20</span></td>
                 </tr>
                 <tr>
-                  <td><span class="start_airport">ICN</span></td>
-                  <td><span class="taken_time">04시간 25분</span></td>
-                  <td><span class="end_airport">GUM</span></td>
+                  <td><span class="start_airport">GUM</span></td>
+                  <td><span class="taken_time">04시간 40분</span></td>
+                  <td><span class="end_airport">ICN</span></td>
                 </tr>
               </table>
             </div>
@@ -355,7 +355,8 @@
       </section>
     </div>
   </div>
-
+  <!-- 탑 버튼 -->
+  <img class="btn_top" src="../images/btn_top.png">
   <!-- footer -->
   <footer class="footer mt_0">
     <div class="wrap">

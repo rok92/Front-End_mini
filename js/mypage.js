@@ -130,7 +130,13 @@ function randomIdGenerate(){
   return '_' + Math.random().toString(36).substr(2,9);
 }
 
-
+// 탑 버튼 눌렀을 때 최상단으로
+$(".btn_top").click(function () {
+  $('html, body').animate({
+      scrollTop: 0
+  }, 400);
+  return false;
+});
 
 
 

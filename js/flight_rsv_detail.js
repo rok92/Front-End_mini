@@ -97,9 +97,6 @@ $(document).ready(function () {
             alert("예약 규정을 읽고, 내용에 동의해주세요.");
             return false;
         }
-              
-        // 페이지 이동
-        location.href = 'flight_rsv.html';
     });
 
     // 각 입력칸에 마우스 올리거나 입력하려고 누르면 테두리 변경

@@ -9,6 +9,19 @@
 
 /* /////////////////////////////////////// */
 
+/* header */
+.header .div_account .btn_account{
+    margin: 0 10px;
+    padding:5px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    display: inline;
+}
+  
+.header .div_account .btn_mypage{
+    display: none;
+}
+
 /* section */
 
 .section .wrap{
@@ -232,4 +245,13 @@
   color: #48A0FF;
 }
 
+/* 탑 버튼 */
+.btn_top {
+    float: right;
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    right: 40px;
+    bottom: 40px;
+  }
 /* /////////////////////////////////////// */

@@ -28,7 +28,7 @@
   border-radius: 10px;
   background-color: #FFFFFF;
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 500;
   outline: none;
 }
 
@@ -231,7 +231,6 @@
   font-weight: 200;
   text-align: center;
   line-height: 38px;
-  cursor: pointer;
 }
 
 .sec_search_list .popup_person .div_person_count .box_plus_minus a.btn_count_active{
@@ -943,4 +942,23 @@
 
 .b_rb_lb_none{
   border-radius: 5px 5px 0 0;
+}
+
+/* 페이지 이동 커서 */
+.txt_flight_select{
+  cursor: pointer;
+}
+
+.wrap_result_hotel_info{
+  cursor: pointer;
+}
+
+/* 탑 버튼 */
+.btn_top {
+  float: right;
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  right: 40px;
+  bottom: 40px;
 }

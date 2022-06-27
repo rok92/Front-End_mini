@@ -78,6 +78,7 @@
 
 .header .lg_title{
   width:222px;
+  cursor: pointer;
 }
 
 /* 헤더 - 로그인/회원가입/마이페이지 */
@@ -86,14 +87,15 @@
 }
 
 .header .div_account .btn_account{
-  margin: 0 10px;
-  padding:5px 20px;
+  margin: 0;
+  padding: 0;
   font-size: 16px;
   font-weight: 600;
+  display: none;
 }
 
 .header .div_account .btn_mypage{
-  display: none;
+  display: block;
 }
 
 /* 헤더 - 네비게이션 */

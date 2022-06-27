@@ -43,7 +43,7 @@ $(document).ready(function(){
         if(input_id==user_id){
             if(input_pw==user_pw){
                 alert("로그인 되었습니다.");
-                location.href='index.html';// 메인페이지로 이동
+                location.href='flight_main.html';// 메인페이지로 이동
             } else{
                 // alert("비밀번호를 확인해주세요.");
                 $('.input_login_password').css('border', '1px solid #E65454');
@@ -56,5 +56,13 @@ $(document).ready(function(){
             $('.error_login_id').show();
             $('.error_login_password').hide();
         }
+    });
+
+    // 탑 버튼 눌렀을 때 최상단으로
+    $(".btn_top").click(function () {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 400);
+        return false;
     });
 });

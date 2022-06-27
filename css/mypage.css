@@ -352,5 +352,13 @@ section.reservation_hotel_container, section.check_list_container{
   display: none;
 }
 
-
+/* 탑 버튼 */
+.btn_top {
+  float: right;
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  right: 40px;
+  bottom: 40px;
+}
 
