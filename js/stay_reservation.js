@@ -24,7 +24,6 @@ $(document).ready(function(){
     if ($('.email_address_select').val() == "1") {
         if (exptext.test(email) == false) {
             alert("이메일 형식이 아닙니다. 다시 입력해주세요.");
-            $('.user_email2').val() = "";
             return false;
         }
     }
@@ -92,6 +91,33 @@ $(document).ready(function(){
   $('select').blur(function(){
     $(this).removeClass('bdblue');
   });
+
+  // select박스 이메일주소 값 text박스로 가져오기
+  // 이메일 주소를 선택했을 때 직접 입력 칸 초기화, 비활성화
+  $('#cusSel').change(function () {
+    $('#cusSel option:selected').each(function () {
+        if ($(this).val() == "") { //직접입력일 경우
+            $("#emailAddress").val("");
+            $("#emailAddress").attr("disabled", false);
+        } else { //직접입력이 아닐경우
+            $("#emailAddress").val($(this).text());
+            $("#emailAddress").attr("disabled", true);
+        }
+    });
+  });
+
+  $('#realSel').change(function () {
+    $('#realSel option:selected').each(function () {
+        if ($(this).val() == "") { //직접입력일 경우
+            $("#realAddress").val("");
+            $("#realAddress").attr("disabled", false);
+        } else { //직접입력이 아닐경우
+            $("#realAddress").val($(this).text());
+            $("#realAddress").attr("disabled", true);
+        }
+    });
+  });
+
 
   // 투숙객정보와 일치해요 버튼클릭하면
   $('.same_name').click(function() {
