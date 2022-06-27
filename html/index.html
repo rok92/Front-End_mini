@@ -12,7 +12,7 @@
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 
   <script defer src="https://kit.fontawesome.com/c1d526d71a.js" crossorigin="anonymous"></script>
-  <script defer src="../js/air_main.js"></script>
+  <script defer src="../js/flight_main.js"></script>
   <link rel="stylesheet" href="../css/common.css">
   <link rel="stylesheet" href="../css/main.css">
 </head>
@@ -22,19 +22,19 @@
     <!-- 헤더 wrap -->
     <div class="wrap">
       <div>
-        <img class="lg_title" src="../images/lg_title.png" alt="로고">
+        <img class="lg_title" src="../images/lg_title.png" alt="로고" onclick="location.href='index.html'">
         <!-- 로그인/회원가입 > 마이페이지 -->
         <div class="div_account">
-          <a class="btn_account" href="#">로그인</a>
-          <a class="btn_account txt_blue mr_0 pr_0" href="#">회원가입</a>
-          <a class="btn_account btn_mypage" href="#">마이페이지</a>
+          <a class="btn_account" href="login.html">로그인</a>
+          <a class="btn_account txt_blue mr_0 pr_0" href="signup.html">회원가입</a>
+          <a class="btn_account btn_mypage" href="mypage.html">마이페이지</a>
         </div>
       </div>
       <nav>
         <!-- 항공/숙박/렌터카 -->
         <ul>
-          <li class="nav_active"><a href="#"><img class="ic_nav" src="../images/ic_plane.png" alt="항공"><span>항공</span></a></li>
-          <li><a href="#"><img class="ic_nav" src="../images/ic_lodgment.png" alt="숙박"><span>숙박</span></a></li>
+          <li class="nav_active"><a href="index.html"><img class="ic_nav" src="../images/ic_plane.png" alt="항공"><span>항공</span></a></li>
+          <li><a href="stay_main.html"><img class="ic_nav" src="../images/ic_lodgment.png" alt="숙박"><span>숙박</span></a></li>
           <li><a href="#"><img class="ic_nav" src="../images/ic_rent.png" alt="렌터카"><span>렌터카</span></a></li>
         </ul>
       </nav>
@@ -542,10 +542,8 @@
       </div>
     </div>
   </section>
-  <!-- 탑버튼 -->
-  <section class="top_btn">
-    <img src="../images/btn_top.png" alt="탑버튼" id="topBtn">
-  </section>
+  <!-- 탑 버튼 -->
+  <img class="btn_top" src="../images/btn_top.png">
   <!-- footer -->
   <footer class="footer">
     <div class="wrap">
