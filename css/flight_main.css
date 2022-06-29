@@ -159,7 +159,6 @@ button.air_search:hover{
 /* 헤더 밑에 비행기 배경 */
 .air_background{
   position: relative;
-
 }
 
 .air_background img{
@@ -193,6 +192,73 @@ button.air_search:hover{
   margin: 0 0 28px 60px;
 }
 
+.recently_slide_container{
+  position: relative;
+}
+
+.recently_slide_box{
+  height: 130px;
+  overflow: hidden;
+}
+
+.recently_slide_box li{
+  width: 400px;
+  height: 120px;
+  float: left;
+  margin: 0 40px 12px 0;
+  border: 0.5px solid #AAAAAA;
+  padding: 17px 24px 16px 24px;
+}
+
+.recently_slide_controller span{
+  position: absolute;
+  top: 38%;
+}
+
+.recently_slide_controller span img{
+  width: 12px;
+  height: 24px;
+}
+
+.shuttle_close_line{
+  display: flex;
+  justify-content: space-between;
+}
+
+.recently_shuttle_way{
+  width: 50px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  border: 1px solid #48A0FF;
+  font-size: 14px;
+  font-weight: normal;
+  color: #48A0FF;
+}
+.recently_colse_btn{
+  font-size: 16px;
+}
+
+.recently_destination{
+  margin: 14px 0 6px 0;
+}
+
+.recently_destination span{
+  font-size: 22px;
+  font-weight: bold;
+  color: #222222;
+}
+
+.recently_destination i{
+  margin: 0 10px;
+  color: #666666;
+  font-size: 13px;
+}
+
+.recently_desc span{
+  font-size: 16px;
+  color: #AAAAAA;
+}
 
 
 

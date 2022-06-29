@@ -131,3 +131,27 @@ $('#popupLodSearchBtn2').click(function(){
 $('.air_search').click(function(){
   location.href = 'flight_list.html';
 });
+
+
+
+// 최근 검색한 항공권 슬라이드
+
+let rctSlidebox = document.getElementById("recently_box");
+let rctSlideItem = document.getElementById("recently_item");
+let rctCurrentIndex = 0;
+let rctSlideCount = rctSlideItem.length;
+
+let prev = document.querySelector(".recently_prev");
+let next = document.querySelector(".recently_next");
+
+
+
+
+
+
+
+
+
+
+
+
