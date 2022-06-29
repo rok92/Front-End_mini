@@ -182,14 +182,14 @@ button.air_search:hover{
 
 /* 최근 검색한 항공권 */
 .recently_search_air{
-  width: 1400px;
+  width: 1280px;
   margin: 134px auto 0;
 }
 
 .recently_air_title{
   font-weight: bold;
   font-size: 22px;
-  margin: 0 0 28px 60px;
+  margin-bottom:20px;
 }
 
 .recently_slide_container{
@@ -205,14 +205,24 @@ button.air_search:hover{
   width: 400px;
   height: 120px;
   float: left;
-  margin: 0 40px 12px 0;
+  margin: 0 0 12px 40px;
   border: 0.5px solid #AAAAAA;
   padding: 17px 24px 16px 24px;
+}
+.recently_slide_box li:first-child, .recently_slide_box li:nth-child(4n){
+  margin-left: 0;
 }
 
 .recently_slide_controller span{
   position: absolute;
   top: 38%;
+  cursor: pointer;
+}
+.recently_slide_controller span:nth-child(1){
+  left: -20px;
+}
+.recently_slide_controller span:nth-child(2){
+  right: -20px;
 }
 
 .recently_slide_controller span img{
@@ -223,6 +233,10 @@ button.air_search:hover{
 .shuttle_close_line{
   display: flex;
   justify-content: space-between;
+}
+
+.recently_colse_btn{
+  cursor: pointer;
 }
 
 .recently_shuttle_way{
@@ -327,20 +341,6 @@ button.air_search:hover{
   font-size: 20px;
   color: #222222;
 }
-
-/* 탑버튼 */
-.top_btn{
-  position: fixed;
-  top: 45vh;
-  right: 40px;
-}
-
-.top_btn img{
-  width: 60px;
-  height: 60px;
-  cursor: pointer;
-}
-
 
 /* 출발지 팝업창 */
 
