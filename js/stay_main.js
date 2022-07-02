@@ -20,7 +20,7 @@ $(document).ready(function(){
   // 여행지 검색 팝업 외부영역 클릭 시 팝업 딛기
   $(document).mouseup(function (e){
     var LayerPopup = $(".popup_lod");
-    if(LayerPopup.has(e.target).length === 0){
+    if(!LayerPopup.is(e.target) && LayerPopup.has(e.target).length == 0){
       LayerPopup.removeClass("dp_block");
     }
   });
@@ -93,7 +93,7 @@ $(document).ready(function(){
   // 인원 선택 팝업 외부영역 클릭 시 팝업 닫기
   $(document).mouseup(function (e){
     var LayerPopup = $(".popup_person");
-    if(LayerPopup.has(e.target).length === 0){
+    if(!LayerPopup.is(e.target) && LayerPopup.has(e.target).length == 0){
       LayerPopup.removeClass("dp_block");
     }
   });

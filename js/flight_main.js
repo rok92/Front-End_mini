@@ -144,8 +144,29 @@ let rctSlideCount = rctSlideItem.length;
 let prev = document.querySelector(".recently_prev");
 let next = document.querySelector(".recently_next");
 
+// 출발지 선택 팝업 외부영역 클릭 시 팝업 닫기
+$(document).mouseup(function (e){
+  var LayerPopup = $("#depart_pop");
+  if(!LayerPopup.is(e.target) && LayerPopup.has(e.target).length == 0){
+    LayerPopup.css('display','none');
+  }
+});
 
+// 도착지 선택 팝업 외부영역 클릭 시 팝업 닫기
+$(document).mouseup(function (e){
+  var LayerPopup = $("#arrive_pop");
+  if(!LayerPopup.is(e.target) && LayerPopup.has(e.target).length == 0){
+    LayerPopup.css('display','none');
+  }
+});
 
+// 인원 선택 팝업 외부영역 클릭 시 팝업 닫기
+$(document).mouseup(function (e){
+  var LayerPopup = $("#custom_air_pop");
+  if(!LayerPopup.is(e.target) && LayerPopup.has(e.target).length == 0){
+    LayerPopup.css('display','none');
+  }
+});
 
 
 
