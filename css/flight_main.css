@@ -194,11 +194,14 @@ button.air_search:hover{
 
 .recently_slide_container{
   position: relative;
+  overflow: hidden;
+  width: 1280px;
+  height: 130px;
 }
 
 .recently_slide_box{
-  height: 130px;
-  overflow: hidden;
+  position: absolute;
+  transition: 0.5s ease-out;
 }
 
 .recently_slide_box li{
@@ -209,13 +212,13 @@ button.air_search:hover{
   border: 0.5px solid #AAAAAA;
   padding: 17px 24px 16px 24px;
 }
-.recently_slide_box li:first-child, .recently_slide_box li:nth-child(4n){
+/* .recently_slide_box > li:nth-child(2n){
   margin-left: 0;
-}
+} */
 
 .recently_slide_controller span{
-  position: absolute;
-  top: 38%;
+  /* position: absolute;
+  top: 38%; */
   cursor: pointer;
 }
 .recently_slide_controller span:nth-child(1){
