@@ -212,23 +212,24 @@ button.air_search:hover{
   border: 0.5px solid #AAAAAA;
   padding: 17px 24px 16px 24px;
 }
-/* .recently_slide_box > li:nth-child(2n){
+.recently_slide_box li:nth-child(1){
   margin-left: 0;
-} */
+}
 
-.recently_slide_controller span{
-  /* position: absolute;
-  top: 38%; */
+.recently_prev{
+  position: absolute;
+  left: 90px;
+  bottom: 140px;
   cursor: pointer;
 }
-.recently_slide_controller span:nth-child(1){
-  left: -20px;
-}
-.recently_slide_controller span:nth-child(2){
-  right: -20px;
+.recently_next{
+  position: absolute;
+  right: 90px;
+  bottom: 140px;
+  cursor: pointer;
 }
 
-.recently_slide_controller span img{
+.recently_prev img, .recently_next img{
   width: 12px;
   height: 24px;
 }

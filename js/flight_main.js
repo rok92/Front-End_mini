@@ -136,13 +136,73 @@ $('.air_search').click(function(){
 
 // 최근 검색한 항공권 슬라이드
 
-let rctSlidebox = document.getElementById("recently_box");
-let rctSlideItem = document.getElementById("recently_item");
-let rctCurrentIndex = 0;
-let rctSlideCount = rctSlideItem.length;
 
-let prev = document.querySelector(".recently_prev");
-let next = document.querySelector(".recently_next");
+let rctSlideBox = document.querySelector(".recently_slide_box");
+let rctSlideItem = document.querySelectorAll(".recently_slide_box li");
+rctCurrentIndex = 0;
+rctSlideCount = rctSlideItem.length;
+
+rctPrev = document.querySelector(".recently_prev");
+rctNext = document.querySelector(".recently_next");
+
+rctWidth = 400;
+rctMargin = 40;
+
+itemMakeClone();
+boxItemInit();
+
+function itemMakeClone(){
+
+  // cloneNode() 노드 복제 true : 자식노드도 함께 복제
+  let cloneRctSlide = rctSlideItem.cloneNode(true);
+
+  rctSlideBox.append(cloneRctSlide);
+  rctSlideBox.insertBefore(cloneRctSlide, rctSlideBox.firstElementChild);
+
+}
+
+function boxItemInit(){
+  rctSlideBox.style.width = ((rctWidth*3) + (rctMargin*2)) * (Math.ceil(rctSlideCount/3) + 2) + 'px';
+  rctSlideBox.style.left = -((rctWidth*3) + (rctMargin*2)) * (Math.ceil(rctSlideCount/3) + 1) + "px";
+}
+
+rctNext.addEventListener('click',function(){
+
+  //다음(next) 버튼 눌렀을 때
+  if(rctCurrentIndex <= rctSlideCount - 1){
+    //슬라이드 이동
+    rctSlideBox.style.left = -(Math.ceil((rctCurrentIndex+1)/3)) * ((rctWidth*3) + (rctMargin*2)) * 2 + 'px';
+    rctSlideBox.style.transition = `${0.5}s ease-out`;
+  }
+
+  // 마지막 슬라이드
+  if(rctCurrentIndex == rctSlideCount - 1){
+    setTimeout(function(){
+      rctSlideBox.style.left = -((rctWidth*3) + (rctMargin*2)) + "px";
+      rctSlideBox.style.transition = `${0}s ease-out`;
+    },500);
+    rctCurrentIndex = -1;
+  }
+
+  rctCurrentIndex += 1;
+});
+
+rctPrev.addEventListener('click',function(){
+
+  if(rctCurrentIndex >= 0){
+    rctSlideBox.style.left = -(Math.ceil((rctCurrentIndex+1)/3)) * ((rctWidth*3) + (rctMargin*2)) + 'px';
+    rctSlideBox.style.transition = `${0.5}s ease-out`;
+  }
+
+  if(rctCurrentIndex == 0){
+    setTimeout(function(){
+      rctSlideBox.style.left = -rctSlideCount * ((rctWidth*3) + (rctMargin*2)) + "px";
+      rctSlideBox.style.transition = `${0}s ease-out`;
+    },500);
+    rctCurrentIndex = rctSlideCount;
+  }
+  rctCurrentIndex -= 1;
+});
 
 // 출발지 선택 팝업 외부영역 클릭 시 팝업 닫기
 $(document).mouseup(function (e){
