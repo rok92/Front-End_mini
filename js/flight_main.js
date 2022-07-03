@@ -138,71 +138,50 @@ $('.air_search').click(function(){
 
 
 let rctSlideBox = document.querySelector(".recently_slide_box");
-let rctSlideItem = document.querySelectorAll(".recently_slide_box li");
-rctCurrentIndex = 0;
-rctSlideCount = rctSlideItem.length;
+let rctPrev = document.querySelector(".recently_prev");
+let rctNext = document.querySelector(".recently_next");
+let rctIndex = 0;
+let rctPosition = 0;
+const moveWidth = 440;
 
-rctPrev = document.querySelector(".recently_prev");
-rctNext = document.querySelector(".recently_next");
+function rctPrevButton(){
 
-rctWidth = 400;
-rctMargin = 40;
+  if(rctIndex > 0){
+    rctNext.removeAttribute("disabled");
+    rctPosition += moveWidth;
 
-itemMakeClone();
-boxItemInit();
+    rctSlideBox.style.transform = `transitionX(${rctPosition}px)`
+    rctIndex -= 1;
+  }
 
-function itemMakeClone(){
-
-  // cloneNode() 노드 복제 true : 자식노드도 함께 복제
-  let cloneRctSlide = rctSlideItem.cloneNode(true);
-
-  rctSlideBox.append(cloneRctSlide);
-  rctSlideBox.insertBefore(cloneRctSlide, rctSlideBox.firstElementChild);
+  if(rctIndex == 0){
+    rctPrev.setAttribute('disabled', 'true');
+  }
 
 }
 
-function boxItemInit(){
-  rctSlideBox.style.width = ((rctWidth*3) + (rctMargin*2)) * (Math.ceil(rctSlideCount/3) + 2) + 'px';
-  rctSlideBox.style.left = -((rctWidth*3) + (rctMargin*2)) * (Math.ceil(rctSlideCount/3) + 1) + "px";
+function rctNextButton(){
+  if(rctIndex < 9){
+    rctPrev.removeAttribute("disabled");
+    rctPosition -= moveWidth;
+
+    rctSlideBox.style.transform = `transitionX(${rctPosition}px)`
+    rctIndex += 1;
+  }
+
+  if(rctIndex == 9){
+    rctNext.setAttribute('disabled', 'true');
+  }
 }
 
-rctNext.addEventListener('click',function(){
+function rctInit(){
+  rctPrev.setAttribute("disabled", "true");
+  rctPrev.addEventListener('click',rctPrevButton);
+  rctNext.addEventListener('click',rctNextButton);
+}
 
-  //다음(next) 버튼 눌렀을 때
-  if(rctCurrentIndex <= rctSlideCount - 1){
-    //슬라이드 이동
-    rctSlideBox.style.left = -(Math.ceil((rctCurrentIndex+1)/3)) * ((rctWidth*3) + (rctMargin*2)) * 2 + 'px';
-    rctSlideBox.style.transition = `${0.5}s ease-out`;
-  }
+rctInit();
 
-  // 마지막 슬라이드
-  if(rctCurrentIndex == rctSlideCount - 1){
-    setTimeout(function(){
-      rctSlideBox.style.left = -((rctWidth*3) + (rctMargin*2)) + "px";
-      rctSlideBox.style.transition = `${0}s ease-out`;
-    },500);
-    rctCurrentIndex = -1;
-  }
-
-  rctCurrentIndex += 1;
-});
-
-rctPrev.addEventListener('click',function(){
-
-  if(rctCurrentIndex >= 0){
-    rctSlideBox.style.left = -(Math.ceil((rctCurrentIndex+1)/3)) * ((rctWidth*3) + (rctMargin*2)) + 'px';
-    rctSlideBox.style.transition = `${0.5}s ease-out`;
-  }
-
-  if(rctCurrentIndex == 0){
-    setTimeout(function(){
-      rctSlideBox.style.left = -rctSlideCount * ((rctWidth*3) + (rctMargin*2)) + "px";
-      rctSlideBox.style.transition = `${0}s ease-out`;
-    },500);
-    rctCurrentIndex = rctSlideCount;
-  }
-  rctCurrentIndex -= 1;
-});
 
 // 출발지 선택 팝업 외부영역 클릭 시 팝업 닫기
 $(document).mouseup(function (e){
