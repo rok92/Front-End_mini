@@ -138,6 +138,7 @@ $('.air_search').click(function(){
 
 
 let rctSlideBox = document.querySelector(".recently_slide_box");
+let rctSlideCount = rctSlideBox.childElementCount;
 let rctPrev = document.querySelector(".recently_prev");
 let rctNext = document.querySelector(".recently_next");
 let rctIndex = 0;
@@ -150,27 +151,27 @@ function rctPrevButton(){
     rctNext.removeAttribute("disabled");
     rctPosition += moveWidth;
 
-    rctSlideBox.style.transform = `transitionX(${rctPosition}px)`
+    rctSlideBox.style.transform = `translateX(${rctPosition}px)`
     rctIndex -= 1;
   }
 
   if(rctIndex == 0){
-    rctPrev.setAttribute('disabled', 'true');
+    rctPrev.setAttribute("disabled", 'true');
   }
 
 }
 
 function rctNextButton(){
-  if(rctIndex < 9){
+  if(rctIndex < (rctSlideCount-1)){
     rctPrev.removeAttribute("disabled");
     rctPosition -= moveWidth;
 
-    rctSlideBox.style.transform = `transitionX(${rctPosition}px)`
+    rctSlideBox.style.transform = `translateX(${rctPosition}px)`
     rctIndex += 1;
   }
 
-  if(rctIndex == 9){
-    rctNext.setAttribute('disabled', 'true');
+  if(rctIndex == (rctSlideCount-1)){
+    rctNext.setAttribute("disabled", 'true');
   }
 }
 
