@@ -29,7 +29,7 @@ section.flight_reservation{
 }
 
 /* 왕복 편도 다구간 */
-.flight_shuttle_button button{
+.flight_shuttle_select{
   border-radius: 25px;
   background-color: #eeeeee;
   border: none;
@@ -43,12 +43,14 @@ section.flight_reservation{
   width: 81px;
 }
 .flight_shuttle_button button:hover{
+  transition: 0.5s;
   background-color: #FBDB03;
   cursor: pointer;
 }
+
 /* 왕복 편도 다구간 선택시 색변경*/
-.selectBtn{
-  background-color: #FBDB03;
+.flight_shuttle_button button.selectBtn{
+  background-color: #FBDB03; 
 }
 
 /* 항공 예약 공통 적용 */
