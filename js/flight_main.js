@@ -24,9 +24,9 @@ $('input[name="daterange"]').on('apply.daterangepicker', function(ev,picker){
 });
 
 
-let airDateBox = document.getElementById('rangepicker');
-airDateBox.addEventListener('click',()=>{
-  airDateBox.value = "여행 날짜 선택";
+let flightDateBox = document.getElementById('rangepicker');
+flightDateBox.addEventListener('click',()=>{
+  flightDateBox.value = "여행 날짜 선택";
 });
 
 
@@ -38,9 +38,6 @@ $(document).ready(function(){
 
     $('html, body').animate({scrollTop:0},500);
   });
-
-
-  
 
 });
 
@@ -81,7 +78,7 @@ function clickCount2(){
 
 //인원수 및 좌석 선택 버튼
 let personSit = document.getElementById("person_sit");
-let customAirPOP = document.getElementById("custom_air_pop");
+let customflightPOP = document.getElementById("custom_flight_pop");
 let count3 = 1;
 personSit.addEventListener("click",clickCount3);
 
@@ -89,9 +86,9 @@ function clickCount3(){
   count3++;
   
   if(count3 % 2 == 0){
-    customAirPOP.style.display = "block";
+    customflightPOP.style.display = "block";
   }else{
-    customAirPOP.style.display = "none";
+    customflightPOP.style.display = "none";
   }
 }
 
@@ -128,7 +125,7 @@ $('#popupLodSearchBtn2').click(function(){
 });
 
 // 다음 페이지로 이동
-$('.air_search').click(function(){
+$('.flight_search').click(function(){
   location.href = 'flight_list.html';
 });
 
@@ -202,14 +199,35 @@ $(document).mouseup(function (e){
 
 // 인원 선택 팝업 외부영역 클릭 시 팝업 닫기
 $(document).mouseup(function (e){
-  var LayerPopup = $("#custom_air_pop");
+  var LayerPopup = $("#custom_flight_pop");
   if(!LayerPopup.is(e.target) && LayerPopup.has(e.target).length == 0){
     LayerPopup.css('display','none');
   }
 });
 
 
+// 왕복 편도 다구간 선택
+let flightShuttleBtn = document.getElementsByClassName('flight_shuttle_select');
 
+function shuttleClick(event){
+  if(event.target.classList[1] == "selectBtn"){
+    event.target.classList.remove("selectBtn");
+  }else{
+    for(let i = 0; i < flightShuttleBtn.length; i++){
+      flightShuttleBtn[i].classList.remove("selectBtn");
+    }
+    event.target.classList.add("selectBtn");
+  }
+}
+
+function shuttleInit(){
+  for(let i = 0; i < flightShuttleBtn.length; i++){
+    flightShuttleBtn[i].addEventListener('click',shuttleClick);
+  }
+}
+
+
+shuttleInit();
 
 
 

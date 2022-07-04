@@ -42,17 +42,17 @@
   </header>
 
   <!-- 항공 예약 -->
-  <section class="air_reservation">
-    <div class="air_reservation_content">
-      <div class="air_shuttle_button">
-        <button>왕복</button>
-        <button>편도</button>
-        <button>다구간</button>
+  <section class="flight_reservation">
+    <div class="flight_reservation_content">
+      <div class="flight_shuttle_button">
+        <button class="flight_shuttle_select">왕복</button>
+        <button class="flight_shuttle_select">편도</button>
+        <button class="flight_shuttle_select">다구간</button>
       </div>
       <div class="departure_arrival_container">
         <div class="location_box">
           <div class="depart_location">
-            <span class="air_reservation_subtitle">출발</span>
+            <span class="flight_reservation_subtitle">출발</span>
             <input type="text" class="departure_location txt_gray" id="depart_loacation" value="출발지를 선택하세요">
           </div>
           <div class="depart_popup" id="depart_pop">
@@ -161,7 +161,7 @@
           </div>
           <i class="fa fa-exchange roundArrow" aria-hidden="true"></i>
           <div class="arrive_location">
-            <span class="air_reservation_subtitle">도착</span>
+            <span class="flight_reservation_subtitle">도착</span>
             <input type="text" class="arrival_location txt_gray" id="arrive_location" value="도착지를 선택하세요">
           </div>
           <div class="arrive_popup" id="arrive_pop">
@@ -270,16 +270,16 @@
           </div>
         </div>
         <p class="partition">|</p>
-        <div class="air_date_box">
-          <div class="air_reservation_subtitle">출발일 - 도착일</div>
-          <input type="text" class="air_date" id="rangepicker" name="daterange" placeholder="여행 날짜 선택">
+        <div class="flight_date_box">
+          <div class="flight_reservation_subtitle">출발일 - 도착일</div>
+          <input type="text" class="flight_date" id="rangepicker" name="daterange" placeholder="여행 날짜 선택">
         </div>
         <div class="sit_class_box">
-          <span class="air_reservation_subtitle">인원, 좌석등급</span>
+          <span class="flight_reservation_subtitle">인원, 좌석등급</span>
           <button class="sit_class" id="person_sit">1명, 좌석전체</button>
         </div>
-        <div class="customer_airclass_popup" id="custom_air_pop">
-          <div class="customer_airclass_wrap">
+        <div class="customer_flightclass_popup" id="custom_flight_pop">
+          <div class="customer_flightclass_wrap">
             <p>인원 & 좌석등급</p>
             <div class="age_container">
               <div class="age_box">
@@ -314,7 +314,7 @@
                 <span class="person_plus_button">+</span>
               </div>
             </div>
-            <div class="air_sit_choice">
+            <div class="flight_sit_choice">
               <div>
                 <input id="sitsGen" type="radio" name="sits" value="일반석" checked="checked">
                 <label id="sitsGenLabel" for="sitsGen"> 일반석</label>
@@ -334,22 +334,22 @@
             </div>
           </div>
         </div>
-        <button class="air_search">검색하기</button>
+        <button class="flight_search">검색하기</button>
       </div>
     </div>
   </section>
 
   <!-- 비행기 배경 -->
-  <section class="air_background">
+  <section class="flight_background">
     <img src="../images/bg_plane@2x.png" alt="비행기 배경">
-    <div class="air_reservation_title">
+    <div class="flight_reservation_title">
       항공 예약
     </div>
   </section>
 
   <!-- 최근 검색한 항공권 -->
-  <section class="recently_search_air">
-    <div class="recently_air_title">최근 검색한 항공권</div>
+  <section class="recently_search_flight">
+    <div class="recently_flight_title">최근 검색한 항공권</div>
 
     <div class="recently_slide_container">
       <div class="recently_slide_box">
@@ -428,8 +428,8 @@
       </div>
     </div>
     
-    <span class="recently_prev"><img src="/images/btn_left.png"></span>
-    <span class="recently_next"><img src="/images/btn_right.png"></span>
+    <span class="recently_prev"><i class="fas fa-chevron-left"></i></span>
+    <span class="recently_next"><i class="fas fa-chevron-right"></i></span>
     
     
   </section>

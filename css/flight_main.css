@@ -7,7 +7,7 @@
 }
 
 /* 비행기 예약 section */
-section.air_reservation{
+section.flight_reservation{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,7 +17,7 @@ section.air_reservation{
 }
 
 /* 항공 예약 내용들 */
-.air_reservation_content{
+.flight_reservation_content{
   position: absolute;
   top: 191px;
   width: 1280px;
@@ -29,7 +29,7 @@ section.air_reservation{
 }
 
 /* 왕복 편도 다구간 */
-.air_shuttle_button button{
+.flight_shuttle_button button{
   border-radius: 25px;
   background-color: #eeeeee;
   border: none;
@@ -39,20 +39,25 @@ section.air_reservation{
   font-weight: normal;
   font-size: 16px;
 }
-.air_shuttle_button button:nth-child(3){
+.flight_shuttle_button button:nth-child(3){
   width: 81px;
 }
-.air_shuttle_button button:hover{
+.flight_shuttle_button button:hover{
   background-color: #FBDB03;
   cursor: pointer;
 }
+/* 왕복 편도 다구간 선택시 색변경*/
+.selectBtn{
+  background-color: #FBDB03;
+}
 
 /* 항공 예약 공통 적용 */
-.air_reservation_subtitle{
+.flight_reservation_subtitle{
   color: #666666;
   font-weight: normal;
   font-size: 16px;
 }
+
 .departure_location, .arrival_location, .sit_class{
   margin-top: 10px;
 }
@@ -109,7 +114,7 @@ section.air_reservation{
 }
 
 /* 여행 날짜 선택 */
-.air_date_box{
+.flight_date_box{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -118,7 +123,7 @@ section.air_reservation{
   margin-top: 20px;
 }
 
-.air_date_box input{
+.flight_date_box input{
   width: 220px;
   height: 30px;
   border: none;
@@ -142,7 +147,7 @@ section.air_reservation{
 }
 
 /* 항공 예약 검색 버튼 */
-button.air_search{
+button.flight_search{
   width: 150px;
   height: 68px;
   border: transparent;
@@ -152,23 +157,23 @@ button.air_search{
   font-weight: normal;
   font-size: 20px;
 }
-button.air_search:hover{
+button.flight_search:hover{
   cursor: pointer;
 }
 
 /* 헤더 밑에 비행기 배경 */
-.air_background{
+.flight_background{
   position: relative;
 }
 
-.air_background img{
+.flight_background img{
   width: 100%;
   height: 319px;
   opacity: 0.85;
 }
 
 /* 항공예약 글자 */
-.air_reservation_title{
+.flight_reservation_title{
   position: absolute;
   top: 112px;
   /* left: 900px; */
@@ -181,13 +186,13 @@ button.air_search:hover{
 }
 
 /* 최근 검색한 항공권 */
-.recently_search_air{
+.recently_search_flight{
   position: relative;
   width: 1280px;
   margin: 134px auto 0;
 }
 
-.recently_air_title{
+.recently_flight_title{
   font-weight: bold;
   font-size: 22px;
   margin-bottom:20px;
@@ -232,9 +237,9 @@ button.air_search:hover{
   cursor: pointer;
 }
 
-.recently_prev img, .recently_next img{
-  width: 12px;
-  height: 24px;
+.recently_prev i, .recently_next i{
+  font-size: 24px;
+  color: #999999;
 }
 
 .shuttle_close_line{
@@ -439,7 +444,7 @@ button.air_search:hover{
 
 /* 인원, 좌석 클래스 팝업창 */
 
-.customer_airclass_popup{
+.customer_flightclass_popup{
   display: none;
   position: absolute;
   top: 206px;
@@ -451,12 +456,12 @@ button.air_search:hover{
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-.customer_airclass_wrap{
+.customer_flightclass_wrap{
   width: 328px;
   margin: 50px auto;
 }
 
-.customer_airclass_wrap p{
+.customer_flightclass_wrap p{
   font-size: 18px;
   font-weight: bold;
   color:#222222;
@@ -519,7 +524,7 @@ button.air_search:hover{
   color: #48A0FF;
 }
 
-.air_sit_choice{
+.flight_sit_choice{
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
@@ -530,7 +535,7 @@ button.air_search:hover{
   margin-top: 20px;
 }
 
-.air_sit_choice div{
+.flight_sit_choice div{
   display: flex;
   align-items: center;
   width: 140px;
@@ -538,25 +543,25 @@ button.air_search:hover{
   margin-top: 20px;
 }
 
-.air_sit_choice input{
+.flight_sit_choice input{
   width: 22px;
   height: 22px;
 }
 
-.air_sit_choice label{
+.flight_sit_choice label{
   margin-left: 10px;
   font-size: 16px;
   color: #222222;
 }
 
 /* 항공 좌석 등급 라디오버튼 */
-.airsit_choice_box{
+.flightsit_choice_box{
   width: 328px;
   height: 92px;
   border-top: 1px solid #DDDDDD;
 }
 
-.airsit_choice_box input{
+.flightsit_choice_box input{
   font-size: 16px;
 }
 
