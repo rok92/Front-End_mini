@@ -787,6 +787,7 @@ button {
   height: 60px;
   right: 40px;
   bottom: 40px;
+  cursor: pointer;
 }
 
 /* footer */
