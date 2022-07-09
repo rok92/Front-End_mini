@@ -180,6 +180,9 @@ function rctInit(){
 
 rctInit();
 
+//최근 검색한 항공권 슬라이드 내용 지우기
+
+
 
 // 출발지 선택 팝업 외부영역 클릭 시 팝업 닫기
 $(document).mouseup(function (e){

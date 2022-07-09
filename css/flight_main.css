@@ -249,8 +249,9 @@ button.flight_search:hover{
   justify-content: space-between;
 }
 
-.recently_colse_btn{
+.recently_colse_btn .close{
   cursor: pointer;
+  font-size: 16px;
 }
 
 .recently_shuttle_way{
