@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>쿨탐찼다! 여행가자! - 쿨타임트립</title>
+  <!-- ico -->
+  <link rel="icon" href="../images/ico_logo.ico" />
+  <!-- fontawesome -->
+  <script type="text/javascript" src="https://kit.fontawesome.com/fa5522895a.js" crossorigin="anonymous"></script>
+  <!-- daterangepicker -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+  <script type="text/javascript" src="../js/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+<!--custom css-->
+<link rel="stylesheet" href="../css/common.css"/>
+<link rel="stylesheet" href="../css/rent_list.css">
+</head>
+<body>
+  <header class="header">
+    <!-- 헤더 wrap -->
+    <div class="wrap">
+      <div>
+        <img class="lg_title" src="../images/lg_title.png" alt="로고" onclick="location.href='flight_main.html'">
+        <!-- 로그인/회원가입 > 마이페이지 -->
+        <div class="div_account">
+          <a class="btn_account" href="login.html">로그인</a>
+          <a class="btn_account txt_blue mr_0 pr_0" href="signup.html">회원가입</a>
+          <a class="btn_account btn_mypage" href="mypage.html">마이페이지</a>
+        </div>
+      </div>
+      <nav>
+        <!-- 항공/숙박/렌터카 -->
+        <ul>
+          <li><a href="flight_main.html"><img class="ic_nav" src="../images/ic_plane.png" alt="항공"><span>항공</span></a></li>
+          <li><a href="stay_main.html"><img class="ic_nav" src="../images/ic_lodgment.png" alt="숙박"><span>숙박</span></a></li>
+          <li class="nav_active"><a href="#"><img class="ic_nav" src="../images/ic_rent.png" alt="렌터카"><span>렌터카</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!--검색영역-->
+  <section class="sec_rent_search_list">
+    <span class="list_destination">여행지</span>
+    <!--검색 설정-->
+    <div class="rent_list_search wrap">
+      <div class="wrap_rent_box">
+        <form id="rentSearchList">
+          <div class="wrap_search_input_box">
+            <input type="text" class="search_destination" value="제주도">
+            <input type="text" class="search_daterange" value="06.24(금) 오전 10:00 - 07. 01(금) 오전 10:00">
+            <input type="text" class="search_drive_age" value="970325 (만 25세)">
+            <input type="submit" class="rent_search_btn" value="검색하기">
+          </div>
+        </form>
+        <!--검색 팝업-->
+        <div class="popup_rent">
+          <h4 class="tlt_popup_rent">여행지 검색</h4><i class="fa-solid fa-xmark" id="popupLRent  ListCloseBtn"></i>
+          <div class="div_popup_rent_search">
+            <input type="text" name="" id="popupRentListSearch" class="input_popup_rent_search" placeholder="여행지 검색">
+            <input type="button" name="" id="popupRentListSearchBtn" class="btn_popup_rent_search" value="검색하기">
+          </div>
+          <h6 class="tlt_list_rent">최근 확인한 여행지</h6>
+          <!--최근 검색지-->
+          <div class="list_location">
+            <i class="fa-solid fa-location-dot"></i>
+            <div class="div_popup_search">
+              <span class="txt_location_main">제주도</span>
+              <span class="txt_location_sub">대한민국</span>
+            </div>
+          </div>
+          <div class="list_location">
+            <i class="fa-solid fa-location-dot"></i>
+            <div class="div_popup_search">
+              <span class="txt_location_main">가평군</span>
+              <span class="txt_location_sub">대한민국 경기도</span>
+            </div>
+          </div>
+          <h6 class="tlt_list_rent">최근 확인한 여행지</h6>
+          <!--인기여행지 3개까지-->
+          <div class="list_location">
+            <i class="fa-solid fa-location-dot"></i>
+            <div class="div_popup_search">
+              <span class="txt_location_main">제주도</span>
+              <span class="txt_location_sub">대한민국</span>
+            </div>
+          </div>
+          <div class="list_location">
+            <i class="fa-solid fa-location-dot"></i>
+            <div class="div_popup_search">
+              <span class="txt_location_main">강릉</span>
+              <span class="txt_location_sub">대한민국 강원도</span>
+            </div>
+          </div>
+          <div class="list_location">
+            <i class="fa-solid fa-location-dot"></i>
+            <div class="div_popup_search">
+              <span class="txt_location_main">여수</span>
+              <span class="txt_location_sub">대한민국 전라남도</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 검색 영역 끝 -->
+   <!-- 검색필터 / 검색 결과 -->
+   <div class="bg_gray">
+    <!-- 검색필터 -->
+    <div class="wrap wrap_result">
+      <section class="sec_filter">
+        <div class="wrap_kind_car">
+          <button class="tlt_kind_car">차종<i id="arrowDown" class="fa-solid fa-angle-up"></i></button>
+          <div class="toggle_filter">
+            <ul class="wrap_car_picker">
+              <li class="txt_car_picker"><i class="fa-solid fa-check fa-active"></i>경차</li>
+              <li class="txt_car_picker"><i class="fa-solid fa-check"></i>소형</li>
+              <li class="txt_car_picker"><i class="fa-solid fa-check"></i>준중형</li>
+              <li class="txt_car_picker"><i class="fa-solid fa-check"></i>중형</li>
+              <li class="txt_car_picker"><i class="fa-solid fa-check"></i>고급</li>
+              <li class="txt_car_picker"><i class="fa-solid fa-check"></i>RV/SUV</li>
+              <li class="txt_car_picker"><i class="fa-solid fa-check"></i>승합</li>
+            </ul>
+          </div>
+        </div>
+        <div class="wrap_kind_fuel">
+          <button class="tlt_kind_fuel">연료<i id="arrowDown2" class="fa-solid fa-angle-down"></i></button>
+          <div class="toggle_filter2">
+            <ul class="wrap_fuel_picker">
+              <li class="txt_fuel_picker"><i class="fa-solid fa-check fa-active"></i>휘발유</li>
+              <li class="txt_fuel_picker"><i class="fa-solid fa-check"></i>경유</li>
+              <li class="txt_fuel_picker"><i class="fa-solid fa-check"></i>LPG</li>
+              <li class="txt_fuel_picker"><i class="fa-solid fa-check"></i>하이브리드</li>
+              <li class="txt_fuel_picker"><i class="fa-solid fa-check"></i>전기</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- 검색결과 -->
+     <section class="sec_result">
+      <div class="wrap_result_title">
+        <span class="result_count">검색결과 총 6개</span>
+        <!-- 커스텀 셀렉트 -->
+        <div class="result_filter">
+          <button class="result_filter_open"><span>인기순</span><i id="arrowDown" class="fa-solid fa-angle-down"></i></button>
+          <ul class="result_filter_select">
+            <li class="result_filter_option">인기순</li>
+            <li class="result_filter_option">가격 낮은 순</li>
+            <li class="result_filter_option">가격 높은 순</li>
+          </ul>
+        </div>
+      </div>
+      <!-- result data-->
+      <div class="wrap_result_car_list">
+        <div class="result_car_img">
+          <img src="../images/k5.png">
+        </div>
+        <div class="wrap_whole">
+          <div class="txt_box_rent_result">
+            <div class="wrap_result_car_txt">
+              <div class="txt_k5">The New K5</div>
+              <div class="txt_free_cancel">무료취소(~7.9)</div>
+            </div>
+            <div class="txt_choose">
+              선택<i class="fa-solid small_angle fa-angle-right"></i>
+            </div>
+          </div>
+          <div class="wrap_final_price">
+            <div class="wrap_txt_rent_company">
+              <div class="txt_rent_company">아리랑렌트카</div>
+              <div class="txt_rent_year">19년식·경유</div>
+            </div>
+            <div class="wrap_txt_money">
+              <span class="txt_ttl">총</span>
+              <span class="txt_num_won">40,000</span>
+              <span class="txt_ttl">원</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wrap_result_car_list">
+        <div class="result_car_img">
+          <img src="../images/k5.png">
+        </div>
+        <div class="wrap_whole">
+          <div class="txt_box_rent_result">
+            <div class="wrap_result_car_txt">
+              <div class="txt_k5">The New K5</div>
+              <div class="txt_free_cancel">무료취소(~7.9)</div>
+            </div>
+            <div class="txt_choose">
+              선택<i class="fa-solid small_angle fa-angle-right"></i>
+            </div>
+          </div>
+          <div class="wrap_final_price">
+            <div class="wrap_txt_rent_company">
+              <div class="txt_rent_company">아리랑렌트카</div>
+              <div class="txt_rent_year">19년식·경유</div>
+            </div>
+            <div class="wrap_txt_money">
+              <span class="txt_ttl">총</span>
+              <span class="txt_num_won">40,000</span>
+              <span class="txt_ttl">원</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wrap_result_car_list">
+        <div class="result_car_img">
+          <img src="../images/k5.png">
+        </div>
+        <div class="wrap_whole">
+          <div class="txt_box_rent_result">
+            <div class="wrap_result_car_txt">
+              <div class="txt_k5">The New K5</div>
+              <div class="txt_free_cancel">무료취소(~7.9)</div>
+            </div>
+            <div class="txt_choose">
+              선택<i class="fa-solid small_angle fa-angle-right"></i>
+            </div>
+          </div>
+          <div class="wrap_final_price">
+            <div class="wrap_txt_rent_company">
+              <div class="txt_rent_company">아리랑렌트카</div>
+              <div class="txt_rent_year">19년식·경유</div>
+            </div>
+            <div class="wrap_txt_money">
+              <span class="txt_ttl">총</span>
+              <span class="txt_num_won">40,000</span>
+              <span class="txt_ttl">원</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wrap_result_car_list">
+        <div class="result_car_img">
+          <img src="../images/k5.png">
+        </div>
+        <div class="wrap_whole">
+          <div class="txt_box_rent_result">
+            <div class="wrap_result_car_txt">
+              <div class="txt_k5">The New K5</div>
+              <div class="txt_free_cancel">무료취소(~7.9)</div>
+            </div>
+            <div class="txt_choose">
+              선택<i class="fa-solid small_angle fa-angle-right"></i>
+            </div>
+          </div>
+          <div class="wrap_final_price">
+            <div class="wrap_txt_rent_company">
+              <div class="txt_rent_company">아리랑렌트카</div>
+              <div class="txt_rent_year">19년식·경유</div>
+            </div>
+            <div class="wrap_txt_money">
+              <span class="txt_ttl">총</span>
+              <span class="txt_num_won">40,000</span>
+              <span class="txt_ttl">원</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wrap_result_car_list">
+        <div class="result_car_img">
+          <img src="../images/k5.png">
+        </div>
+        <div class="wrap_whole">
+          <div class="txt_box_rent_result">
+            <div class="wrap_result_car_txt">
+              <div class="txt_k5">The New K5</div>
+              <div class="txt_free_cancel">무료취소(~7.9)</div>
+            </div>
+            <div class="txt_choose">
+              선택<i class="fa-solid small_angle fa-angle-right"></i>
+            </div>
+          </div>
+          <div class="wrap_final_price">
+            <div class="wrap_txt_rent_company">
+              <div class="txt_rent_company">아리랑렌트카</div>
+              <div class="txt_rent_year">19년식·경유</div>
+            </div>
+            <div class="wrap_txt_money">
+              <span class="txt_ttl">총</span>
+              <span class="txt_num_won">40,000</span>
+              <span class="txt_ttl">원</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wrap_result_car_list">
+        <div class="result_car_img">
+          <img src="../images/k5.png">
+        </div>
+        <div class="wrap_whole">
+          <div class="txt_box_rent_result">
+            <div class="wrap_result_car_txt">
+              <div class="txt_k5">The New K5</div>
+              <div class="txt_free_cancel">무료취소(~7.9)</div>
+            </div>
+            <div class="txt_choose">
+              선택<i class="fa-solid small_angle fa-angle-right"></i>
+            </div>
+          </div>
+          <div class="wrap_final_price">
+            <div class="wrap_txt_rent_company">
+              <div class="txt_rent_company">아리랑렌트카</div>
+              <div class="txt_rent_year">19년식·경유</div>
+            </div>
+            <div class="wrap_txt_money">
+              <span class="txt_ttl">총</span>
+              <span class="txt_num_won">40,000</span>
+              <span class="txt_ttl">원</span>
+            </div>
+          </div>
+        </div>
+      </div>
+     </section>
+    </div>
+   </div>
+  <!-- footer -->
+  <footer class="footer mt_0">
+    <div class="wrap">
+      <div class="div_terms ml_0">
+        <a class="btn_terms ml_0 pl_0" href="#">이용 약관</a>
+        <a class="btn_terms bold" href="#">개인정보 처리방침</a>
+        <a class="btn_terms" href="#">취소 및 환불 정책</a>
+      </div>
+      <div class="div_service">
+        <a class="btn_service" href="#">고객센터</a>
+        <a class="btn_service mr_0 pr_0" href="#">FAQ</a>
+      </div>
+      <div class="div_cpy_info">
+        <p>
+          상호명 (주)쿨타임트립 | 대표 채동혁 | 개인정보보호책임자 곽경록<br>
+          주소 서울 강남구 선릉로 428, 위워크 2층 | 이메일 help@cooltimetrip.com | 마케팅/제휴 문의 marketing@cooltimetrip.com
+        </p>
+        <p>
+          쿨타임트립은 통신판매중개자이며 통신판매의 당사자가 아닙니다. 따라서 상품·거래정보 및 거래에 대하여 책임을 지지않습니다.
+        </p>
+      </div>
+      <img class="lg_title_gray" src="../images/lg_title_gray.png" alt="">
+    </div>
+  </footer>
+</body>
+</html>

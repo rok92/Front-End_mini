@@ -1,0 +1,347 @@
+/* 검색박스 설정 */
+.sec_rent_search_list{  
+  width: 100%;
+  height: 130px;
+  background-color: #48A0FF;
+}
+/* 여행지 텍스트 설정 */
+.sec_rent_search_list .list_destination{
+  display: block;
+  width:1320px;
+  margin: 0 auto;
+  padding: 18px 20px 10px;
+  color: #FFFFFF;
+  font-size:18px;
+  font-weight: bold;
+}
+.wrap_search_input_box{
+  width: 1320px;
+}
+/* 목적지 박스 설정 */
+.wrap_search_input_box .search_destination{
+  width: 347px;
+  height: 63px;
+  background-color: #FFFFFF;
+  border: none;
+  border-radius: 10px;
+  color: #222222;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 15px 50px;
+}
+/* 날짜선택 박스 설정 */
+.wrap_search_input_box .search_daterange{
+  width: 516px;
+  height: 63px;
+  background-color: #FFFFFF;
+  border: none;
+  border-radius: 10px;
+  margin-left: 5px;
+  color: #222222;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+/* 운전자 나이 설정 */
+.wrap_search_input_box .search_drive_age{
+  width: 263px;
+  height: 63px;
+  background-color: #FFFFFF;
+  border: none;
+  border-radius: 10px;
+  margin-left: 5px;
+  color: #222222;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+/* 검색하기 버튼 설정 */
+.wrap_search_input_box .rent_search_btn{
+  width: 130px;
+  height: 63px;
+  background-color: #FBDB03;
+  border: none;
+  border-radius: 10px;
+  margin-left: 5px;
+  color: #222222;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* 검색 팝업 */
+/* popup_rent */
+.sec_rent_search_list .popup_rent{
+  display: none;
+  position: absolute;
+  top: 311px;
+  width: 690px;
+  height: 733px;
+
+  padding:50px 70px;
+  border-radius: 15px;
+  background-color: #ffffff;
+  box-shadow: 3px 3px 18px #0003;
+  z-index: 1;
+}
+
+.sec_rent_search_list .popup_rent .tlt_popup_rent{
+  display: inline-block;
+  font-size: 22px;
+  font-weight: 600;
+}
+.sec_rent_search_list .popup_rent>i{
+  float: right;
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.sec_rent_search_list .popup_rent .div_popup_rent_search{
+  margin: 20px 0 20px;
+}
+.sec_rent_search_list .popup_rent .div_popup_rent_search .input_popup_rent_search{
+  width: 408px;
+  padding: 14px 30px;
+  border: 1px solid #BBBBBB;
+  font-size: 20px;
+  font-weight: 400;
+}
+.sec_rent_search_list .popup_rent .div_popup_rent_search .input_popup_rent_search:focus{
+  outline: none;
+  border: 1px solid #48A0FF!important;
+}
+.sec_rent_search_list .popup_rent .div_popup_rent_search .input_popup_rent_search::placeholder{
+  color: #AAAAAA;
+}
+.sec_rent_search_list .popup_rent .div_popup_rent_search .btn_popup_rent_search{
+  margin-left: -4px;
+  padding: 14px 35px;
+  color:#ffffff;
+  border: 1px solid #48A0FF;
+  font-size: 20px;
+  font-weight: 600;
+  background-color: #48A0FF;
+}
+.sec_rent_search_list .popup_rent .tlt_list_rent{
+  display: inline-block;
+  margin: 20px 0 10px;
+  font-size: 18px;
+  font-weight: 400;
+}
+.sec_rent_search_list .popup_rent .list_location{
+  display: flex;
+  height: 78px;
+  border-bottom: 1px solid #DDDDDD;
+}
+.sec_rent_search_list .popup_rent .list_location>i{
+  display: inline-block;
+  width: 70px;
+  padding-left: 20px;
+  font-size: 27px;
+  color:#48A0FF;
+  line-height: 78px;
+}
+.sec_rent_search_list .popup_rent .list_location .div_popup_search{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.sec_rent_search_list .popup_rent .list_location .div_popup_search .txt_location_main{
+  font-size: 22px;
+  font-weight: 600;
+}
+.sec_rent_search_list .popup_rent .list_location .div_popup_search .txt_location_sub{
+  color: #999999;
+  font-size: 17px;
+  font-weight: 200;
+}
+/* 검색필터 */
+.wrap_result{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 100px;
+}
+.sec_filter{
+  width: 220px;
+  margin-top: 60px;
+}
+.wrap_kind_car .tlt_kind_car,
+.wrap_kind_fuel .tlt_kind_fuel{
+  display: inline-block;
+  width: 100%;
+  margin: 0px 0 10px;
+  padding: 0px 0 10px;
+  border: none;
+  background: none;
+  font-size: 17px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+}
+.wrap_kind_car .tlt_kind_car>i,
+.wrap_kind_fuel .tlt_kind_fuel>i{
+  float: right;
+  font-size: 16px;
+}
+.wrap_kind_car .toggle_filter{
+  margin-bottom: 30px;
+}
+.wrap_kind_fuel .toggle_filter2{
+  display: none;
+}
+.wrap_kind_car .wrap_car_picker,
+.wrap_kind_fuel .wrap_fuel_picker{
+  margin-top:14px;
+}
+.wrap_kind_car .txt_car_picker,
+.wrap_kind_fuel .txt_fuel_picker{
+  width: 100%;
+  margin-bottom: 14px;
+}
+.wrap_kind_car .txt_car_picker>i,
+.wrap_kind_fuel .txt_fuel_picker>i{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border: 1px solid #EEEEEE;
+  background-color: #FFFFFF;
+  color: #FFFFFF;
+  font-size: 14px;
+  text-align: center;
+  line-height: 20px;
+}
+.wrap_kind_car .txt_car_picker>i.fa-active,
+.wrap_kind_fuel .txt_fuel_picker>i.fa-active{
+  border: 1px solid #48A0FF;
+  background-color: #48A0FF;
+  color: #FFFFFF;
+  font-size: 14px;
+  text-align: center;
+  line-height: 20px;
+}
+
+/* 검색 결과 */
+.sec_result{
+  width: 1010px;
+  margin-top: 60px;
+}
+.sec_result .wrap_result_title{
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin-bottom: 24px;
+}
+.sec_result .wrap_result_title{
+  display: flex;
+  justify-content: space-between;
+}
+.sec_result .wrap_result_title .result_count{
+  font-size: 18px;
+  font-weight: 500;
+}
+/* 버튼 사이징 */
+.result_filter_open{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 210px;
+  height: 50px;
+  border: 1px #DDDDDD solid;
+  background-color: #FFFFFF;
+}
+.result_filter_open>span{
+  margin-left: 10px;
+  margin-right: 118px;
+  font-size: 16px;
+  color: #222222;
+}
+.sec_result .wrap_result_title .result_filter .result_filter_select{
+  display: none;
+  width: 210px;
+  border: 1px solid #DDDDDD;
+  border-top: 0;
+}
+.sec_result .wrap_result_title .result_filter .result_filter_select .result_filter_option{
+  width: 208px;
+  height: 38px;
+  padding: 0px 15px;
+  background-color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 38px;
+}
+.wrap_result_car_list{
+  display: flex;
+  width: 1010px;
+  height: 256px;
+  border: #DDDDDD 1px solid;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  margin-bottom: 20px;
+}
+.wrap_result_car_list .result_car_img{
+  margin: 75.7px 0 0 60px;
+}
+.wrap_result_car_list .result_car_img>img{
+  width: 220px;
+  height: 116px;
+}
+.wrap_result_car_list .txt_box_rent_result{
+  display: flex;
+  justify-content: space-between;
+  width: 630px;
+  margin: 44px 0 0 40px;
+}
+.wrap_whole .txt_k5{
+  color: #222222;
+  font-size: 22px;
+  font-weight: bold;
+}
+.wrap_whole .txt_free_cancel{
+  color: #222222;
+  font-size: 14px;
+  margin-top: 4px;
+}
+.wrap_whole .txt_choose{
+  color: #666666;
+  font-size: 14px;
+}
+.wrap_whole .txt_choose>i{
+  font-size: 7px;
+  color: #666666;
+  margin-left: 4px;
+}
+.wrap_txt_rent_company{
+  margin: 21px 0 0 30px;
+}
+.wrap_txt_rent_company .txt_rent_company{
+  font-size: 18px;
+  font-weight: bold;
+}
+.wrap_txt_rent_company .txt_rent_year{
+  font-size: 14px;
+  color: #BBBBBB;
+  margin-top: 4px;
+}
+.wrap_final_price{
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0 0 40px;
+  border: #BBBBBB solid 1px;
+  border-radius: 2px;
+  width: 630px;
+  height: 111px;
+}
+.wrap_txt_money .txt_ttl{
+  font-size: 18px;
+  color: #222222;
+}
+.wrap_txt_money .txt_num_won{
+  font-size: 28px;
+  color: #222222;
+  font-weight: bold;
+}
+.wrap_txt_money{
+  margin: 56px 46px 0 0;
+}
