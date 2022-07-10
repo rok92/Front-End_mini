@@ -56,11 +56,18 @@ $(document).ready(function(){
 		});
 	});
 
-	// 지도 클릭 시 새탭에서 큰 지도 보기
-	// 드래그 해도 클릭으로 간주되어서 수정 필요
+	// 지도보기 클릭 시 새탭에서 큰 지도 보기
 	$('.agency_kakaomap').click(function() {
 		window.open('rent_map.html');
 	});
+
+	$('.agency_kakaomap').hover(
+		function(){
+			$('.agency_kakaomap').css('border', '1px solid #48A0FF');
+		},
+		function(){
+			$('.agency_kakaomap').css('border', '1px solid #DDDDDD');
+	})
 
 	// 렌터카 선택하기 버튼 눌렀을 때 페이지 이동
 	$('.btn_choice').click(function() {

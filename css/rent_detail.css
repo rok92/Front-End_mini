@@ -178,13 +178,18 @@ section {
     font-size: 20px;
 }
 
-.agency_map {
+/* .agency_map {
     padding-bottom: 30px;
-}
+} */
 
-.agency_kakaomap {
+#map {
     width: 880px;
     height: 430px;
+}
+
+.agency_map div:nth-child(2) {
+    display: flex;
+    justify-content: space-between;
 }
 
 .agency_address {
@@ -198,6 +203,24 @@ section {
 .agency_address span:nth-child(2) i{
     margin-left: 10px;
     cursor: pointer;
+}
+
+.agency_kakaomap {
+    width: 120px;
+    height: 44px;
+    margin: 10px 0 20px;
+    padding: 10px 10px;
+    border: 1px solid #DDDDDD;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.agency_kakaomap i {
+    padding: 1.5px;
+    font-size: 20px;
+    color: #48A0FF;
 }
 
 .agency_policy {
