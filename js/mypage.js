@@ -39,6 +39,29 @@ function open(){
 open();
 
 
+
+// 메뉴 호버 속성 유지
+let mypageNavBtn = document.getElementsByClassName('nav_hover');
+
+function mypageNavClick(e){
+  if(e.target.classList[1] == "selectBtn"){
+    e.target.classList.remove("selectBtn");
+  }else{
+    for(let i = 0; i < mypageNavBtn.length; i++){
+      mypageNavBtn[i].classList.remove("selectBtn");
+    }
+    e.target.classList.add("selectBtn");
+  }
+}
+
+function mypageNavInit(){
+  for(let i = 0; i < mypageNavBtn.length; i++){
+    mypageNavBtn[i].addEventListener('click',mypageNavClick);
+  }
+}
+
+mypageNavInit();
+
 // 체크리스트 작성
 
 let listInput = document.getElementById("list_input");

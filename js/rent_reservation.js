@@ -3,6 +3,9 @@ $('.check_agree_terms').click(function() {
   $(this).addClass('check')
   $('.check i').toggleClass('fa-active');
   
+  // 라디오 버튼 초기화
+  $('input[name="license"]').removeAttr('checked');
+  $('input[name="license"]')[0].checked = true;
 });
 
 // 약관 전체 동의 클릭 시
