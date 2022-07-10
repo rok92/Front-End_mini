@@ -33,11 +33,11 @@ selectEmailBoxItems.forEach(selecteditem =>{
   });
 });
 
+let inputEmail = document.getElementById("driver_email");
 // 옵션 선택되게 하기
 function selectEmailOption(optionitem){
   let emailBox = optionitem.closest(".select_email");
   let selected = emailBox.querySelector(".selected_value");
-  let inputEmail = document.getElementById("driver_email");
   selected.textContent = optionitem.textContent;
   inputEmail.value = `${selected.textContent}`;
 }
@@ -70,6 +70,10 @@ function selectPhoneOption(optionitem){
   selected.textContent = optionitem.textContent;
 }
 
+// 도메인 선택된 곳 클릭하면 다시 빈 값 되게 만들기
+inputEmail.addEventListener('click',()=>{
+  inputEmail.value= '';
+});
 
   // 탑 버튼 눌렀을 때 최상단으로
   $(".btn_top").click(function () {
