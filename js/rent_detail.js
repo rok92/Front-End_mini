@@ -3,6 +3,9 @@ $(document).ready(function(){
     var map;
     var mapContainer;
 
+	// 주소 복사에 사용
+	var address = document.getElementById("agency_address_text");
+
 	// 지도
 	mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 	mapOption = {
@@ -25,22 +28,47 @@ $(document).ready(function(){
 	marker.setMap(map);
 
 	// i 아이콘 눌렀을 때 업체 정보로 이동
-	$(".car_agency i").click(function(){
+	$('.car_agency i').click(function() {
 		$('html, body').animate({
             scrollTop: 890
         }, 400);
         return false;
 	});
 
-	// 
+	// 주소 복사 아이콘 눌렀을 때 복사
+	$('.agency_address i').click(function() {
+		// address의 내용(textContent)을 복사
+		window.navigator.clipboard.writeText(address.textContent).then(() => {
+			// 복사가 완료되면 호출
+			$('#copy_box').css('display', 'flex');
+			$('#copy_box').fadeOut(4000, 'swing');
+		});
+	});
+
+	// 더보기 눌렀을 때 숨겨진 내용 슬라이드 하면서 접기로 변경
+	$('.btn_expand').click(function() {
+		$('.agency_policy_second').slideToggle(500, function () {
+			if ($('.btn_expand').text() == "더보기") {
+				$('.btn_expand').html('접기<i id="arrow" class="fa-solid text_downarrow fa-angle-up txt_blue"></i>');
+			} else {
+				$('.btn_expand').html('더보기<i id="arrow" class="fa-solid text_downarrow fa-angle-down txt_blue"></i>');
+			}
+		});
+	});
+
+	// 지도 클릭 시 새탭에서 큰 지도 보기
+	// 드래그 해도 클릭으로 간주되어서 수정 필요
+	$('.agency_kakaomap').click(function() {
+		window.open('rent_map.html');
+	});
 
 	// 렌터카 선택하기 버튼 눌렀을 때 페이지 이동
-	$(".btn_choice").click(function(){
+	$('.btn_choice').click(function() {
 		location.href='rent_rsv.html'
 	});
 
 	// 탑 버튼 눌렀을 때 최상단으로
-    $(".btn_top").click(function () {
+    $('.btn_top').click(function () {
         $('html, body').animate({
             scrollTop: 0
         }, 400);
