@@ -57,21 +57,21 @@ $(document).ready(function(){
 	});
 
 	// 지도보기 클릭 시 새탭에서 큰 지도 보기
-	$('.agency_kakaomap').click(function() {
+	$('.btn_kakaomap').click(function() {
 		window.open('rent_map.html');
 	});
 
-	$('.agency_kakaomap').hover(
+	$('.btn_kakaomap').hover(
 		function(){
-			$('.agency_kakaomap').css('border', '1px solid #48A0FF');
+			$('.btn_kakaomap').css('border', '1px solid #48A0FF');
 		},
 		function(){
-			$('.agency_kakaomap').css('border', '1px solid #DDDDDD');
+			$('.btn_kakaomap').css('border', '1px solid #DDDDDD');
 	})
 
 	// 렌터카 선택하기 버튼 눌렀을 때 페이지 이동
 	$('.btn_choice').click(function() {
-		location.href='rent_rsv.html'
+		location.href='rent_reservation.html'
 	});
 
 	// 탑 버튼 눌렀을 때 최상단으로
