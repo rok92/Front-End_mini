@@ -1,0 +1,548 @@
+/* 전체 내용 감싸는 div */
+.rent_reservation_container{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+}
+
+/* 왼쪽 예약 정보들 감싸는 div*/
+.rent_reservation_info{
+  width: 880px;
+  border-top: 2px solid #BBBBBB;
+}
+
+/* 렌트하는 자동차 이미지,이름 및 렌트 기간 감싸는 div */
+.rent_info_box{
+  display: flex;
+  margin-top: 29px;
+}
+
+.rent_img_box{
+  position: relative;
+  width: 110px;
+  height: 110px;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid #DDDDDD;
+  cursor: pointer;
+}
+
+.rent_img_box img{
+  position:absolute;
+  top: 5px;
+  left: -34px;
+  width: 170px;
+  height: 100px;
+}
+
+.rent_info_box .name_date_box{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 770px;
+  margin-left: 20px;
+}
+
+.car_name{
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.car_date{
+  width: 249px;
+  height: 39px;
+  line-height: 19.5px;
+  font-size: 14px;
+  color: #999999;
+}
+
+/* 렌트카 가격 부분 */
+.rent_price_info{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 880px;
+  height: 106px;
+  padding: 0 40px;
+  margin-top: 22px;
+  background-color: #F2F2F2;
+  border-radius: 5px;
+}
+
+/* 차량 대여료, 일반 자차 각 div 공통 속성*/
+.rent_price_info > div{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 800px;
+}
+
+/* 차량 대여료, 일반 자차 각 폰트 속성 */
+.rent_price_info > div > span{
+  font-size: 16px;
+  color: #666666;
+}
+
+/* 총 상품 금액 */
+.car_total_price{
+  display: flex;
+  justify-content: space-between;
+  width: 880px;
+  height: 82px;
+  padding-top: 20px;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.car_total_price span:nth-child(1){
+  font-size: 16px;
+  color: #222222;
+}
+
+.car_total_price span:nth-child(2){
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* 예약자 정보 */
+.booker_info{
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.booker_info_title{
+  font-size: 24px;
+  font-weight: 600;
+  color: #222222;
+  padding-top: 40px;
+}
+
+.booker_info_box{
+  margin: 40px 0 20px 0;
+}
+
+.booker_info_content > td:nth-child(1){
+  padding:0 40px 20px 0;
+  font-size: 16px;
+  color: #AAAAAA;
+  font-weight: 500;
+}
+
+.booker_info_content > td:nth-child(2){
+  padding-bottom: 20px;
+  font-size: 16px;
+  color: #222222;
+}
+
+.add_reservation_info{
+  padding-top: 40px;
+}
+
+.add_reservation_info_title{
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.add_reservation_info_title > p{
+  font-size: 24px;
+  font-weight: 600;
+  color: #222222;
+}
+
+
+/* 다른 사람이 운전하는 체크 박스 */
+
+/* 체크박스 설명 텍스트 */
+.another_person_drive{   
+  font-size: 16px;
+  font-weight: 200;
+  color: #222222;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+/* 체크박스 (다른 사람 운전, 약관 전체 동의) */
+.another_person_drive > i, .check_agree_terms > i{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border: 1px solid #DDDDDD;
+  background-color: #FFFFFF;
+  color: #FFFFFF;
+  font-size: 14px;
+  text-align: center;
+  line-height: 20px;
+}
+
+.another_person_drive >i.fa-active, .check_agree_terms > i.fa-active{
+  border: 1px solid #48A0FF;
+  background-color: #48A0FF;
+  color: #FFFFFF;
+  font-size: 14px;
+  text-align: center;
+  line-height: 20px;
+}
+
+/* 추가 예약 정보 입력 */
+.add_reservation_box{
+  width: 100%;
+  height: 779px;
+  border: 1px solid #DDDDDD;
+  margin-top: 20px;
+  padding: 40px 40px 25px;
+}
+
+/* 운전자 한글 이름 텍스트 */
+.add_reservation_box > p{
+  font-size: 16px;
+  font-weight: 500;
+  color: #222222;
+  margin-bottom: 6px;
+}
+
+/* input 태그 공통 속성, select */
+.add_reservation_box > input, .driver_email_container > input, .driver_email_container > div{
+  width: 250px;
+  height: 50px;
+  border: 1px solid #DDDDDD;
+  padding: 15px;
+  margin-bottom: 30px;
+  font-size: 16px;
+  color: #222222;
+}
+
+/* 컨테이너 안에 요소가 아닌, 컨테이너에 마진값 주기 위해 */
+.driver_email_container > input, .driver_email_container > div{
+  margin-bottom: 0;
+}
+
+.add_reservation_box > input:focus, .driver_email_container > input:focus{
+  border: 1px solid #48A0FF;
+}
+
+/* 이메일 입력 전체 감싸는 컨테이너 */
+.driver_email_container{
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+/* @ 스타일 */
+.driver_email_container > span{
+  display: inline-block;
+  width: 11px;
+  text-align: center;
+  font-size: 18px;
+  color:#222222;
+}
+
+/* 플레이스 홀더 스타일 */
+.add_reservation_box input::placeholder{
+  font-size: 16px;
+  color: #BBBBBB;
+}
+
+/* select option custom */
+/* 이메일 선택하는 부분 */
+.driver_email_container > div{
+  padding-left: 16px;
+  padding-right: 20px;
+  cursor: pointer;
+}
+
+.select_email{
+  display: inline-block;
+  position: relative;
+  top: 1px;
+}
+
+.selected_email{
+  display: flex;
+  justify-content: space-between;
+}
+/* 화살표 아이콘 */
+.selected_email i{
+  font-size: 14px;
+  color: #222222;
+}
+
+/* email ul 속성 */
+.select_email > ul{
+  display: none;
+  position:absolute;
+  top: 49px;
+  right: -1px;
+  width: 250px;
+  border: 1px solid #DDDDDD;
+  border-top: none;
+  font-size: 16px;
+  color: #222222;
+  list-style: none;
+}
+
+.select_email.active > ul{
+  display: initial;
+  transition: 0.2s;
+}
+
+/* email li */
+.email_option{
+  padding: 15px;
+}
+
+.email_option:hover{
+  color:#48A0FF;
+}
+
+/* 휴대폰번호 입력 */
+input.add_reservation_phone{
+  width: 120px;
+}
+
+.select_phone{
+  display: inline-block;
+  position: relative;
+  width: 120px;
+  height: 50px;
+  line-height: 50px;
+  margin-bottom: 30px;
+  border: 1px solid #DDDDDD;
+  cursor: pointer;
+}
+
+.selected_phone{
+  display: flex;
+  justify-content: space-between;
+}
+.selected_phone span:first-child{
+  margin-left: 16px;
+}
+
+/* 화살표 아이콘 */
+.selected_phone i{
+  font-size: 14px;
+  color: #222222;
+  margin-right: 15px;
+}
+
+/* phone ul 속성 */
+.select_phone > ul{
+  display: none;
+  position:absolute;
+  top: 49px;
+  right: -1px;
+  width: 120px;
+  border: 1px solid #DDDDDD;
+  background: #FFFFFF;
+  border-top: none;
+  font-size: 16px;
+  color: #222222;
+  list-style: none;
+}
+
+.select_phone.active > ul{
+  display: initial;
+  transition: 0.2s;
+}
+
+/* phone li */
+.phone_option{
+  padding: 5px 16px;
+}
+
+.phone_option:hover{
+  color:#48A0FF;
+}
+
+/* 운전면허 라디오버튼 */
+.drive_type_box{
+  display: flex;
+  align-items: center;
+  margin-top: 17px;
+  height: 24px;
+}
+
+input.drive_type{
+  width: 22px;
+  height: 22px;
+  margin-right: 15px;
+}
+
+input.drive_type > label.drive_type_content{
+  font-size: 16px;
+  color: #222222;
+}
+
+/* 운전자 추가 정보 알림 */
+.notice_add_driver{
+  width: 800px;
+  height: 91px;
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #F2F2F2;
+  border: 1px solid #DDDDDD;
+}
+
+.notice_add_driver > div:nth-child(1){
+  font-size: 19px;
+  color:#222222;
+  font-weight: bold;
+}
+
+.notice_add_driver > div:nth-child(2){
+  margin-top: 10px;
+  font-size: 16px;
+  color:#222222;
+}
+
+/* 약관안내 */
+article.terms{
+  margin-top: 54px;
+  margin-bottom: 100px;
+}
+
+article.terms p{
+  font-size: 24px;
+  font-weight: 600;
+  color: #222222;
+}
+
+.agree_drive_terms_container{
+  width: 100%;
+  height: 361px;
+  margin-top: 24px;
+  border: 1px solid #DDDDDD;
+}
+
+.agree_drive_terms_content{
+  height: 298px;
+  padding: 40px 40px 26px 40px;
+}
+
+.agree_drive_terms_content > div:nth-child(-n+3){
+  display: flex;
+  align-items: center;
+  height: 19px;
+  margin-bottom: 29px;
+  font-size: 16px;
+  color: #444444;
+  cursor: pointer;
+}
+
+.agree_drive_terms_content > div > i{
+  margin-left: 5.29px;
+  font-size: 5px;
+  color: #222222;
+}
+
+.notice_terms{
+  width: 800px;
+  height: 91px;
+  padding: 20px;
+  background-color: #F2F2F2;
+  border: 1px solid #DDDDDD;
+}
+
+.notice_terms div:nth-child(1){
+  font-size: 19px;
+  font-weight: bold;
+  color: #222222;
+}
+
+.notice_terms div:nth-child(2){
+  margin-top: 10px;
+  font-size: 16px;
+  color: #222222;
+}
+
+.agree_drive_terms_check{
+  height: 100%;
+  padding: 22px 20px 21px;
+  border-top: 1px solid #DDDDDD;
+}
+
+.check_agree_terms{
+  font-size: 16px;
+  font-weight: 200;
+  color: #222222;
+  cursor: pointer;
+}
+
+/* 총 결제 금액, fixed */
+.rent_total_price_info{
+  position: fixed;
+  right: 300px;
+  width: 330px;
+}
+
+.rent_total_price_info > div:nth-child(1){
+  margin-bottom: 10px;
+  font-size: 20px;
+  color:#222222;
+}
+
+.rent_total_price_info > div:nth-child(2){
+  display: flex;
+  justify-content: space-between;
+  height: 71px;
+  margin-bottom: 23px;
+  padding-top: 14px;
+  border-top: 1px solid #DDDDDD;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.rent_total_price_info > div:nth-child(2) > span{
+  font-size: 14px;
+  color: #444444;
+}
+
+.rent_total_price_box{
+  display: flex;
+  justify-content: space-between;
+}
+
+.rent_total_price_box > span{
+  font-size: 18px;
+  font-weight: 600;
+  color: #222222;
+}
+.rent_total_price > span:nth-child(1){
+  font-size: 28px;
+  font-weight: bold;
+  color: #222222;
+}
+
+.rent_total_price > span:nth-child(2){
+  font-size: 18px;
+  color: #222222;
+}
+
+/* 예약하기 버튼 */
+.rent_reservation_btn{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border-top: 1px solid #DDDDDD;
+}
+
+.rent_reservation_btn button{
+  width: 300px;
+  height: 64px;
+  margin-top: 46px;
+  background-color: #48A0FF;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+

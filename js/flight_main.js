@@ -133,7 +133,6 @@ $('.flight_search').click(function(){
 
 // 최근 검색한 항공권 슬라이드
 
-
 let rctSlideBox = document.querySelector(".recently_slide_box");
 let rctSlideCount = rctSlideBox.childElementCount;
 let rctPrev = document.querySelector(".recently_prev");
@@ -159,17 +158,19 @@ function rctPrevButton(){
 }
 
 function rctNextButton(){
-  if(rctIndex < (rctSlideCount-1)){
+  if(rctIndex < (rctSlideCount-3)){
     rctPrev.removeAttribute("disabled");
     rctPosition -= moveWidth;
 
-    rctSlideBox.style.transform = `translateX(${rctPosition}px)`
+    rctSlideBox.style.transform = `translateX(${rctPosition}px)`;
+    rctSlideBox.style.transition = "0.5s";
     rctIndex += 1;
   }
 
   if(rctIndex == (rctSlideCount-1)){
     rctNext.setAttribute("disabled", 'true');
   }
+
 }
 
 function rctInit(){
@@ -181,6 +182,22 @@ function rctInit(){
 rctInit();
 
 //최근 검색한 항공권 슬라이드 내용 지우기
+let rctClose = document.querySelectorAll(".recently_colse_btn");
+let rctBox = document.querySelectorAll(".recently_slide_box > div");
+
+
+// 다 사라져 버렷
+rctClose.forEach(element => {
+  
+  element.addEventListener('click',() => {
+    rctBox.forEach((e)=>{
+      e.remove();
+    });
+  });
+
+});
+
+
 
 
 
