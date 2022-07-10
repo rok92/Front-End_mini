@@ -106,13 +106,13 @@ button {
 
 .headerBox {
     width: 1280px;
-    height: 90px;
+    height: 80px;
     margin: 0 auto;
     text-align: center;
 }
 
 .headerBox h2 {
-    line-height: 90px;
+    line-height: 80px;
     font-size: 22px;
     font-weight: bold;
 }
@@ -121,13 +121,15 @@ button {
 .btn_back {
     float: left;
     z-index: 1;
-    padding-top: 30px;
+    padding-top: 31px;
+}
+
+.back span{
     font-size: 18px;
 }
 
 .back i {
-    width: 7px;
-    height: 14px;
+    font-size: 18px;
     color: #BBBBBB;
 }
 
@@ -138,7 +140,7 @@ button {
 
 /* 헤더 타이틀 */
 .title {
-    padding-right: 72.31px;
+    padding-right: 81.23px;
     font-size: 22px;
     font-weight: bold;
 }
@@ -154,7 +156,7 @@ button {
 /* 섹션 왼쪽 */
 .left {
     width: 900px;
-    height: 729px;
+    height: 700px;
 }
 
 /* 가는편 */
