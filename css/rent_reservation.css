@@ -537,7 +537,16 @@ article.terms p{
   cursor: pointer;
 }
 
-
+/* 탑 버튼 */
+.btn_top {
+  float: right;
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  right: 40px;
+  bottom: 50%;
+  cursor: pointer;
+}
 
 
 
