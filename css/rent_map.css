@@ -1,4 +1,54 @@
+body {
+    overflow-y: scroll;
+}
+
+/* 헤더 */
+.header {
+    height: 80px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.headerBox {
+    width: 1320px;
+    height: 80px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.headerBox h2 {
+    line-height: 80px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* 헤더 뒤로가기 부분 */
+.btn_back {
+    float: left;
+    padding-top: 31px;
+    font-size: 18px;
+}
+
+.back i {
+    font-size: 18px;
+    color: #BBBBBB;
+}
+
+.btn_back span:last-child {
+    padding-left: 10px;
+    color: #BBBBBB;
+}
+
+/* 헤더 타이틀 */
+.title {
+    padding-right: 81.23px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* 지도 */
 #map {
     width: 100%;
-    height: 700px;
+    height: 889px;
 }
