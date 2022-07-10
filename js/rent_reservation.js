@@ -37,7 +37,9 @@ selectEmailBoxItems.forEach(selecteditem =>{
 function selectEmailOption(optionitem){
   let emailBox = optionitem.closest(".select_email");
   let selected = emailBox.querySelector(".selected_value");
+  let inputEmail = document.getElementById("driver_email");
   selected.textContent = optionitem.textContent;
+  inputEmail.value = `${selected.textContent}`;
 }
 
 

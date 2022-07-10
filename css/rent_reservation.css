@@ -132,6 +132,7 @@
   color: #222222;
 }
 
+/* 추가 예약 정보 */
 .add_reservation_info{
   padding-top: 40px;
 }
@@ -147,7 +148,6 @@
   font-weight: 600;
   color: #222222;
 }
-
 
 /* 다른 사람이 운전하는 체크 박스 */
 
@@ -186,7 +186,7 @@
 /* 추가 예약 정보 입력 */
 .add_reservation_box{
   width: 100%;
-  height: 779px;
+  height: 800px;
   border: 1px solid #DDDDDD;
   margin-top: 20px;
   padding: 40px 40px 25px;
@@ -265,8 +265,8 @@
   color: #222222;
 }
 
-/* email ul 속성 */
-.select_email > ul{
+/* email 옵션 전체 박스*/
+.email_option_box{
   display: none;
   position:absolute;
   top: 49px;
@@ -279,7 +279,7 @@
   list-style: none;
 }
 
-.select_email.active > ul{
+.select_email.active > .email_option_box{
   display: initial;
   transition: 0.2s;
 }
@@ -359,6 +359,9 @@ input.add_reservation_phone{
   align-items: center;
   margin-top: 17px;
   height: 24px;
+}
+.drive_type_box > input, .drive_type_box > label{
+  cursor: pointer;
 }
 
 input.drive_type{
