@@ -78,6 +78,11 @@ inputEmail.addEventListener('click',()=>{
   inputEmail.value= '';
 });
 
+
+
+
+
+
   // 탑 버튼 눌렀을 때 최상단으로
   $(".btn_top").click(function () {
     $('html, body').animate({

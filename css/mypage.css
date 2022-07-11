@@ -50,63 +50,32 @@ button{
   font-size: 18px;
 }
 
-/* 호버 (내 여행, 내 정보) */
-.mypage_nav div:hover, .myinfo_nav div:hover{
+/* 호버 (내 여행) */
+.mypage_nav div:hover{
   border-left: 8px solid #48A0FF;
   background-color: #eeeeee;
   cursor: pointer;
 }
 
-/* 첫 호버랑 마지막 호버에 radius 맞춰주기 위해 (내 여행, 내 정보)*/
-.mypage_nav_hover1:hover, .myinfo_nav_hover1:hover{
+/* 첫 호버랑 마지막 호버에 radius 맞춰주기 위해 (내 여행)*/
+.mypage_nav_hover1:hover{
   border-radius: 5px 5px 0 0;
 }
-.mypage_nav_hover2:hover, .myinfo_nav_hover2:hover{
+.mypage_nav_hover2:hover{
   border-radius: 0 0 5px 5px;
 }
 
-/* 클릭하면 호버 속성 유지 (내 여행, 내 정보) */
-.mypage_nav .nav_hover.selectBtn, .myinfo_nav .nav_hover.selectBtn{
+/* 클릭하면 호버 속성 유지 (내 여행) */
+.mypage_nav .nav_hover.selectBtn{
   border-left: 8px solid #48A0FF;
   background-color: #eeeeee;
 }
-.mypage_nav_hover1.nav_hover.selectBtn, .myinfo_nav_hover1.nav_hover.selectBtn{
+.mypage_nav_hover1.nav_hover.selectBtn{
   border-radius: 5px 5px 0 0;
 }
-.mypage_nav_hover2.nav_hover.selectBtn, .myinfo_nav_hover2.nav_hover.selectBtn{
+.mypage_nav_hover2.nav_hover.selectBtn{
   border-radius: 0 0 5px 5px;
 }
-
-/* 내 정보 title */
-.myinfo_title{
-  margin-top: 30px;
-  font-size: 26px;
-  font-weight: bold;
-  color: #222222;
-}
-
-/* 내 정보 메뉴 */
-.myinfo_nav{
-  margin-top: 30px;
-  height: 156px;
-  width: 308px;
-  border: 1px solid #DDDDDD;
-  border-radius: 5px;
-}
-
-.myinfo_nav div{
-  display: flex;
-  align-items: center;
-  height: 50%;
-  padding-left: 40px;
-}
-
-.myinfo_nav div p{
-  color: #222222;
-  font-weight: bold;
-  font-size: 18px;
-}
-
 
 /* 여행 체크리스트 사용 알려주는 공지 */
 .checklist_link_box{
