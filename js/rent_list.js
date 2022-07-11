@@ -99,7 +99,7 @@ $(document).ready(function(){
       startDate: moment().startOf('hour'),
       endDate: moment().startOf('hour').add(32, 'hour'),
       locale: {
-        format: 'MM/DD(dd) A hh:mm '
+        format: 'MM.DD(dd) A hh:mm'
       }
     });
   });
