@@ -15,8 +15,11 @@
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 <!--custom css-->
+<link rel="stylesheet" href="../css/daterangepicker.css"/>
 <link rel="stylesheet" href="../css/common.css"/>
 <link rel="stylesheet" href="../css/rent_list.css">
+<!-- js파일 -->
+<script src="../js/rent_list.js"></script>
 </head>
 <body>
   <header class="header">
@@ -50,14 +53,14 @@
         <form id="rentSearchList">
           <div class="wrap_search_input_box">
             <input type="text" class="search_destination" value="제주도">
-            <input type="text" class="search_daterange" value="06.24(금) 오전 10:00 - 07. 01(금) 오전 10:00">
+            <input type="text" name ="datetimes"id="renttDatepicker" class="search_daterange" value="06.24(금) 오전 10:00 - 07. 01(금) 오전 10:00">
             <input type="text" class="search_drive_age" value="970325 (만 25세)">
             <input type="submit" class="rent_search_btn" value="검색하기">
           </div>
         </form>
         <!--검색 팝업-->
         <div class="popup_rent">
-          <h4 class="tlt_popup_rent">여행지 검색</h4><i class="fa-solid fa-xmark" id="popupLRent  ListCloseBtn"></i>
+          <h4 class="tlt_popup_rent">여행지 검색</h4><i class="fa-solid fa-xmark" id="popupRentListCloseBtn"></i>
           <div class="div_popup_rent_search">
             <input type="text" name="" id="popupRentListSearch" class="input_popup_rent_search" placeholder="여행지 검색">
             <input type="button" name="" id="popupRentListSearchBtn" class="btn_popup_rent_search" value="검색하기">

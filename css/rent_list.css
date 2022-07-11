@@ -221,6 +221,13 @@
   line-height: 20px;
 }
 
+.wrap_kind_car .txt_car_picker>span
+.wrap_kind_fuel .txt_fuel_picker>span{
+  color: #444444;
+  font-size: 16px;
+  cursor: pointer;
+}
+
 /* 검색 결과 */
 .sec_result{
   width: 1010px;
@@ -249,6 +256,7 @@
   height: 50px;
   border: 1px #DDDDDD solid;
   background-color: #FFFFFF;
+  cursor: pointer;
 }
 .result_filter_open>span{
   margin-left: 10px;
@@ -306,11 +314,13 @@
 .wrap_whole .txt_choose{
   color: #666666;
   font-size: 14px;
+  cursor: pointer;
 }
 .wrap_whole .txt_choose>i{
   font-size: 7px;
   color: #666666;
   margin-left: 4px;
+  cursor: pointer;
 }
 .wrap_txt_rent_company{
   margin: 21px 0 0 30px;
@@ -332,6 +342,7 @@
   border-radius: 2px;
   width: 630px;
   height: 111px;
+  cursor: pointer;
 }
 .wrap_txt_money .txt_ttl{
   font-size: 18px;
