@@ -83,12 +83,16 @@ $(document).ready(function(){
   $('#rentBirth').change(function(){
     var rentBirth = $(this).val();  // 입력한 생일 가져오기
     var now = new Date();           // 오늘 날짜 가져오기   
-    var age;                
+    var age, mon;
+    // 계산을 위해 int로 변환 (YY, MM, DD)
+    var birthY = parseInt(rentBirth.substr(0,2));
+    var birthM = parseInt(rentBirth.substr(2,2));
+    var birthD = parseInt(rentBirth.substr(4,2));
+    var onlyNum = /^[0-9]+$/;       // 숫자만 입력 가능하게  
+
+    
+
     if(rentBirth != ""){            // 입력한 생일이 빈 값이 아니라면,
-      // 계산을 위해 int로 변환 (YY, MM, DD)
-      var birthY = parseInt(rentBirth.substr(0,2));
-      var birthM = parseInt(rentBirth.substr(2,2));
-      var birthD = parseInt(rentBirth.substr(4,2));
       // 연도 4자리로 변환하기
       if(birthY >= 00 && birthY <= (now.getFullYear()%100)){ // 2022 % 100 = 22
         birthY += 2000;
@@ -97,12 +101,23 @@ $(document).ready(function(){
       }
       // 만 나이
       age = now.getFullYear() - birthY;
-      var mon = (now.getMonth()+1) - birthM;
+      mon = (now.getMonth()+1) - birthM;
       if(mon < 0 || (mon === 0 && now.getDate() < birthD)){
         age -= 1; // 만약 계산한 달이 0보다 작거나 0이지만 오늘 일자보다 생일 일자가 큰 경우 -1
       }
+      
     }
-    if(age < 19){
+    // 텍스트를 적었을 경우
+    if(!onlyNum.test($(this).val())){
+      alert("숫자만 입력 가능 합니다");
+      $(this).val('');
+    }else if(birthM > 12 || birthM < 1){          // 1월~12월 사이의 값을 작성하지 않았을 경우
+      alert("생년월일을 올바르게 입력했는지 확인해주세요");   
+      $(this).focus();
+    }else if(birthD > 31 || birthD < 1){          // 1~31일 사이의 값을 작성하지 않았을 경우
+      alert("생년월일을 올바르게 입력했는지 확인해주세요");   
+      $(this).focus();
+    }else if(age < 19 || age >= 99){
       alert("만 19세 미만은 이용하실 수 없습니다");
       $(this).val('');
     }else{
