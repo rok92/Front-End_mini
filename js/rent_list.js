@@ -62,9 +62,9 @@ $(document).ready(function(){
 
   // 차종 체크박스
   $('.txt_car_picker').click(function() {
-    $(this).addClass('checkI')
-    $('.checkI i').toggleClass('fa-active');
-    $(this).removeClass('checkI');
+    $(this).addClass('checkC')
+    $('.checkC i').toggleClass('fa-active');
+    $(this).removeClass('checkC');
   });
 
   // 연료 체크박스
@@ -103,6 +103,47 @@ $(document).ready(function(){
       }
     });
   });
-  
 
+  // 생년월일 입력하면 나이 자동계산
+  // 나이 입력하고 마우스 다른곳에 클릭하면
+  $('.search_drive_age').change(function(){
+    // 입력값 받아오기
+    let birthInput = $(this).val();
+    // 오늘날짜
+    let now = new Date();
+    // 나이변수
+    let age;
+    let onlyNum = /^[0-9]+$/;
+
+    if(birthInput != ""){
+      // 계산을 위한 형변환(int)
+      let birthY = parseInt(birthInput.substr(0,2));
+      let birthM = parseInt(birthInput.substr(2,2));
+      let birthD = parseInt(birthInput.substr(4,2));
+      // 년도 4자리로 변환
+      if(birthY >= 00 && birthY <= (now.getFullYear()%100)){ // 2022 % 100 = 22
+        birthY += 2000;
+      }else{
+        birthY += 1900;
+      }
+      // 만나이 계산
+      age = now.getFullYear() - birthY;
+      let mon = (now.getMonth()+1) - birthM;
+      if(mon<0 || (mon===0 && now.getDate()<birthD)){
+        age -= 1;
+      }
+    }
+    if(age < 19){
+      alert("만 19세 미만은 이용하실 수 없습니다");
+      $(this).val('');
+    }else if(!onlyNum.test($(this).val())){
+      alert("숫자만 입력 가능 합니다");
+    }else{
+      $(this).val(birthInput + " (만 " + age + "세)");
+    }
+  });
+  // 클릭할 때 초기화
+  $('.search_drive_age').click(function(){
+    $(this).val('');
+  });
 });

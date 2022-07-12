@@ -67,6 +67,7 @@
   font-size: 20px;
   font-weight: bold;
   text-align: center;
+  cursor: pointer;
 }
 
 /* 검색 팝업 */
@@ -149,11 +150,13 @@
 .sec_rent_search_list .popup_rent .list_location .div_popup_search .txt_location_main{
   font-size: 22px;
   font-weight: 600;
+  cursor: pointer;
 }
 .sec_rent_search_list .popup_rent .list_location .div_popup_search .txt_location_sub{
   color: #999999;
   font-size: 17px;
   font-weight: 200;
+  cursor: pointer;
 }
 /* 검색필터 */
 .wrap_result{
