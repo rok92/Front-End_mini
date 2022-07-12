@@ -35,6 +35,24 @@ $(document).ready(function(){
         return false;
 	});
 
+	// 남은 차 수에 따라 색 변경
+	var quantity_left_length = document.getElementById('quantity_left_txt').textContent.length;
+	var quantity_left;
+	if(quantity_left_length == 7) {
+		quantity_left = document.getElementById('quantity_left_txt').textContent.substring(0, 1);
+	} else if (quantity_left_length == 8) {
+		quantity_left = document.getElementById('quantity_left_txt').textContent.substring(0, 2);
+	}
+	if(quantity_left > 5) {
+		if($('#quantity_left_txt').hasClass('txt_red')) {
+			$('#quantity_left_txt').removeClass('txt_red');
+		}
+	} else if (quantity_left <= 5) {
+		if(!($('#quantity_left_txt').hasClass('txt_red'))) {
+			$('#quantity_left_txt').addClass('txt_red');
+		}
+	}
+
 	// 주소 복사 아이콘 눌렀을 때 복사
 	$('.agency_address i').click(function() {
 		// address의 내용(textContent)을 복사

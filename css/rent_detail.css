@@ -7,6 +7,10 @@
     color: #DDDDDD;
 }
 
+.txt_red {
+    color: #E65454;
+}
+
 section {
     display: flex;
     justify-content: space-between;
@@ -56,8 +60,12 @@ section {
     font-weight: bold;
 }
 
-.quantity_left i {
-    margin-right: 15px;
+.quantity_left span i {
+    margin-right: 10px;
+}
+
+#quantity_left_txt {
+    margin-left: 0;
 }
 
 .cancel_time {
