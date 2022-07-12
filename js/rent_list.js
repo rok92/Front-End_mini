@@ -112,14 +112,15 @@ $(document).ready(function(){
     // 오늘날짜
     let now = new Date();
     // 나이변수
-    let age;
-    let onlyNum = /^[0-9]+$/;
+    let age, mon;
+    let onlyNum = /^[0-9]+$/; // 숫자만 입력 가능
+     // 계산을 위한 형변환(int)
+     let birthY = parseInt(birthInput.substr(0,2));
+     let birthM = parseInt(birthInput.substr(2,2));
+     let birthD = parseInt(birthInput.substr(4,2));
 
     if(birthInput != ""){
-      // 계산을 위한 형변환(int)
-      let birthY = parseInt(birthInput.substr(0,2));
-      let birthM = parseInt(birthInput.substr(2,2));
-      let birthD = parseInt(birthInput.substr(4,2));
+     
       // 년도 4자리로 변환
       if(birthY >= 00 && birthY <= (now.getFullYear()%100)){ // 2022 % 100 = 22
         birthY += 2000;
@@ -128,16 +129,21 @@ $(document).ready(function(){
       }
       // 만나이 계산
       age = now.getFullYear() - birthY;
-      let mon = (now.getMonth()+1) - birthM;
+      mon = (now.getMonth()+1) - birthM;
       if(mon<0 || (mon===0 && now.getDate()<birthD)){
         age -= 1;
       }
     }
-    if(age < 19){
+    if(age < 19 || age >= 99){
       alert("만 19세 미만은 이용하실 수 없습니다");
       $(this).val('');
     }else if(!onlyNum.test($(this).val())){
       alert("숫자만 입력 가능 합니다");
+      $(this).val('');
+    }else if(birthM > 12 || birthM < 1 ){
+      alert("생년월일을 올바르게 입력했는지 확인해주세요");
+    }else if(birthD > 31 || birthD < 1){
+      alert("생년월일을 올바르게 입력했는지 확인해주세요");
     }else{
       $(this).val(birthInput + " (만 " + age + "세)");
     }
@@ -145,5 +151,13 @@ $(document).ready(function(){
   // 클릭할 때 초기화
   $('.search_drive_age').click(function(){
     $(this).val('');
+  });
+
+  // 탑 버튼 눌렀을 때 최상단으로
+  $(".btn_top").click(function () {
+    $('html, body').animate({
+        scrollTop: 0
+    }, 400);
+    return false;
   });
 });
