@@ -79,6 +79,42 @@ $(document).ready(function(){
     });
   });
 
+  // 운전자 생년월일 입력 후 외부영역 클릭 시 만 나이 계산
+  $('#rentBirth').change(function(){
+    var rentBirth = $(this).val();  // 입력한 생일 가져오기
+    var now = new Date();           // 오늘 날짜 가져오기   
+    var age;                
+    if(rentBirth != ""){            // 입력한 생일이 빈 값이 아니라면,
+      // 계산을 위해 int로 변환 (YY, MM, DD)
+      var birthY = parseInt(rentBirth.substr(0,2));
+      var birthM = parseInt(rentBirth.substr(2,2));
+      var birthD = parseInt(rentBirth.substr(4,2));
+      // 연도 4자리로 변환하기
+      if(birthY >= 00 && birthY <= (now.getFullYear()%100)){ // 2022 % 100 = 22
+        birthY += 2000;
+      }else{
+        birthY += 1900;
+      }
+      // 만 나이
+      age = now.getFullYear() - birthY;
+      var mon = (now.getMonth()+1) - birthM;
+      if(mon < 0 || (mon === 0 && now.getDate() < birthD)){
+        age -= 1; // 만약 계산한 달이 0보다 작거나 0이지만 오늘 일자보다 생일 일자가 큰 경우 -1
+      }
+    }
+    if(age < 19){
+      alert("만 19세 미만은 이용하실 수 없습니다");
+      $(this).val('');
+    }else{
+      $(this).val(rentBirth + " (만 " + age + "세)");
+    }
+  });
+  
+  // 클릭할 때 초기화
+  $('#rentBirth').click(function(){
+    $(this).val('');
+  });
+
   // form #rentSearch의 submit 버튼 클릭 시 유효성 검사
   $('.btn_search_rent').click(function(){
     // 만약 날짜가 선택되지 않았을 경우 = 기본 value값인 "날짜를 선택해주세요"가 적혀 있는 경우
