@@ -141,64 +141,61 @@ let rctIndex = 0;
 let rctPosition = 0;
 const moveWidth = 440;
 
+// 최근 항공권 검색 이전 버튼
 function rctPrevButton(){
 
   if(rctIndex > 0){
-    rctNext.removeAttribute("disabled");
     rctPosition += moveWidth;
-
     rctSlideBox.style.transform = `translateX(${rctPosition}px)`
     rctIndex -= 1;
   }
 
+  if(rctIndex == (rctSlideCount-(rctSlideCount-2))){
+    rctNext.style.visibility = "visible";
+  }
+
   if(rctIndex == 0){
-    rctPrev.setAttribute("disabled", 'true');
+    rctPrev.style.visibility = "hidden";
   }
 
 }
 
+// 최근 항공권 검색 다음버튼
 function rctNextButton(){
   if(rctIndex < (rctSlideCount-3)){
-    rctPrev.removeAttribute("disabled");
     rctPosition -= moveWidth;
-
     rctSlideBox.style.transform = `translateX(${rctPosition}px)`;
     rctSlideBox.style.transition = "0.5s";
     rctIndex += 1;
   }
 
-  if(rctIndex == (rctSlideCount-1)){
-    rctNext.setAttribute("disabled", 'true');
+  if(rctIndex == (rctSlideCount-3)){
+    rctNext.style.visibility = "hidden";
+  }
+
+  if(rctIndex <= (rctSlideCount-3)){
+    rctPrev.style.visibility = "visible";
   }
 
 }
-
+// 초기 설정 및 클릭 이벤트
 function rctInit(){
-  rctPrev.setAttribute("disabled", "true");
   rctPrev.addEventListener('click',rctPrevButton);
   rctNext.addEventListener('click',rctNextButton);
+  rctPrev.style.visibility = "hidden";
 }
 
 rctInit();
 
 //최근 검색한 항공권 슬라이드 내용 지우기
-let rctClose = document.querySelectorAll(".recently_colse_btn");
 let rctBox = document.querySelectorAll(".recently_slide_box > div");
 
-
-// 다 사라져 버렷
-rctClose.forEach(element => {
-  
-  element.addEventListener('click',() => {
-    rctBox.forEach((e)=>{
-      e.remove();
-    });
-  });
-
-});
-
-
-
+function removeFlightBox(){
+  for(let i = 0; i < rctSlideCount.length; i++){
+    rctBox[i].remove();
+    rctPrevButton();
+  }
+}
 
 
 // 출발지 선택 팝업 외부영역 클릭 시 팝업 닫기
@@ -246,8 +243,13 @@ function shuttleInit(){
   }
 }
 
-
 shuttleInit();
+
+
+
+
+
+
 
 
 

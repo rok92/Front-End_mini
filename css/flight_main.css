@@ -220,6 +220,7 @@ button.flight_search:hover{
   margin: 0 40px 12px 0;
   border: 0.5px solid #AAAAAA;
   padding: 17px 24px 16px 24px;
+  cursor: pointer;
 }
 
 /* .recently_slide_box div:nth-child(1){

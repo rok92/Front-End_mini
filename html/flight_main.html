@@ -356,7 +356,7 @@
         <div>
           <div class="shuttle_close_line">
             <span class="recently_shuttle_way">왕복</span>
-            <span class="recently_colse_btn"><i class="fa fa-times close" aria-hidden="true"></i></span>
+            <span class="recently_colse_btn"><i class="fa fa-times close" aria-hidden="true" onclick="removeFlightBox()"></i></span>
           </div>
           <div class="recently_destination">
             <span>김포 (GMP)</span><i class="fa fa-exchange" aria-hidden="true"></i><span>제주 (CJU)</span>
@@ -428,8 +428,8 @@
       </div>
     </div>
     
-    <span class="recently_prev"><i class="fas fa-chevron-left"></i></span>
-    <span class="recently_next"><i class="fas fa-chevron-right"></i></span>
+    <span class="recently_prev" id="flightPrev"><i class="fas fa-chevron-left"></i></span>
+    <span class="recently_next" id="flightNext"><i class="fas fa-chevron-right"></i></span>
     
     
   </section>
