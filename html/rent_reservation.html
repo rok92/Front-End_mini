@@ -92,11 +92,11 @@
             </div>
             <div class="add_reservation_box">
               <p>운전자 한글 이름</p>
-              <input type="text">
+              <input type="text" id ="driverKrName">
               <p>이메일 주소</p>
               <div class="driver_email_container">
-                <input type="text">&nbsp;<span>@</span>&nbsp;
-                <input type="text" placeholder="직접입력" id="driver_email">
+                <input type="text" id="driverEmail">&nbsp;<span>@</span>&nbsp;
+                <input type="text" placeholder="직접입력" id="driverEmailDomain">
                 <div class="select_email">
                   <div class="selected_email">
                     <span class="selected_value">직접입력</span>
@@ -124,10 +124,10 @@
                   <li class="phone_option">019</li>
                 </ul>
               </div>
-              <input type="text" class="add_reservation_phone">
-              <input type="text" class="add_reservation_phone">
+              <input type="text" class="add_reservation_phone" id="driverPhoneNum1" maxlength="4" minlength="3">
+              <input type="text" class="add_reservation_phone" id="driverPhoneNum2" maxlength="4" minlength="3">
               <p>생년월일</p>
-              <input type="text" placeholder="EX) 19900101">
+              <input type="text" placeholder="EX) 19900101" id="driverBirth">
               <p>운전면허</p>
               <div class="drive_type_box">
                 <input type="radio" name = "license" id="license1" class="drive_type" value="2종 보통" checked="checked" />
@@ -185,7 +185,7 @@
   </section>
   <section>
     <div class="rent_reservation_btn">
-      <button>
+      <button onclick="checkDriverInfo1() && checkDriverInfo2()">
         예약하기
       </button>
     </div>
