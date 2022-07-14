@@ -153,6 +153,7 @@ function checkDriverInfo2(){
 //원래 예약자 정보가 디폴트로 입력되고 다른 사람이 운전해요 누르면 내용 없어지게 하기
 //디폴트로 입력되는건 db에서..
 function anotherPersonCheck(){
+  let licenseDefault = document.getElementById("license1");
   if(!document.querySelector('.another_person_drive > i').classList.contains('fa-active')){
     driverKrName.value = "";
     driverEmail.value = "";
@@ -160,6 +161,7 @@ function anotherPersonCheck(){
     driverPhoneNum1.value = "";
     driverPhoneNum2.value="";
     driverBirth.value = "";
+    licenseDefault.checked = true;
   }
 }
 

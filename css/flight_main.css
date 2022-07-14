@@ -22,7 +22,7 @@ section.flight_reservation{
   top: 191px;
   width: 1280px;
   height: 192px;
-  padding:  37px 70px;
+  padding:  37px 70px 30px;
   background-color: #fff;
   border-radius: 30px;
   box-shadow: 3px 3px 18px #0002;
@@ -68,20 +68,24 @@ section.flight_reservation{
 .departure_arrival_container{
   display: flex;
   justify-content: space-between;
-  height: 60%;
+  align-items: center;
+  height: 80%;
 }
 .location_box{
   display: flex;
   justify-content: space-between;
+  align-items: center;
   position: relative;
   width: 480px;
+  height: 100%;
 }
 .depart_location, .arrive_location{
   width: 190px;
-  margin-top: 24px;
+
 }
 
 .departure_location, .arrival_location {
+  width: 200px;
   font-size: 22px;
   font-weight: bold;
   background-color: transparent;
@@ -104,7 +108,7 @@ section.flight_reservation{
   line-height: 30px;
   font-size: 13px;
   color: #666666;
-  margin-top: 41px;
+  margin-top: 30px;
 }
 
 /* 여행지랑 날짜 사이에 중간에 나누는 선 */
@@ -122,7 +126,6 @@ section.flight_reservation{
   justify-content: space-between;
   width: 220px;
   height: 55px;
-  margin-top: 20px;
 }
 
 .flight_date_box input{
@@ -137,19 +140,37 @@ section.flight_reservation{
 
 /* 인원 좌석등급 선택 */
 .sit_class_box{
-  width: 120px;
-  margin-top: 19px;
+  width: 130px;
 }
-.sit_class{
+
+.sit_class_area{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.sit_class1, .sit_class2{
   font-size: 22px;
   font-weight: bold;
-  background-color: transparent;
   border: none;
+  width: 30px;
+  background-color: transparent;
   cursor: pointer;
+}
+.sit_class2{
+  width: 100px;
+}
+
+.sit_class_area > span{
+  height: 100%;
+  line-height: 100%;
+  font-size: 22px;
+  font-weight: bold;
 }
 
 /* 항공 예약 검색 버튼 */
-button.flight_search{
+.flight_search{
   width: 150px;
   height: 68px;
   border: transparent;
@@ -158,8 +179,6 @@ button.flight_search{
   color: #fff;
   font-weight: normal;
   font-size: 20px;
-}
-button.flight_search:hover{
   cursor: pointer;
 }
 
@@ -402,6 +421,8 @@ button.flight_search:hover{
 .depart_popup input, .arrive_popup input{
   height: 50px;
   width: 660px;
+  padding-left: 15px;
+  font-size: 16px;
 }
 
 .depart_popup button, .arrive_popup button{
@@ -501,7 +522,7 @@ button.flight_search:hover{
 .person_minus_button, .person_plus_button{
   width: 46px;
   height: 46px;
-  line-height: 42px;
+  line-height: 40px;
   text-align: center;
   border: 2px solid #BBBBBB;
   color: #bbbbbb;
@@ -550,12 +571,14 @@ button.flight_search:hover{
 .flight_sit_choice input{
   width: 22px;
   height: 22px;
+  cursor: pointer;
 }
 
 .flight_sit_choice label{
   margin-left: 10px;
   font-size: 16px;
   color: #222222;
+  cursor: pointer;
 }
 
 /* 항공 좌석 등급 라디오버튼 */

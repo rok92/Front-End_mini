@@ -24,26 +24,8 @@ $('input[name="daterange"]').on('apply.daterangepicker', function(ev,picker){
 });
 
 
-let flightDateBox = document.getElementById('rangepicker');
-flightDateBox.addEventListener('click',()=>{
-  flightDateBox.value = "여행 날짜 선택";
-});
 
-
-
-$(document).ready(function(){
-
-  // top 버튼
-  $('#topBtn').on('click',function(){
-
-    $('html, body').animate({scrollTop:0},500);
-  });
-
-});
-
-
-// 출발지 선택하는 버튼
-
+// 출발지 선택하는 버튼 block/none
 let departLocation = document.getElementById("depart_loacation");
 let departPopUP = document.getElementById("depart_pop");
 let count = 1;
@@ -60,8 +42,8 @@ function clickCount(){
   }
 }
 
-//도착지 선택하는 버튼
-let arriveLocation = document.getElementById("arrive_location");
+//도착지 선택하는 버튼 block/none
+let arriveLocation = document.getElementById("arriveLocation");
 let arrivePopUP = document.getElementById("arrive_pop");
 let count2 = 1;
 arriveLocation.addEventListener("click",clickCount2);
@@ -76,7 +58,7 @@ function clickCount2(){
   }
 }
 
-//인원수 및 좌석 선택 버튼
+//인원수 및 좌석 선택 버튼 block/none
 let personSit = document.getElementById("person_sit");
 let customflightPOP = document.getElementById("custom_flight_pop");
 let count3 = 1;
@@ -92,14 +74,53 @@ function clickCount3(){
   }
 }
 
-// 탑 버튼 눌렀을 때 최상단으로
-$(".btn_top").click(function () {
-  $('html, body').animate({
-      scrollTop: 0
-  }, 400);
-  return false;
+// 출발지 선택 팝업 외부영역 클릭 시 팝업 닫기
+$(document).mouseup(function (e){
+  var LayerPopup = $("#depart_pop");
+  if(!LayerPopup.is(e.target) && LayerPopup.has(e.target).length == 0){
+    LayerPopup.css('display','none');
+  }
 });
 
+// 도착지 선택 팝업 외부영역 클릭 시 팝업 닫기
+$(document).mouseup(function (e){
+  var LayerPopup = $("#arrive_pop");
+  if(!LayerPopup.is(e.target) && LayerPopup.has(e.target).length == 0){
+    LayerPopup.css('display','none');
+  }
+});
+
+// 인원 선택 팝업 외부영역 클릭 시 팝업 닫기
+$(document).mouseup(function (e){
+  var LayerPopup = $("#custom_flight_pop");
+  if(!LayerPopup.is(e.target) && LayerPopup.has(e.target).length == 0){
+    LayerPopup.css('display','none');
+  }
+});
+
+
+// 왕복 편도 다구간 선택
+let flightShuttleBtn = document.getElementsByClassName('flight_shuttle_select');
+
+function shuttleClick(event){
+  if(event.target.classList[1] == "selectBtn"){
+    event.target.classList.remove("selectBtn");
+  }else{
+    for(let i = 0; i < flightShuttleBtn.length; i++){
+      flightShuttleBtn[i].classList.remove("selectBtn");
+    }
+    event.target.classList.add("selectBtn");
+  }
+}
+
+function shuttleInit(){
+  for(let i = 0; i < flightShuttleBtn.length; i++){
+    flightShuttleBtn[i].addEventListener('click',shuttleClick);
+  }
+}
+shuttleInit();
+
+// 출발지 여행지 선택
 // 출발지 팝업 내 검색하기 버튼 클릭 시
 $('#popupLodSearchBtn').click(function(){
   var txt = $('#popupLodSearch').val() + " (ICN)";
@@ -118,18 +139,65 @@ $('#popupLodSearchBtn2').click(function(){
   if(txt == ''){
     alert("여행지를 입력하세요");
   }else{
-    $('#arrive_location').attr('value', txt);
-    $('#arrive_location').removeClass('txt_gray');
+    $('#arriveLocation').attr('value', txt);
+    $('#arriveLocation').removeClass('txt_gray');
     $('.arrive_popup').css('display','none');
   }
 });
 
-// 다음 페이지로 이동
-$('.flight_search').click(function(){
-  location.href = 'flight_list.html';
-});
+// 인원 좌석 선택 버튼 클릭
+//성인
+let adultBtnMinus = document.getElementById('adultBtnMinus');
+let personCount = document.getElementById('personCount');
+let classType = document.getElementById('classType');
+
+function plusMinusBtn(pm){
+  const adCount = document.getElementById('adCount');
+  let number = adCount.innerHTML;
+
+  if(pm == "plus"){
+    number = parseInt(number) + 1;
+  }else if(pm = "minus"){
+    number = parseInt(number) - 1;
+  }
+
+  adCount.innerHTML = number;
+  personCount.value = number;
+  
+  if(adCount.innerHTML > 1){
+    adultBtnMinus.setAttribute("disabled", false);
+  }
+
+}
+
+function plusMinusInit(){
+  adultBtnMinus.setAttribute('disabled', true);
+}
+plusMinusInit();
 
 
+//유효성검사, 링크
+let flightDateBox = document.getElementById('rangepicker');
+// flightDateBox.value = "";
+function flightCheck(){
+
+    if(!flightShuttleBtn[0].classList.contains('selectBtn') && !flightShuttleBtn[1].classList.contains('selectBtn') && !flightShuttleBtn[2].classList.contains('selectBtn')){
+      alert("왕복, 편도, 다구간 중 선택해주세요");
+      
+    }else if(departLocation.value == ""){
+      alert("출발지를 선택해주세요");
+      
+    }else if(arriveLocation.value == ""){
+      alert("도착지를 선택해주세요");
+      
+    }else if(flightDateBox.value == ""){
+      alert("여행 날짜를 선택해 주세요");
+
+    }else{
+        location.href = 'flight_list.html';
+    }
+
+}
 
 // 최근 검색한 항공권 슬라이드
 
@@ -178,7 +246,7 @@ function rctNextButton(){
   }
 
 }
-// 초기 설정 및 클릭 이벤트
+// 최근 검색한 항공권 초기 설정 및 클릭 이벤트
 function rctInit(){
   rctPrev.addEventListener('click',rctPrevButton);
   rctNext.addEventListener('click',rctNextButton);
@@ -187,7 +255,7 @@ function rctInit(){
 
 rctInit();
 
-//최근 검색한 항공권 슬라이드 내용 지우기
+//최근 검색한 항공권 슬라이드 내용 지우기 (아직 못함)
 let rctBox = document.querySelectorAll(".recently_slide_box > div");
 
 function removeFlightBox(){
@@ -197,61 +265,13 @@ function removeFlightBox(){
   }
 }
 
-
-// 출발지 선택 팝업 외부영역 클릭 시 팝업 닫기
-$(document).mouseup(function (e){
-  var LayerPopup = $("#depart_pop");
-  if(!LayerPopup.is(e.target) && LayerPopup.has(e.target).length == 0){
-    LayerPopup.css('display','none');
-  }
+// 탑 버튼 눌렀을 때 최상단으로
+$(".btn_top").click(function () {
+  $('html, body').animate({
+      scrollTop: 0
+  }, 400);
+  return false;
 });
-
-// 도착지 선택 팝업 외부영역 클릭 시 팝업 닫기
-$(document).mouseup(function (e){
-  var LayerPopup = $("#arrive_pop");
-  if(!LayerPopup.is(e.target) && LayerPopup.has(e.target).length == 0){
-    LayerPopup.css('display','none');
-  }
-});
-
-// 인원 선택 팝업 외부영역 클릭 시 팝업 닫기
-$(document).mouseup(function (e){
-  var LayerPopup = $("#custom_flight_pop");
-  if(!LayerPopup.is(e.target) && LayerPopup.has(e.target).length == 0){
-    LayerPopup.css('display','none');
-  }
-});
-
-
-// 왕복 편도 다구간 선택
-let flightShuttleBtn = document.getElementsByClassName('flight_shuttle_select');
-
-function shuttleClick(event){
-  if(event.target.classList[1] == "selectBtn"){
-    event.target.classList.remove("selectBtn");
-  }else{
-    for(let i = 0; i < flightShuttleBtn.length; i++){
-      flightShuttleBtn[i].classList.remove("selectBtn");
-    }
-    event.target.classList.add("selectBtn");
-  }
-}
-
-function shuttleInit(){
-  for(let i = 0; i < flightShuttleBtn.length; i++){
-    flightShuttleBtn[i].addEventListener('click',shuttleClick);
-  }
-}
-
-shuttleInit();
-
-
-
-
-
-
-
-
 
 
 

@@ -53,13 +53,13 @@
         <div class="location_box">
           <div class="depart_location">
             <span class="flight_reservation_subtitle">출발</span>
-            <input type="text" class="departure_location txt_gray" id="depart_loacation" value="출발지를 선택하세요">
+            <input type="text" class="departure_location txt_gray" id="depart_loacation" placeholder="출발지를 선택하세요" autocomplete="off">
           </div>
           <div class="depart_popup" id="depart_pop">
             <div class="popup_wrap">
               <p class="depart_popup_title">출발 도시/공항 선택</p>
               <div class="depart_popup_search_box">
-                <input id="popupLodSearch" type="text" placeholder="도시를 검색하세요">
+                <input id="popupLodSearch" type="text" placeholder="도시를 검색하세요" autocomplete="off">
                 <button id="popupLodSearchBtn">검색하기</button>
               </div>
               <p class="depart_popup_subtitle">주요도시 바로 선택</p>
@@ -162,13 +162,13 @@
           <i class="fa fa-exchange roundArrow" aria-hidden="true"></i>
           <div class="arrive_location">
             <span class="flight_reservation_subtitle">도착</span>
-            <input type="text" class="arrival_location txt_gray" id="arrive_location" value="도착지를 선택하세요">
+            <input type="text" class="arrival_location txt_gray" id="arriveLocation" placeholder="도착지를 선택하세요" autocomplete="off">
           </div>
           <div class="arrive_popup" id="arrive_pop">
             <div class="popup_wrap">
               <p class="arrive_popup_title">도착 도시/공항 선택</p>
               <div class="arrive_popup_search_box">
-                <input id="popupLodSearch2" type="text" placeholder="도시를 검색하세요">
+                <input id="popupLodSearch2" type="text" placeholder="도시를 검색하세요" autocomplete="off">
                 <button id="popupLodSearchBtn2">검색하기</button>
               </div>
               <p class="arrive_popup_subtitle">주요도시 바로 선택</p>
@@ -272,11 +272,15 @@
         <p class="partition">|</p>
         <div class="flight_date_box">
           <div class="flight_reservation_subtitle">출발일 - 도착일</div>
-          <input type="text" class="flight_date" id="rangepicker" name="daterange" placeholder="여행 날짜 선택">
+          <input type="text" class="flight_date" id="rangepicker" name="daterange" placeholder="여행 날짜 선택" autocomplete="off">
         </div>
         <div class="sit_class_box">
           <span class="flight_reservation_subtitle">인원, 좌석등급</span>
-          <button class="sit_class" id="person_sit">1명, 좌석전체</button>
+          <div class="sit_class_area" id="person_sit">
+            <input type="button" class="sit_class1" id="personCount" value="1명"></input><span>,</span>
+            <input type="button" class="sit_class2" id="classType" value="좌석 전체"></input>
+          </div>
+          
         </div>
         <div class="customer_flightclass_popup" id="custom_flight_pop">
           <div class="customer_flightclass_wrap">
@@ -287,9 +291,9 @@
                 <div>만 12세 이상</div>
               </div>
               <div class="person_count_box">
-                <span class="person_minus_button">-</span>
-                <span class="person_number">1</span>
-                <span class="person_plus_button">+</span>
+                <span class="person_minus_button" id="adultBtnMinus" onclick="plusMinusBtn('minus')">-</span>
+                <span class="person_number" id="adCount">1</span>
+                <span class="person_plus_button" id="adultBtnPlus" onclick="plusMinusBtn('plus')">+</span>
               </div>
             </div>
             <div class="age_container">
@@ -297,10 +301,10 @@
                 <div>소아</div>
                 <div>만 12세 미만</div>
               </div>
-              <div class="person_count_box">
+              <div class="person_count_box" id="childBtnMinus">
                 <span class="person_minus_button">-</span>
-                <span class="person_number">0</span>
-                <span class="person_plus_button">+</span>
+                <span class="person_number" id="cdCount">0</span>
+                <span class="person_plus_button" id="childBtnPlus">+</span>
               </div>
             </div>
             <div class="age_container">
@@ -334,7 +338,7 @@
             </div>
           </div>
         </div>
-        <button class="flight_search">검색하기</button>
+        <input type="button" class="flight_search" value="검색하기" onclick="flightCheck()">
       </div>
     </div>
   </section>
