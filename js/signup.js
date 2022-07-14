@@ -103,7 +103,7 @@ $(document).ready(function(){
             alert("휴대폰 번호를 확인해주세요.");
             $('.input_signup_phone').css('border', '1px solid #E65454');
         }else{
-            num=Math.round(Math.random()*999999)+100000;
+            num=Math.round(Math.random()*899999)+100000;
             alert("인증번호 발송 : " + num);
             $('.input_check_phone').show();
             $('.btn_check_phone').show();
