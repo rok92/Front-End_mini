@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>쿨탐찼다! 여행가자! - 쿨타임트립</title>
+
+    <!-- ico -->
+    <link rel="icon" href="../images/ico_logo.ico" />
+    <!-- login.css -->
+    <link rel="stylesheet" href="../css/common.css"/>
+    <link rel="stylesheet" href="../css/mypage_update_main.css"/>
+    <!-- login.js -->
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/mypage_update_main.js"></script>
+</head>
+<body>
+    <header class="header">
+        <!-- 헤더 wrap -->
+        <div class="wrap">
+            <div>
+            <img class="lg_title" src="../images/lg_title.png" alt="로고" onclick="location.href='index.html'">
+            <!-- 로그인/회원가입 > 마이페이지 -->
+            <div class="div_account">
+                <a class="btn_account" href="login.html">로그인</a>
+                <a class="btn_account txt_blue mr_0 pr_0" href="signup.html">회원가입</a>
+                <a class="btn_account btn_mypage" href="mypage.html">마이페이지</a>
+            </div>
+            </div>
+            <nav>
+            <!-- 항공/숙박/렌터카 -->
+            <ul>
+                <li><a href="flight_main.html"><img class="ic_nav" src="../images/ic_plane.png" alt="항공"><span>항공</span></a></li>
+                <li><a href="stay_main.html"><img class="ic_nav" src="../images/ic_lodgment.png" alt="숙박"><span>숙박</span></a></li>
+                <li><a href="#"><img class="ic_nav" src="../images/ic_rent.png" alt="렌터카"><span>렌터카</span></a></li>
+            </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- section -->
+    <section class="section">
+    <div class="wrap">
+        <!-- <div class="div_update_title title_main">
+            내 정보 수정하기
+        </div> -->
+        <div class="div_update_panel">
+            <div class="div_update_profile">
+                <!-- 사진 -->
+                <div class="div_img_profile">
+                    <img class="img_profile_image" src="../images/ic_profile.png">
+                    <div class="div_update_image">
+                        <img class="img_camera_background" src="../images/ic_camera_background.png">
+                        <img class="img_camera_image" src="../images/ic_camera.png">
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="div_update_id">
+                <div><p class="text_update_id">아이디</p></div><div><input class="input_update_id" type="text"></div>
+            </div>
+            <div class="div_update_password">
+                <div><p class="text_update_password">비밀번호</p></div><div><a href src="mypage_update_password.html">비밀번호 변경하기</a></div>
+            </div>
+            <div class="div_update_name">
+                <div><p class="text_update_name">이름</p></div><div><input class="input_update_name" type="text"></div>
+            </div>
+            <div class="div_update_phone">
+                <div><p class="text_update_phone">휴대폰 번호</p></div><div>01012345678</div><div><a href src="mypage_update_password.html">연락처 변경하기</a></div>
+            </div>
+            <div class="div_update_eamil">
+                <div><p class="text_update_email">이메일</p></div><div>ggg@naver.com</div>
+            </div> -->
+            <table class="table_user_info">
+                <tr><td class="td_text user_id">아이디</td><td colspan="2"><input class="input_update_id" type="text"></td></tr>
+                <tr><td class="td_text user_password">비밀번호</td><td class="td_link update_password" colspan="2"><a href="mypage_update_password.html">비밀번호 변경하기</a></td></tr>
+                <tr><td class="td_text user_name">이름</td><td colspan="2"><input class="input_update_name" type="text" placeholder="실명 입력"></td></tr>
+                <tr><td class="td_text user_phone">휴대폰 번호</td><td class="td_data user_phone">01012345678</td><td class="td_link update_phone"><a href="mypage_update_phone.html">연락처 변경하기</a></td></tr>
+                <tr><td class="td_text user_email">이메일</td><td class="td_data user_email" colspan="2">ggg@naver.com</td></tr>
+            </table>
+            <br>
+            <!-- 구분선 -->
+            <div class="line_update_panel"></div>
+            <br>
+            <div class="div_update_button">
+                <button class="btn_update_cancel">취소하기</button>
+                <button class="btn_update_confirm">저장하기</button>
+            </div>
+        </div>
+        <div class="div_delete_account">
+            <a href="#">회원탈퇴</a>
+        </div>
+    </div>
+    </section>
+    <!-- 탑 버튼 -->
+    <!-- <img class="btn_top" src="../images/btn_top.png"> -->
+    <!-- footer -->
+    <footer class="footer">
+    <div class="wrap">
+        <div class="div_terms ml_0">
+        <a class="btn_terms ml_0 pl_0" href="#">이용 약관</a>
+        <a class="btn_terms bold" href="#">개인정보 처리방침</a>
+        <a class="btn_terms" href="#">취소 및 환불 정책</a>
+        </div>
+        <div class="div_service">
+        <a class="btn_service" href="#">고객센터</a>
+        <a class="btn_service mr_0 pr_0" href="#">FAQ</a>
+        </div>
+        <div class="div_cpy_info">
+        <p>
+            상호명 (주)쿨타임트립 | 대표 채동혁 | 개인정보보호책임자 곽경록<br>
+            주소 서울 강남구 선릉로 428, 위워크 2층 | 이메일 help@cooltimetrip.com | 마케팅/제휴 문의 marketing@cooltimetrip.com
+        </p>
+        <p>
+            쿨타임트립은 통신판매중개자이며 통신판매의 당사자가 아닙니다. 따라서 상품·거래정보 및 거래에 대하여 책임을 지지않습니다.
+        </p>
+        </div>
+        <img class="lg_title_gray" src="../images/lg_title_gray.png" alt="">
+    </div>
+    </footer>
+</body>
+</html>

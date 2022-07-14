@@ -1,0 +1,97 @@
+/* section - mypage_authentication */
+
+.section .wrap{
+    display: flex;
+    justify-content: center;
+    /* margin-top:86px; */
+} 
+
+/* 비밀번호 인증 박스 */
+.wrap .div_authentication_panel{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* border: 1px solid #DDDDDD; */
+    padding-top: 86px;
+    padding-bottom: 186px;
+}
+
+/* title 공통 */
+.wrap .div_authentication_title{
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+/* title_main */
+.section .div_authentication_title .title_main{
+    font-size:28px;
+}
+
+/* title_sub */
+.section .div_authentication_title .title_sub{
+    font-size:22px;
+    margin-top: 8px;
+    color: #A1A1A1;
+}
+
+/* 비밀번호 본인인증 상자 */
+.section .div_authentication_panel .div_authentication_field{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #DDDDDD;
+    width: 580px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    align-items: center;
+}
+
+/* 비밀번호 입력 상자 위 텍스트 - 비밀번호 */
+.section .div_authentication_password .text_authentication_password{
+    text-align: left;
+    font-size: 14px;
+    color: #222222;
+}
+
+/* 비밀번호 불일치 시 출력 텍스트 - 비밀번호가 일치하지 않습니다 */
+.section .div_authentication_password .error_authentication_password{
+    font-size: 12px;
+    margin-top: 5px;
+    color: #E65454;
+}
+
+/* 비밀번호 입력 상자 */
+.section .div_authentication_password input{
+    height: 50px;
+    width: 350px;
+    font-size: 16px;
+    margin-top: 7px;
+    border: 1px solid #DDDDDD;
+    text-indent: 16px;
+}
+
+/* 비밀번호 입력 상자 placeholder */
+.section .div_authentication_password input::placeholder{
+    color:#BBBBBB;
+}
+
+/* 비밀번호 인증 버튼 div */
+.section .div_authentication_button{
+    display: flex;
+    justify-content: center;    
+    width: 350px;
+    margin-top: 26px;
+}
+
+/* 비밀번호 인증 버튼 */
+.section .div_authentication_button button{
+    width: 350px;
+    height: 50px;
+    font-size: 16px;
+    color: #FFFFFF;
+    border: 0px;
+    background-color: #48A0FF;
+    cursor: pointer;
+}

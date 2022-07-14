@@ -1,0 +1,192 @@
+/* section - mypage_update_main */
+
+.section .wrap{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* border: 1px solid red; */
+} 
+
+/* 회원 정보 박스 */
+.wrap .div_update_panel{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid #DDDDDD;
+    width: 980px;
+    padding: 100px 100px 60px 100px;
+    margin-top: 90px;
+    /* margin-bottom: 240px;  */
+    margin-bottom: 30px; 
+}
+
+/* title 공통 */
+/* .wrap .div_update_title{
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 30px;
+    margin-top: 70px;
+    font-size:28px;
+} */
+
+/* 회원 프로필 panel 상단 div */
+.wrap .div_update_panel .div_update_profile{
+    display: flex;
+    justify-content: center;
+}
+
+/* 회원 프로필 이미지 */
+.div_update_profile .div_img_profile{
+    position: relative;
+    width: 180px;
+    height: 180px;
+    /* border: 1px solid blue; */
+    border-radius: 90px 85px 20px 85px;
+    margin-bottom: 80px;
+    cursor: pointer;
+}
+
+.div_update_profile .div_img_profile .img_profile_image{
+    height: 180px;
+}
+
+.div_update_profile .div_img_profile .img_camera_background{
+    height: 38px;
+    position: absolute;
+    top: 140px;
+    left: 140px;
+}
+
+.div_update_profile .div_img_profile .img_camera_image{
+    height: 18px;
+    width: 19px;
+    position: absolute;
+    top: 150px;
+    left: 150px;
+}
+
+/* 회원 정보 수정 입력란 테이블 */
+.div_update_panel .table_user_info{
+    /* border: 1px solid red; */
+    margin-bottom: 10px;
+}
+
+.div_update_panel .table_user_info .table_user_info{
+    width: 660px;
+}
+
+.div_update_panel .table_user_info td{
+    margin-bottom: 35px;
+}
+
+.div_update_panel .table_user_info tr{
+    height: 90px;
+    max-width: 42px;
+}
+
+/* 회원 정보 수정 panel 텍스트 */
+.div_update_panel .table_user_info .td_text,
+.div_update_panel .table_user_info .td_data{
+    color: #222222;
+    font-size: 16px;
+}
+
+.div_update_panel .table_user_info .td_text{
+    font-weight: bold;
+    width: 142px;
+}
+
+.div_update_panel .table_user_info .td_data{
+    width:142px;
+}
+
+.div_update_panel .table_user_info input{
+    width: 620px;
+    height: 50px;
+    font-size: 16px;
+    text-indent: 16px;
+    border: 1px solid #BBBBBB;
+}
+
+/* 회원 아이디 input 텍스트 */
+.div_update_panel .table_user_info .input_update_id{
+    color: #888888;
+    background-color: #EEEEEE;
+}
+
+/* 이름 입력란 - 실명 입력 */
+.div_update_panel .table_user_info input::placeholder{
+    color: #BBBBBB;
+}
+
+/* 비밀번호 변경하기 / 연락처 변경하기 링크 */
+.div_update_panel .table_user_info a{
+    color:#48A0FF;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* 구분선 */
+.div_update_panel .line_update_panel{
+    border-top: 1px solid #DDDDDD;
+    margin-bottom: 10px;
+}
+
+/* 회원 정보 상자 */
+.section .div_update_panel .div_update_field{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #DDDDDD;
+    width: 580px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    align-items: center;
+}
+
+/* 취소하기 / 저장하기 버튼 div */
+.section .div_update_button{
+    display: flex;
+    justify-content: center;    
+    width: 780px;
+    margin-top: 26px;
+    margin-bottom: 10px;
+    justify-content: right;
+}
+
+/* 취소하기 / 저장하기 버튼 */
+/* 공통 */
+.section .div_update_button button{
+    width: 200px;
+    height: 64px;
+    font-size: 20px;
+    border: 0px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* 버튼 - 취소하기 */
+.section .div_update_button .btn_update_cancel{
+    color: #666666;
+    background-color: #EEEEEE;
+}
+
+/* 버튼 - 저장하기 */
+.section .div_update_button .btn_update_confirm{
+    color: #FFFFFF;
+    background-color: #48A0FF;
+    margin-left: 20px;
+}
+
+/* 하단 회원탈퇴 div */
+.wrap .div_delete_account{
+    width: 980px;
+    text-align: right;
+    margin-bottom: 190px; 
+}
+
+/* 하단 회원탈퇴 */
+.wrap .div_delete_account a{
+   color: #AAAAAA;
+}

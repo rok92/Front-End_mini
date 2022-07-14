@@ -1,0 +1,107 @@
+/* section - mypage_update_phoneNum */
+
+.section .wrap{
+    display: flex;
+    justify-content: center;
+} 
+
+/* 휴대폰 번호 인증 박스 */
+.wrap .div_phoneNum_panel{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 86px;
+    padding-bottom: 186px;
+}
+
+/* title 공통 */
+.wrap .div_phoneNum_title{
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+/* title_main - 휴대폰 번호 변경하기 */
+.section .div_phoneNum_title .title_main{
+    color: #222222;
+    font-size:28px;
+}
+
+/* 휴대폰 번호 본인인증 상자 */
+.section .div_phoneNum_panel .div_phoneNum_field{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #DDDDDD;
+    width: 580px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    align-items: center;
+}
+
+/* 번호 입력 div */
+.section .div_phoneNum_input,
+.section .div_phoneNum_check{
+    padding-bottom: 30px;
+}
+
+/* 입력 상자 위 텍스트 - 휴대폰 / 인증번호 */
+.section .div_phoneNum_input .text_phoneNum_input,
+.section .div_phoneNum_check .text_phoneNum_check{
+    text-align: left;
+    font-size: 14px;
+    color: #222222;
+}
+
+
+
+/* 휴대폰 / 인증번호 불일치 시 출력 텍스트 */
+.section .div_phoneNum_input .error_update_phoneNum,
+.section .div_phoneNum_check .error_check_phoneNum{
+    font-size: 12px;
+    margin-top: 5px;
+    color: #E65454;
+}
+
+/* 휴대폰 / 인증번호 입력 상자 */
+.section .div_phoneNum_input input,
+.section .div_phoneNum_check input{
+    height: 50px;
+    width: 350px;
+    font-size: 16px;
+    margin-top: 7px;
+    border: 1px solid #DDDDDD;
+    text-indent: 16px;
+}
+
+/* 휴대폰 / 인증번호 입력 상자 placeholder */
+.section .div_phoneNum_input input::placeholder,
+.section .div_phoneNum_check input::placeholder{
+    color:#BBBBBB;
+}
+
+/* 비밀번호 인증 버튼 div */
+.section .div_phoneNum_button{
+    display: flex;
+    justify-content: center;    
+    flex-direction: column;
+    width: 350px;
+    /* margin-top: 26px; */
+}
+
+/* 비밀번호 인증 버튼 공통 */
+.section .div_phoneNum_button button{
+    width: 350px;
+    height: 50px;
+    font-size: 16px;
+    color: #FFFFFF;
+    border: 0px;
+    background-color: #48A0FF;
+    cursor: pointer;
+}
+
+/* 변경하기 버튼 */
+.section .div_phoneNum_button .btn_phoneNum_send{
+    margin-bottom: 19px;
+}
