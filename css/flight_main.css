@@ -145,7 +145,7 @@ section.flight_reservation{
 
 .sit_class_area{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: 100%;
   margin-top: 10px;
 }
@@ -153,13 +153,20 @@ section.flight_reservation{
 .sit_class1, .sit_class2{
   font-size: 22px;
   font-weight: bold;
+  text-align: left;
   border: none;
   width: 30px;
   background-color: transparent;
   cursor: pointer;
 }
 .sit_class2{
-  width: 100px;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; 
+  word-break:break-all;
+  width: 83px;
+  margin-left: 3px;
 }
 
 .sit_class_area > span{
