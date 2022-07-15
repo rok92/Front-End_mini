@@ -58,16 +58,6 @@ function clickCount2(){
   }
 }
 
-// // 호범낭룸ㅇㄹ
-// $('#depart_location_table td').hover(
-//   function(){
-//   $(this).addClass('bg_gray');
-//   },
-//   function(){
-//   $(this).removeClass('bg_gray');
-//   }
-// );
-
 // 도시 선택 시 출발지 / 도착지 자동 입력
 // 출발지
 var city;
